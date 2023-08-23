@@ -15,10 +15,18 @@
     }
 
     #table-container {
-        
         max-width: 100%;
         overflow-x: auto;
         grid-area: table;
+        
+
+        .table-header {
+            background-color: #fafafa;
+        }
+
+        .selected-total-container {            
+            padding: 1rem;
+        }
     }
 
     #export-cta-container {
@@ -50,7 +58,7 @@
 }
   
 .mat-mdc-row .mat-mdc-cell {
-    cursor: pointer;
+    // cursor: pointer;
 }
 
 .mat-mdc-row:hover .mat-mdc-cell {
@@ -60,4 +68,9 @@
 
 .demo-row-is-clicked {
     background-color: #edeffc !important;
+}
+
+.export-button {
+    font-size: 0.8rem;
+    
 }

@@ -1,2 +1,13 @@
-<app-canvas></app-canvas>
+<app-canvas *ngIf="data?.length"
+    [headerColumns]="[
+        'select',
+        'processo', 
+        'numeroRequisicao', 
+        'beneficiario', 
+        'classe', 
+        'tipoRequisicao'
+        ]"
+        [tableData]="data"
+>
+</app-canvas>
 <router-outlet></router-outlet>
