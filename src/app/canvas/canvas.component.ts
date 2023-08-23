@@ -1,69 +1,56 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit, Input, OnInit } from '@angular/core';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { SelectionModel } from '@angular/cdk/collections';
+import { FetchdataService } from '../fetchdata.service';
+import { RequisicaoPagamento } from '../types/requisicao-pagamento';
 
-export interface Processo {
-  id: number,
-  processo: string;
-  numeroRequisicao: string;
-  beneficiario: string;
-  classe: string;
-  tipoRequisicao: string;
-}
-const PROCESSOS_DATA: Processo[] = [
-  {id: 1,  processo: '1002801-53.2022.4.01.3000', numeroRequisicao: '0000001.2023.4.01.004.3000', beneficiario: 'MARIA AUXILIADORA PAIVA SABOIA', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 2,  processo: '1006674-57.2019.4.01.3100', numeroRequisicao: '0000001.2022.4.01.003.3100', beneficiario: 'ELAINE MARIA PENA DOS SANTOS ROCHA', classe: 'PRECATORIO', tipoRequisicao: 'Geral'},
-  {id: 3,  processo: '1001988-51.2021.4.01.3100', numeroRequisicao: '0000002.2022.4.01.003.3100', beneficiario: 'DARCLEY CABRAL DOS SANTOS', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 4,  processo: '1001523-08.2022.4.01.3100', numeroRequisicao: '0000003.2022.4.01.003.3100', beneficiario: 'MANOEL ROSENO JESUS DOS REIS', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 5,  processo: '1007258-90.2020.4.01.3100', numeroRequisicao: '0000004.2022.4.01.003.3100', beneficiario: 'JOSE CAUBI DE OLIVEIRA NEGRAO', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 6,  processo: '1004394-11.2022.4.01.3100', numeroRequisicao: '0000005.2022.4.01.003.3100', beneficiario: 'EDINALDO ALVES DE ALMEIDA', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 7,  processo: '1003417-19.2022.4.01.3100', numeroRequisicao: '0000006.2022.4.01.003.3100', beneficiario: 'ROSANA LAURENTINO PESSOA', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 8,  processo: '1015996-33.2021.4.01.3100', numeroRequisicao: '0000007.2022.4.01.003.3100', beneficiario: 'GIULIANE PANTOJA NUNES', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 9,  processo: '1003353-77.2020.4.01.3100', numeroRequisicao: '0000008.2022.4.01.003.3100', beneficiario: 'FABRICIO GUEDES LOBATO', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 10, processo: '0006227-23.2018.4.01.3100', numeroRequisicao: '0000009.2022.4.01.003.3100', beneficiario: 'PATRICIA BASTOS DE AGUIAR', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 11,  processo: '1002801-53.2022.4.01.3000', numeroRequisicao: '0000001.2023.4.01.004.3000', beneficiario: 'MARIA AUXILIADORA PAIVA SABOIA', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 12,  processo: '1006674-57.2019.4.01.3100', numeroRequisicao: '0000001.2022.4.01.003.3100', beneficiario: 'ELAINE MARIA PENA DOS SANTOS ROCHA', classe: 'PRECATORIO', tipoRequisicao: 'Geral'},
-  {id: 13,  processo: '1001988-51.2021.4.01.3100', numeroRequisicao: '0000002.2022.4.01.003.3100', beneficiario: 'DARCLEY CABRAL DOS SANTOS', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 14,  processo: '1001523-08.2022.4.01.3100', numeroRequisicao: '0000003.2022.4.01.003.3100', beneficiario: 'MANOEL ROSENO JESUS DOS REIS', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 15,  processo: '1007258-90.2020.4.01.3100', numeroRequisicao: '0000004.2022.4.01.003.3100', beneficiario: 'JOSE CAUBI DE OLIVEIRA NEGRAO', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 16,  processo: '1004394-11.2022.4.01.3100', numeroRequisicao: '0000005.2022.4.01.003.3100', beneficiario: 'EDINALDO ALVES DE ALMEIDA', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 17,  processo: '1003417-19.2022.4.01.3100', numeroRequisicao: '0000006.2022.4.01.003.3100', beneficiario: 'ROSANA LAURENTINO PESSOA', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 18,  processo: '1015996-33.2021.4.01.3100', numeroRequisicao: '0000007.2022.4.01.003.3100', beneficiario: 'GIULIANE PANTOJA NUNES', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 19,  processo: '1003353-77.2020.4.01.3100', numeroRequisicao: '0000008.2022.4.01.003.3100', beneficiario: 'FABRICIO GUEDES LOBATO', classe: 'RPV', tipoRequisicao: 'Geral'},
-  {id: 20, processo: '0006227-23.2018.4.01.3100', numeroRequisicao: '0000009.2022.4.01.003.3100', beneficiario: 'PATRICIA BASTOS DE AGUIAR', classe: 'RPV', tipoRequisicao: 'Geral'},
-];
-
+/**
+ * Componente de apresentação em forma de tabela
+ * 
+ * @author bruno.carneiro (tr301605)
+ */
 @Component({
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
   styleUrls: ['./canvas.component.scss']
 })
-export class CanvasComponent implements AfterViewInit{
-  displayedColumns: string[] = [
-    'id', 
-    'processo', 
-    'numeroRequisicao', 
-    'beneficiario', 
-    'classe', 
-    'tipoRequisicao'
-  ];
-  dataSource = new MatTableDataSource(PROCESSOS_DATA);
-  clickedRows = new Set<Processo>();
-  selection = new SelectionModel<Processo>(true, []);
+export class CanvasComponent implements OnInit, AfterViewInit{
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+  // Colunas da tabela
+  @Input() headerColumns: string[];
+
+  // Linhas da tabela
+  @Input() tableData: any[];
+
+  // Fonte de dados a serem apresentados
+  dataSource: MatTableDataSource<any, any>;
+  clickedRows = new Set<RequisicaoPagamento>();
+  selection = new SelectionModel<RequisicaoPagamento>(true, []);
+
+  constructor(private _liveAnnouncer: LiveAnnouncer, private _fetchDataService: FetchdataService) {
+    this._fetchDataService.displayedColumns = this.headerColumns;
+  }
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  ngOnInit(): void {    
+    // Ao iniciar a aplicação, atribuímos os dados recebidos na tabela
+    this.dataSource = new MatTableDataSource(this.tableData);
+  }
+
   ngAfterViewInit() {
+    // Depois que a view for carregada, aplicamos a paginação e ordenação
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
 
+  /**
+   * Muda a ordenação das colunas
+   */
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
@@ -72,24 +59,39 @@ export class CanvasComponent implements AfterViewInit{
     }
   }
 
-  selectRow(row: any) {
-    this.clickedRows.add(row);
-  }
-
-  isRowSelected(row: any) {
-    return this.clickedRows.has(row);
-  }
-
+  /**
+   * Verifica se todos as linhas da tabela apresentadas
+   * em tela estão selecionadas
+   * 
+   * @return true se todas as linhas estiverem selecionadas
+   */
   isAllSelected() {
     const numSelected = this.selection.selected.length;
     const numRows = this.dataSource.data.length;
     return numSelected === numRows;
   }
 
+  /**
+   * Seleciona todas as linhas da tabela apresentadas em tela
+   */
   masterToggle() {
     this.isAllSelected() ?
         this.selection.clear() :
         this.dataSource.data.forEach(row => this.selection.select(row));
+  }
+
+  /**
+   * Obtém a quantidade de linhas selecionadas
+   */
+  selectedRows() {
+    return this.selection.selected.length;
+  }
+
+  /**
+   * Verifica se a tabela contém algum registro
+   */
+  tableHasAnyData() {
+    return this.dataSource?.data?.length;
   }
 
 }
