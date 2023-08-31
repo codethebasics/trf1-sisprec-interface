@@ -103,11 +103,8 @@ export class CanvasComponent implements OnInit, AfterViewInit{
     return this.dataSource?.data?.length;
   }
 
-<<<<<<< HEAD
-=======
   getIdsSelecionados() {
     this.selection.selected.map(row => console.log(row.id));
   }
 
->>>>>>> develop
 }
