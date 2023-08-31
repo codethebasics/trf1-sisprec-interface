@@ -30,15 +30,12 @@ export class CanvasComponent implements OnInit, AfterViewInit{
   clickedRows = new Set<RequisicaoPagamento>();
   selection = new SelectionModel<RequisicaoPagamento>(true, []);
 
-<<<<<<< HEAD
-=======
   // Armazena todas as requisições que foram alteradas em tela
   private requisicoesAlteradas: RequisicaoPagamento[] = [];
 
   // Armazena o backup de todas as requisições alteradas
   private requisicoesBackup: RequisicaoPagamento[] = [];
 
->>>>>>> develop
   constructor(private _liveAnnouncer: LiveAnnouncer, private _fetchDataService: FetchdataService) {
     this._fetchDataService.displayedColumns = this.headerColumns;
   }
