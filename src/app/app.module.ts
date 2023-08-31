@@ -25,7 +25,7 @@ import { CustomPaginator } from './canvas/config/CustomPaginatorConfiguration';
 @NgModule({
   declarations: [
     AppComponent,
-    CanvasComponent
+    CanvasComponent,
   ],
   imports: [
     BrowserModule,
