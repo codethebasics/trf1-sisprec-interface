@@ -4,20 +4,16 @@
     overflow-y: auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 1fr auto;
     grid-template-areas: 
-        "header"
         "table"
         "cta";
 
-    #header-container {
-        grid-area: header;
-    }
-
-    #table-container {
+    #table-container {  
         max-width: 100%;
         overflow-x: auto;
         grid-area: table;
+        height: 100%;
         
 
         .table-header {
