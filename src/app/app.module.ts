@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -20,17 +20,64 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatSelectModule } from '@angular/material/select'
 import { CustomPaginator } from './canvas/config/CustomPaginatorConfiguration';
+import { ConsultaFaseComponent } from './cjf/consulta-fase/consulta-fase.component';
+import { ConsultaTabelaComponent } from './cjf/consulta-tabela/consulta-tabela.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PulseComponent } from './shared/pulse/pulse.component';
+import { DynamicTableComponent } from './shared/dynamic-table/dynamic-table.component';
+import { TabelaAssuntoComponent } from './cjf/consulta-tabela/tabela-assunto/tabela-assunto.component';
+import { TabelaUnidadeJudicialComponent } from './cjf/consulta-tabela/tabela-unidade-judicial/tabela-unidade-judicial.component';
+import { TabelaUnidadeComponent } from './cjf/consulta-tabela/tabela-unidade/tabela-unidade.component';
+import { TabelaClassificacaoDespesaComponent } from './cjf/consulta-tabela/tabela-classificacao-despesa/tabela-classificacao-despesa.component';
+import { TabelaIndiceComponent } from './cjf/consulta-tabela/tabela-indice/tabela-indice.component';
+import { TabelaIndiceTipoComponent } from './cjf/consulta-tabela/tabela-indice-tipo/tabela-indice-tipo.component';
+import { TabelaBeneficiarioTipoComponent } from './cjf/consulta-tabela/tabela-beneficiario-tipo/tabela-beneficiario-tipo.component';
+import { TabelaBeneficiarioSucessaoTipoComponent } from './cjf/consulta-tabela/tabela-beneficiario-sucessao-tipo/tabela-beneficiario-sucessao-tipo.component';
+import { TabelaBeneficiarioValorOrdemPagamentoComponent } from './cjf/consulta-tabela/tabela-beneficiario-valor-ordem-pagamento/tabela-beneficiario-valor-ordem-pagamento.component';
+import { TabelaServidorCondicaoTipoComponent } from './cjf/consulta-tabela/tabela-servidor-condicao-tipo/tabela-servidor-condicao-tipo.component';
+import { TabelaFaseTipoComponent } from './cjf/consulta-tabela/tabela-fase-tipo/tabela-fase-tipo.component';
+import { TabelaIdentificacaoTipoComponent } from './cjf/consulta-tabela/tabela-identificacao-tipo/tabela-identificacao-tipo.component';
+import { TabelaMovimentoTipoComponent } from './cjf/consulta-tabela/tabela-movimento-tipo/tabela-movimento-tipo.component';
+import { TabelaSentencaTipoComponent } from './cjf/consulta-tabela/tabela-sentenca-tipo/tabela-sentenca-tipo.component';
+import { TabelaUnidadeJudicialTipoComponent } from './cjf/consulta-tabela/tabela-unidade-judicial-tipo/tabela-unidade-judicial-tipo.component';
+import { TabelaValorTipoComponent } from './cjf/consulta-tabela/tabela-valor-tipo/tabela-valor-tipo.component';
+import { TabelaDivergenciaTipoComponent } from './cjf/consulta-tabela/tabela-divergencia-tipo/tabela-divergencia-tipo.component';
+import {registerLocaleData} from '@angular/common';
 
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [
     AppComponent,
     CanvasComponent,
+    ConsultaFaseComponent,
+    ConsultaTabelaComponent,
+    PulseComponent,
+    DynamicTableComponent,
+    TabelaAssuntoComponent,
+    TabelaUnidadeJudicialComponent,
+    TabelaUnidadeComponent,
+    TabelaClassificacaoDespesaComponent,
+    TabelaIndiceComponent,
+    TabelaIndiceTipoComponent,
+    TabelaBeneficiarioTipoComponent,
+    TabelaBeneficiarioSucessaoTipoComponent,
+    TabelaBeneficiarioValorOrdemPagamentoComponent,
+    TabelaServidorCondicaoTipoComponent,
+    TabelaFaseTipoComponent,
+    TabelaIdentificacaoTipoComponent,
+    TabelaMovimentoTipoComponent,
+    TabelaSentencaTipoComponent,
+    TabelaUnidadeJudicialTipoComponent,
+    TabelaValorTipoComponent,
+    TabelaDivergenciaTipoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
@@ -45,7 +92,9 @@ import { CustomPaginator } from './canvas/config/CustomPaginatorConfiguration';
     MatSelectModule
   ],
   providers: [
-    { provide: MatPaginatorIntl, useValue: CustomPaginator() }
+    { provide: MatPaginatorIntl, useValue: CustomPaginator() },
+    { provide: LOCALE_ID, useValue: 'pt' }, // Configurando idioma
+    { provide:  DEFAULT_CURRENCY_CODE, useValue: 'BRL' }, // Configurando moeda
   ],
   bootstrap: [AppComponent]
 })

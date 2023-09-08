@@ -1,0 +1,166 @@
+<ng-container>
+    <table 
+        mat-table 
+        matTableExporter
+        #exporter="matTableExporter"
+        [dataSource]="dataSource" 
+        matSort (matSortChange)="announceSortChange($event)"
+        class="canvas-table"
+    >
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-checkbox
+                    *ngIf="tableHasAnyData()"
+                    color="primary"
+                    (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                >
+                </mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let row">
+                <mat-checkbox 
+                    color="primary"
+                    (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)"
+                >
+                </mat-checkbox>
+            </td>
+        </ng-container>
+                        
+        <!-- ÍNDICE TIPO -->
+        <ng-container matColumnDef="indiceTipo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar pelo tipo de índice">
+                Tipo índice
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.indiceTipo?.descricao }}</td>
+        </ng-container>
+        
+        <!-- REGISTRO   -->
+        <ng-container matColumnDef="registro">
+            <th 
+                mat-header-cell 
+                *matHeaderCellDef 
+                mat-sort-header 
+                sortActionDescription="Ordenar pelo registro"
+            >
+                Registro
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.registro }}</td>
+        </ng-container>
+        
+        <!-- VALIDADE INÍCIO -->
+        <ng-container matColumnDef="validadeInicio">
+            <th 
+                mat-header-cell 
+                *matHeaderCellDef 
+                mat-sort-header 
+                sortActionDescription="Ordenar pela data de início de validade"
+            >
+                Validade início
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.validadeInicio || null}} </td>
+        </ng-container>
+    
+        <!-- VALIDADE FIM -->
+        <ng-container matColumnDef="validadeFim">
+            <th 
+                mat-header-cell 
+                *matHeaderCellDef 
+                mat-sort-header 
+                sortActionDescription="Ordenar pela data de fim de validade"
+            >
+                Validade fim
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.validadeFim || null}} </td>
+        </ng-container>
+
+        <!-- ANO -->
+        <ng-container matColumnDef="ano">
+            <th 
+                mat-header-cell 
+                *matHeaderCellDef 
+                mat-sort-header 
+                sortActionDescription="Ordenar pelo ano"
+            >
+                Ano
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.ano || null}} </td>
+        </ng-container>
+
+        <!-- MÊS -->
+        <ng-container matColumnDef="mes">
+            <th 
+                mat-header-cell 
+                *matHeaderCellDef 
+                mat-sort-header 
+                sortActionDescription="Ordenar pelo mês"
+            >
+                Mês
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.mes || null}} </td>
+        </ng-container>
+
+        <!-- VALOR -->
+        <ng-container matColumnDef="valor">
+            <th 
+                mat-header-cell 
+                *matHeaderCellDef 
+                mat-sort-header 
+                sortActionDescription="Ordenar pelo sequencial da natureza da despesa"
+            >
+                Valor
+            </th>
+            <td mat-cell *matCellDef="let element"> {{(element.valor | currency) || null}} </td>
+        </ng-container>
+        
+        <!-- UTILIZAÇÃO INÍCIO DATA -->
+        <ng-container matColumnDef="utilizacaoInicioData">
+            <th 
+                mat-header-cell 
+                *matHeaderCellDef 
+                mat-sort-header 
+                sortActionDescription="Ordernar pela data início de utilização"
+            >
+                Utilização início data
+            </th>
+            <td mat-cell *matCellDef="let element"> {{(element.utilizacaoInicioData | date: 'dd/MM/yyyy') || null}} </td>
+        </ng-container>
+
+        <!-- UTILIZAÇÃO FIM DATA -->
+        <ng-container matColumnDef="utilizacaoFimData">
+            <th 
+                mat-header-cell 
+                *matHeaderCellDef 
+                mat-sort-header 
+                sortActionDescription="Ordernar pela data fim de utilização"
+            >
+                Utilização fim data
+            </th>
+            <td mat-cell *matCellDef="let element"> {{(element.utilizacaoFimData | date: 'dd/MM/yyyy') || null}} </td>
+        </ng-container>
+        
+        <!-- SEQUENCIAL -->
+        <ng-container matColumnDef="sequencial">
+            <th 
+                mat-header-cell 
+                *matHeaderCellDef 
+                mat-sort-header 
+                sortActionDescription="Ordernar pelo sequencial"
+            >
+                Sequencial
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.sequencial || null}} </td>
+        </ng-container>
+    
+        <tr class="table-header" mat-header-row *matHeaderRowDef="headerColumns; sticky: true"></tr>
+        <tr 
+            mat-row 
+            *matRowDef="let row; columns: headerColumns;"
+        >
+        </tr>
+    </table>
+    <div *ngIf="selection.selected.length" class="selected-total-container">{{ selection.selected.length }} registros selecionados</div>
+</ng-container>

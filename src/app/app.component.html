@@ -1,13 +1,24 @@
-<app-canvas *ngIf="data?.length"
-    [headerColumns]="[
-        'select',
-        'processo', 
-        'numeroRequisicao', 
-        'beneficiario', 
-        'classe', 
-        'tipoRequisicao'
-        ]"
-        [tableData]="data"
->
-</app-canvas>
+<div id="app-container">
+    <div id="header-app-container">
+        <mat-toolbar color="primary">
+            <span>TRF1-SISPREC</span>
+        </mat-toolbar>
+    </div>
+    <div id="body-app-container">
+        <!-- <app-canvas *ngIf="data?.length"
+            [headerColumns]="[
+                'select',
+                'processo', 
+                'numeroRequisicao', 
+                'beneficiario', 
+                'classe', 
+                'tipoRequisicao'
+                ]"
+                [tableData]="data"
+        >
+        </app-canvas> -->
+        <app-consulta-tabela></app-consulta-tabela>
+    </div>
+</div>
+
 <router-outlet></router-outlet>

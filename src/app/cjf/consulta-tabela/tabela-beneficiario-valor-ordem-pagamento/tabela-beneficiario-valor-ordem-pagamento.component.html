@@ -1,0 +1,91 @@
+<ng-container>
+    <table 
+        mat-table 
+        matTableExporter
+        #exporter="matTableExporter"
+        [dataSource]="dataSource" 
+        matSort (matSortChange)="announceSortChange($event)"
+        class="canvas-table"
+    >
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+                <mat-checkbox
+                    *ngIf="tableHasAnyData()"
+                    color="primary"
+                    (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                >
+                </mat-checkbox>
+            </th>
+            <td mat-cell *matCellDef="let row">
+                <mat-checkbox 
+                    color="primary"
+                    (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)"
+                >
+                </mat-checkbox>
+            </td>
+        </ng-container>
+        
+        <!-- DESCRIÇÃO -->
+        <ng-container matColumnDef="descricao">
+            <th 
+                mat-header-cell 
+                *matHeaderCellDef 
+                mat-sort-header 
+                sortActionDescription="Ordenar pela descrição"
+            >
+                Descrição
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.descricao}} </td>
+        </ng-container>
+
+        <!-- CÓDIGO -->
+        <ng-container matColumnDef="codigo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar pelo código">
+                Código
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.codigo}}</td>
+        </ng-container>
+
+        <!-- UTILIZAÇÃO FIM -->
+        <ng-container matColumnDef="utilizacaoFim">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar pela utilização fim">
+                Utilização fim
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.utilizacaoFim}}</td>
+        </ng-container>
+        
+        <!-- OBSERVAÇÃO -->
+        <ng-container matColumnDef="observacao">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar por observaçãoo">
+                Observação
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.observacao}}</td>
+        </ng-container>
+            
+        <!-- SEQUENCIAL -->
+        <ng-container matColumnDef="sequencial">
+            <th 
+                mat-header-cell 
+                *matHeaderCellDef 
+                mat-sort-header 
+                sortActionDescription="Ordernar pelo sequencial"
+            >
+                Sequencial
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.sequencial}} </td>
+        </ng-container>
+    
+        <tr class="table-header" mat-header-row *matHeaderRowDef="headerColumns; sticky: true"></tr>
+        <tr 
+            mat-row 
+            *matRowDef="let row; columns: headerColumns;"
+        >
+        </tr>
+    </table>
+    <div *ngIf="selection.selected.length" class="selected-total-container">{{ selection.selected.length }} registros selecionados</div>
+</ng-container>
