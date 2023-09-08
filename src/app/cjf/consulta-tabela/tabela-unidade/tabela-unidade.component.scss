@@ -32,10 +32,14 @@
         padding: 1rem;
         align-items: center;
         
-        div:first-child {
-            flex: 1;
+        div {
             display: flex;
             gap: 10px;   
+        }
+
+        .center {
+            flex: 1;
+            padding-left: 1rem;
         }
 
         img {

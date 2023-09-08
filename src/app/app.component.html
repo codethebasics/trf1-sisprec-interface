@@ -5,21 +5,7 @@
         </mat-toolbar>
     </div>
     <div id="body-app-container">
-        <!-- <app-canvas *ngIf="data?.length"
-            [headerColumns]="[
-                'select',
-                'processo', 
-                'numeroRequisicao', 
-                'beneficiario', 
-                'classe', 
-                'tipoRequisicao'
-                ]"
-                [tableData]="data"
-        >
-        </app-canvas> -->
-        <app-consulta-tabela></app-consulta-tabela>
-        <!-- <app-consulta-fase></app-consulta-fase> -->
+        <router-outlet></router-outlet>
     </div>
 </div>
 
-<router-outlet></router-outlet>

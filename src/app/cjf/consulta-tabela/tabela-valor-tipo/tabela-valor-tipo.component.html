@@ -109,13 +109,16 @@
         </section>
     </div>
     <div id="export-cta-container">
-        <div>
+        <div class="left">
             <button mat-raised-button class="export-button" color="primary" (click)="exporter.exportTable('xlsx', {fileName: 'processos'})">EXCEL</button>
             <button mat-raised-button class="export-button" color="primary" (click)="exporter.exportTable('txt', {fileName: 'processos'})">TXT</button>
             <button mat-raised-button class="export-button" color="primary" (click)="exporter.exportTable('csv', {fileName: 'processos'})">CSV</button>
             <button mat-raised-button class="export-button" color="primary" (click)="exporter.exportTable('json', {fileName: 'processos'})">JSON</button>
         </div>
-        <div>
+        <div class="center">
+            <div *ngIf="selection.selected.length" class="selected-total-container">{{ selection.selected.length }} registro(s) selecionado(s)</div>
+        </div>
+        <div class="right">
             <mat-paginator [pageSizeOptions]="[10, 20, 50, 100]" showFirstLastButtons></mat-paginator>
         </div>
     </div>
