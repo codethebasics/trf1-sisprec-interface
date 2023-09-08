@@ -1,0 +1,20 @@
+#status-bar-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    background-color: #222;
+    color: #fff;
+    width: 100%;
+    justify-content: flex-end;
+    z-index: 9999;
+
+    #message-container {
+        display: flex;
+        align-items: center;
+
+        .message {
+            font-size: 0.8rem;
+        }
+    }
+}

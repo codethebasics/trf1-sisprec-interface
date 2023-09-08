@@ -14,11 +14,14 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button'
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { CanvasComponent } from './canvas/canvas.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatSelectModule } from '@angular/material/select'
+import { MatListModule } from '@angular/material/list';
 import { CustomPaginator } from './canvas/config/CustomPaginatorConfiguration';
 import { ConsultaFaseComponent } from './cjf/consulta-fase/consulta-fase.component';
 import { ConsultaTabelaComponent } from './cjf/consulta-tabela/consulta-tabela.component';
@@ -42,9 +45,11 @@ import { TabelaSentencaTipoComponent } from './cjf/consulta-tabela/tabela-senten
 import { TabelaUnidadeJudicialTipoComponent } from './cjf/consulta-tabela/tabela-unidade-judicial-tipo/tabela-unidade-judicial-tipo.component';
 import { TabelaValorTipoComponent } from './cjf/consulta-tabela/tabela-valor-tipo/tabela-valor-tipo.component';
 import { TabelaDivergenciaTipoComponent } from './cjf/consulta-tabela/tabela-divergencia-tipo/tabela-divergencia-tipo.component';
-import {registerLocaleData} from '@angular/common';
+import { registerLocaleData } from '@angular/common';
 
 import localePt from '@angular/common/locales/pt';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { StatusBarComponent } from './layout/status-bar/status-bar.component';
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
@@ -71,7 +76,9 @@ registerLocaleData(localePt, 'pt');
     TabelaSentencaTipoComponent,
     TabelaUnidadeJudicialTipoComponent,
     TabelaValorTipoComponent,
-    TabelaDivergenciaTipoComponent
+    TabelaDivergenciaTipoComponent,
+    SidebarComponent,
+    StatusBarComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +96,10 @@ registerLocaleData(localePt, 'pt');
     MatToolbarModule,
     MatPaginatorModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressBarModule,
+    MatExpansionModule,
+    MatListModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: CustomPaginator() },

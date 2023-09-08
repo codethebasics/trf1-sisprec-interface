@@ -3,15 +3,20 @@
     max-height: 100%;
     display: grid;
     grid-template-rows: auto 1fr;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-areas: 
-        "header"
-        "body";
+        "header header"
+        "sidebar body";
 
     #header-app-container {
         grid-area: header;
     }
     
+    #body-app-sidebar {
+        grid-area:  sidebar;
+        overflow-y: auto;
+    }
+
     #body-app-container {
         grid-area: body;
         overflow-y: auto;
