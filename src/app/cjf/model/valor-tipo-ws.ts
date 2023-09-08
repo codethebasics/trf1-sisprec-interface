@@ -1,4 +1,5 @@
 export interface ValorTipoWS {
+    id?: number,
     codigo?: String;
     contextoUtilizacaoCodigo?: String;
     descricao?: String;

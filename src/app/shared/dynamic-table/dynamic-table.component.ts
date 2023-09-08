@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 
+import * as Colunas from '../../cjf/consulta-tabela/tabela-colunas'
+
 @Component({
   selector: 'app-dynamic-table',
   templateUrl: './dynamic-table.component.html',
@@ -13,7 +15,6 @@ export class DynamicTableComponent implements OnInit {
   dataSource: any = undefined;
 
   ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.dados);
-      
+    this.dataSource = new MatTableDataSource(this.dados);     
   }
 }

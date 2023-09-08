@@ -2,6 +2,7 @@ import { OrdemPagamento107ATipoWS } from "./ordem-pagamento-107a-tipo-ws";
 import { ValorTipoWS } from "./valor-tipo-ws";
 
 export interface ValorBeneficiarioWS {
+    id?: number,
     agenciaNumero?: number;
     bancoNumero?: number;
     beneficiarioSequencial?: number;

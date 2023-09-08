@@ -1,34 +1,49 @@
-<div id="consulta-tabela-container">
-    <div class="form-control">
-        <mat-form-field class="select">
-            <mat-label>Selecione a tabela</mat-label>
-            <mat-select [(ngModel)]="opcaoSelecionada" name="tabela">
-                <mat-option *ngFor="let tabela of tabelaOptions" [value]="tabela">
-                    {{ tabela }}
-                </mat-option>
-            </mat-select>
-        </mat-form-field>
+<div class="tabela-container">
+    <div class="filter-container">
+
+        <!-- Filtro -->
+        <div class="filter-container__select">
+            <mat-form-field class="cta-filter" appearance="outline">
+                <mat-label>Selecione a tabela</mat-label>
+                <mat-select [(ngModel)]="opcaoSelecionada" name="tabela" (selectionChange)="reset()">
+                    <mat-option *ngFor="let tabela of tabelaOptions" [value]="tabela">
+                        {{ tabela }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>        
+        </div>
+        <!-- /filtro -->
+
+        <!-- botao-pesquisa -->
+        <div class="filter-container__button">
+            <button 
+            mat-raised-button 
+            color="primary" 
+            (click)="getTabela()"
+            >
+                Pesquisar
+            </button>
+        </div>
+        <!-- /botao-pesquisa -->
+
     </div>
-    <div class="form-control">
-        <button mat-raised-button class="export-button" color="primary" (click)="getTabela()">Pesquisar</button>
-    </div>
-    <div [ngSwitch]="opcaoSelecionada">
-        <app-tabela-assunto *ngSwitchCase="'assunto'"></app-tabela-assunto>
-        <app-tabela-unidade-judicial *ngSwitchCase="'unidade-judicial'"></app-tabela-unidade-judicial>
-        <app-tabela-unidade *ngSwitchCase="'unidade'"></app-tabela-unidade>
-        <app-tabela-classificacao-despesa *ngSwitchCase="'classificacao-despesa'"></app-tabela-classificacao-despesa>
-        <app-tabela-indice *ngSwitchCase="'indice'"></app-tabela-indice>
-        <app-tabela-indice-tipo *ngSwitchCase="'indice-tipo'"></app-tabela-indice-tipo>
-        <app-tabela-beneficiario-tipo *ngSwitchCase="'beneficiario-tipo'"></app-tabela-beneficiario-tipo>
-        <app-tabela-beneficiario-sucessao-tipo *ngSwitchCase="'beneficiario-sucessao-tipo'"></app-tabela-beneficiario-sucessao-tipo>
-        <app-tabela-beneficiario-valor-ordem-pagamento *ngSwitchCase="'beneficiario-valor-ordem-pagamento-107a-tipo'"></app-tabela-beneficiario-valor-ordem-pagamento>
-        <app-tabela-servidor-condicao-tipo *ngSwitchCase="'servidor-condicao-tipo'"></app-tabela-servidor-condicao-tipo>
-        <app-tabela-fase-tipo *ngSwitchCase="'fase-tipo'"></app-tabela-fase-tipo>
-        <app-tabela-identificacao-tipo *ngSwitchCase="'identificacao-tipo'"></app-tabela-identificacao-tipo>
-        <app-tabela-movimento-tipo *ngSwitchCase="'movimento-tipo'"></app-tabela-movimento-tipo>
-        <app-tabela-sentenca-tipo *ngSwitchCase="'sentenca-tipo'"></app-tabela-sentenca-tipo>
-        <app-tabela-unidade-judicial-tipo *ngSwitchCase="'unidade-judicial-tipo'"></app-tabela-unidade-judicial-tipo>
-        <app-tabela-valor-tipo *ngSwitchCase="'valor-tipo'"></app-tabela-valor-tipo>
-        <app-tabela-divergencia-tipo *ngSwitchCase="'divergencia-tipo'"></app-tabela-divergencia-tipo>
+    <div class="result-container" [ngSwitch]="opcaoSelecionada" *ngIf="dados.length">
+        <app-tabela-assunto                            [tableData]="dados" *ngSwitchCase="'assunto'"></app-tabela-assunto>
+        <app-tabela-unidade-judicial                   [tableData]="dados" *ngSwitchCase="'unidade-judicial'"></app-tabela-unidade-judicial>
+        <app-tabela-unidade                            [tableData]="dados" *ngSwitchCase="'unidade'"></app-tabela-unidade>
+        <app-tabela-classificacao-despesa              [tableData]="dados" *ngSwitchCase="'classificacao-despesa'"></app-tabela-classificacao-despesa>
+        <app-tabela-indice                             [tableData]="dados" *ngSwitchCase="'indice'"></app-tabela-indice>
+        <app-tabela-indice-tipo                        [tableData]="dados" *ngSwitchCase="'indice-tipo'"></app-tabela-indice-tipo>
+        <app-tabela-beneficiario-tipo                  [tableData]="dados" *ngSwitchCase="'beneficiario-tipo'"></app-tabela-beneficiario-tipo>
+        <app-tabela-beneficiario-sucessao-tipo         [tableData]="beneficiarioSucessaoTipo" *ngSwitchCase="'beneficiario-sucessao-tipo'"></app-tabela-beneficiario-sucessao-tipo>
+        <app-tabela-beneficiario-valor-ordem-pagamento [tableData]="dados" *ngSwitchCase="'beneficiario-valor-ordem-pagamento-107a-tipo'"></app-tabela-beneficiario-valor-ordem-pagamento>
+        <app-tabela-servidor-condicao-tipo             [tableData]="dados" *ngSwitchCase="'servidor-condicao-tipo'"></app-tabela-servidor-condicao-tipo>
+        <app-tabela-fase-tipo                          [tableData]="dados" *ngSwitchCase="'fase-tipo'"></app-tabela-fase-tipo>
+        <app-tabela-identificacao-tipo                 [tableData]="dados" *ngSwitchCase="'identificacao-tipo'"></app-tabela-identificacao-tipo>
+        <app-tabela-movimento-tipo                     [tableData]="dados" *ngSwitchCase="'movimento-tipo'"></app-tabela-movimento-tipo>
+        <app-tabela-sentenca-tipo                      [tableData]="dados" *ngSwitchCase="'sentenca-tipo'"></app-tabela-sentenca-tipo>
+        <app-tabela-unidade-judicial-tipo              [tableData]="dados" *ngSwitchCase="'unidade-judicial-tipo'"></app-tabela-unidade-judicial-tipo>
+        <app-tabela-valor-tipo                         [tableData]="dados" *ngSwitchCase="'valor-tipo'"></app-tabela-valor-tipo>
+        <app-tabela-divergencia-tipo                   [tableData]="dados" *ngSwitchCase="'divergencia-tipo'"></app-tabela-divergencia-tipo>
     </div>
 </div>

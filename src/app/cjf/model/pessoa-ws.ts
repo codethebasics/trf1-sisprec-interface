@@ -1,4 +1,5 @@
 export interface PessoaWS {
+    id?: number,
     codigoCpfCnpj?: String;
     falecimentoData?: String;
     nacimentoData?: String;

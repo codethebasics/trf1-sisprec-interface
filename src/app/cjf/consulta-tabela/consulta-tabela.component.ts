@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { TabelaEnum } from '../enum/tabela-enum';
 import { ConsultaTabelaService } from './consulta-tabela.service';
 
-import * as Colunas from './tabela-colunas'
-
 @Component({
   selector: 'app-consulta-tabela',
   templateUrl: './consulta-tabela.component.html',
@@ -14,10 +12,17 @@ export class ConsultaTabelaComponent {
   opcaoSelecionada: String;
   response: any[] = [];
   mensagem: String;
-
-  colunas: string[] = [];
   dados: any = [];
+  beneficiarioSucessaoTipo: any[] = [
+    { tipo: "CESSIONARIO" },
+    { tipo: "SUCESSOR" },
+    { tipo: "TERCEIRO" }, 
+    { tipo: "HERDEIRO" }
+  ];
 
+  /**
+   * Opções de tabelas disponíveis para serem consultadas
+   */
   tabelaOptions: String[] = [
     TabelaEnum.ASSUNTO,
     TabelaEnum.UNIDADE_JUDICIAL,
@@ -42,18 +47,31 @@ export class ConsultaTabelaComponent {
 
   }
   
+  /**
+   * Realiza consulta em tabela do CJF
+   */
   getTabela() {
-    this.mensagem = "Consultando tabela..."
-    this.consultaTabelaService.getTabelaItens(this.opcaoSelecionada)
-      .subscribe({
-        next: response => {
-          this.dados = response.retorno,
-          this.colunas = Colunas.colunasAssunto
-        },
-        error: error => console.log(error),
-        complete: () => this.mensagem = ''
-      });
+
+    if (this.opcaoSelecionada === TabelaEnum.BENEFICIARIO_SUCESSAO_TIPO) {
+      this.dados = this.beneficiarioSucessaoTipo;
+    } 
+    else {
+      this.mensagem = "Consultando tabela..."
+      this.consultaTabelaService.getTabelaItens(this.opcaoSelecionada)
+        .subscribe({
+          next: response => this.dados = response.retorno,
+          error: error => console.log(error),
+          complete: () => this.mensagem = ''
+        });
+    }
+
   }
 
+  /**
+   * Limpa opção selecionada
+   */
+  reset() {
+    this.dados = [];
+  }
 
 }

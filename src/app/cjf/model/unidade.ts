@@ -1,4 +1,5 @@
 export interface Unidade {
+    id?: number,
     abreviatura?: String;
     codigo?: String;
     nome?: String;

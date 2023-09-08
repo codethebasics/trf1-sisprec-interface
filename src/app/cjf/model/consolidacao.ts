@@ -1,6 +1,7 @@
 import { ConsolidacaoTipo } from "./consolidacao-tipo";
 
 export interface Consolidacao {
+    id?: number,
     conta?: number;
     faseSequencial?: number;
     ordem?: number;

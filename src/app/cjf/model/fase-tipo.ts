@@ -1,4 +1,5 @@
 export interface FaseTipo {
+    id?: number,
     codigo?: String;
     descricao?: String;
     observacao?: String;

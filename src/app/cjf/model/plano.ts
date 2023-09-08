@@ -1,6 +1,7 @@
 import { UnidadeGestora } from "./unidade-gestora";
 
 export interface Plano {
+    id?: number,
     ano?: number;
     descricao?: String;
     fases?: String;

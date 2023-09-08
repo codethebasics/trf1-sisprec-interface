@@ -1,6 +1,7 @@
 import { UnidadeSuperiorWS } from "./unidade-superior-ws";
 
 export interface UnidadeWS {
+    id?: number,
     sequencial?: number;
     codigo?: String;
     nome?: String;

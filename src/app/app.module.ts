@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,7 +42,10 @@ import { TabelaSentencaTipoComponent } from './cjf/consulta-tabela/tabela-senten
 import { TabelaUnidadeJudicialTipoComponent } from './cjf/consulta-tabela/tabela-unidade-judicial-tipo/tabela-unidade-judicial-tipo.component';
 import { TabelaValorTipoComponent } from './cjf/consulta-tabela/tabela-valor-tipo/tabela-valor-tipo.component';
 import { TabelaDivergenciaTipoComponent } from './cjf/consulta-tabela/tabela-divergencia-tipo/tabela-divergencia-tipo.component';
+import {registerLocaleData} from '@angular/common';
 
+import localePt from '@angular/common/locales/pt';
+registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [
@@ -68,7 +71,7 @@ import { TabelaDivergenciaTipoComponent } from './cjf/consulta-tabela/tabela-div
     TabelaSentencaTipoComponent,
     TabelaUnidadeJudicialTipoComponent,
     TabelaValorTipoComponent,
-    TabelaDivergenciaTipoComponent,
+    TabelaDivergenciaTipoComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +92,9 @@ import { TabelaDivergenciaTipoComponent } from './cjf/consulta-tabela/tabela-div
     MatSelectModule
   ],
   providers: [
-    { provide: MatPaginatorIntl, useValue: CustomPaginator() }
+    { provide: MatPaginatorIntl, useValue: CustomPaginator() },
+    { provide: LOCALE_ID, useValue: 'pt' }, // Configurando idioma
+    { provide:  DEFAULT_CURRENCY_CODE, useValue: 'BRL' }, // Configurando moeda
   ],
   bootstrap: [AppComponent]
 })

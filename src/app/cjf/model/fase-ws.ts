@@ -4,6 +4,7 @@ import { Plano } from "./plano";
 import { UnidadeGestora } from "./unidade-gestora";
 
 export interface FaseWS {
+    id?: number,
     aberta?: boolean;
     aberturaData?: String;
     ano?: number;

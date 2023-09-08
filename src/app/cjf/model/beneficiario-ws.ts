@@ -9,6 +9,7 @@ import { UnidadeWS } from "./unidade-ws";
 import { ValorBeneficiarioWS } from "./valor-beneficiario-ws";
 
 export interface BeneficiarioWS {
+    id?: number,
     advogadoCausa?: boolean;
     antecessores?: BeneficiarioAntecessorWS[];
     beneficiarioTipo?: BeneficiarioTipoWS;

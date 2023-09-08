@@ -1,146 +1,144 @@
 export const colunasAssunto = [
-    'Sequencial',
-    'Código',
-    'Descrição',
-    'Código CNJ',
-    'Descrição CNJ',
-    'Data de atualização'
+    'codigo',
+    'descricao',
+    'codigoCnj',
+    'descricaoCnj',
+    'dataAtualizacao',
+    'sequencial'
 ];
 
 export const colunasUnidadeJudicial = [
-    'Sequencial',
-    'Código',
-    'Descrição',
-    'Data utilização início',
-    'Data utilização fim',
-    'Data de registro',
-    'Município'
+    'codigo',
+    'descricao',
+    'utilizacaoInicioData',
+    'utilizacaoFimData',
+    'registroData',
+    'municipio',
+    'sequencial'
 ];
 
 export const colunasUnidade = [
-    'Sequencial',
-    'Código',
-    'Nome',
-    'Abreviatura',
-    'Data utilização início',
-    'Data utilização fim',
-    'Unidade superior'
+    'codigo',
+    'nome',
+    'abreviatura',
+    'utilizacaoInicioData',
+    'utilizacaoFimData',
+    'unidadeSuperior',
+    'sequencial'
 ];
 
 export const colunasClassificacaoDespesa = [
-    'Sequencial',
-    'Natureza despesa descrição',
-    'Despesa tipo código',
-    'Despesa tipo descrição',
-    'Alimentar',
-    'Despesa tipo sequencial',
-    'Natureza despesa sequencial',
-    'Data utilização início',
-    'Data utilização fim',
-    'Natureza despesa código'
+    'naturezaDespesaDescricao',
+    'despesaTipoCodigo',
+    'despesaTipoDescricao',
+    'alimentar',
+    'despesaTipoSequencial',
+    'naturezaDespesaSequencial',
+    'utilizacaoInicioData',
+    'utilizacaoFimData',
+    'naturezaDespesaCodigo',
+    'sequencial'
 ];
 
 export const colunasIndice = [
-    'Sequencial',
-    'Tipo de índice',
-    'Registro',
-    'Validade início',
-    'Validade fim',
-    'Ano',
-    'Mês',
-    'Valor'
+    'indiceTipo',
+    'registro',
+    'validadeInicio',
+    'validadeFim',
+    'ano',
+    'mes',
+    'valor',
+    'sequencial'
 ];
 
 export const colunasIndiceTipo = [
-    'Sequencial',
-    'Código',
-    'Descrição',
-    'Uso Código'
+    'codigo',
+    'descricao',
+    'usoCodigo',
+    'sequencial'
 ];
 
 export const colunasBeneficiarioTipo = [
-    'Sequencial',
-    'Código',
-    'Descrição',
-    'Utilização fim'
+    'codigo',
+    'descricao',
+    'utilizacaoFim',
+    'sequencial'
 ];
 
 export const colunasBeneficiarioSucessaoTipo = [
-    'Cessionário',
-    'Sucessor',
-    'Terceiro',
-    'Herdeiro'
+    'tipo'
 ];
 
 export const colunasBeneficiarioValorOrdemPagamento107ATipo = [
-    'Sequencial',
-    'Descrição',
-    'Código',
-    'Utilização fim',
-    'Observação'
+    'descricao',
+    'codigo',
+    'utilizacaoFim',
+    'observacao',
+    'sequencial'
 ];
 
 export const colunasServidorCondicaoTipo = [
-    'Sequencial',
-    'Código',
-    'Descrição',
-    'Utilização fim'
+    'codigo',
+    'descricao',
+    'utilizacaoFim',
+    'sequencial'
 ];
 
 export const colunasFaseTipo = [
-    'Sequencial',
-    'Código',
-    'Descrição',
-    'Origem',
-    'Utilização fim',
-    'Observação',
-    'Número parcela'
+    'codigo',
+    'descricao',
+    'origem',
+    'utilizacaoFim',
+    'observacao',
+    'parcelaNumero',
+    'sequencial'
 ];
 
 export const colunasIdentificacaoTipo = [
-    'Sequencial',
-    'Código',
-    'Descrição',
-    'Utilização fim'
+    'codigo',
+    'descricao',
+    'utilizacaoFim',
+    'sequencial'
 ];
 
 export const colunasMovimentoTipo = [
-    'Sequencial',
-    'Código',
-    'Descrição',
-    'Utilização fim'
+    'codigo',
+    'descricao',
+    'utilizacaoFim',
+    'sequencial'
 ];
 
 export const colunasSentencaTipo = [
-    'Sequencial',
-    'Código',
-    'Descrição',
-    'Código PCT/RPV',
-    'Código de acesso'
+    'codigo',
+    'descricao',
+    'codigoPctRpv',
+    'codigoAccess',
+    'utilizacaoFim',
+    'sequencial'
 ];
 
 export const colunasUnidadeJudicialTipo = [
-    'Sequencial',
-    'Código',
-    'Descrição',
-    'Utilização fim',
-    'Natureza'
+    'codigo',
+    'descricao',
+    'utilizacaoFim',
+    'natureza',
+    'sequencial'
 ];
 
 export const colunasValorTipo = [
-    'Sequencial',
-    'Código',
-    'Descrição',
-    'Observação',
-    'Utilização fim',
-    'Processo beneficiário código',
-    'Contexto utilização código'
+    'codigo',
+    'descricao',
+    'observacao',
+    'utilizacaoFim',
+    'processoBeneficiarioCodigo',
+    'contextoUtilizacaoCodigo',
+    'sequencial'
 ];
 
 export const colunasDivergenciaTipo = [
-    'Código',
-    'Contexto',
-    'Motivo'
+    'codigo',
+    'contexto',
+    'motivo'
 ];
 
 export default {

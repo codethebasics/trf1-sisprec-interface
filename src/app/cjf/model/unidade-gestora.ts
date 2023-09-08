@@ -1,6 +1,7 @@
 import { Unidade } from "./unidade";
 
 export interface UnidadeGestora {
+    id?: number,
     abreviatura?: String;
     codigo?: String;
     codigoAtribuicao?: String;

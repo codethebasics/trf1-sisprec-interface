@@ -1,4 +1,5 @@
 export interface UnidadeSuperiorWS {
+   id?: number,
    sequencial?: number;
    codigo?: String;
    nome?: String;
