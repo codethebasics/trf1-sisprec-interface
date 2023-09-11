@@ -53,6 +53,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 import localePt from '@angular/common/locales/pt';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { StatusBarComponent } from './layout/status-bar/status-bar.component';
+import { BreadcrumbComponent } from './layout/breadcrumb/breadcrumb.component';
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
@@ -81,7 +82,8 @@ registerLocaleData(localePt, 'pt');
     TabelaValorTipoComponent,
     TabelaDivergenciaTipoComponent,
     SidebarComponent,
-    StatusBarComponent
+    StatusBarComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,

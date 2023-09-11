@@ -2,10 +2,11 @@
     height: 100%;
     max-height: 100%;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-template-columns: 1fr 5fr;
     grid-template-areas: 
         "header header"
+        "sidebar breadcrumb"
         "sidebar body";
 
     #header-app-container {
@@ -13,7 +14,12 @@
     }
     
     #body-app-sidebar {
-        grid-area:  sidebar;
+        grid-area: sidebar;
+        overflow-y: auto;
+    }
+
+    #body-app-breadcrumb {
+        grid-area: breadcrumb;
         overflow-y: auto;
     }
 
