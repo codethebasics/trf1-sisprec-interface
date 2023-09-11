@@ -1,1 +1,59 @@
-<p>consulta-fase works!</p>
+<div id="consulta-fase-container">
+    <section id="form">
+        <div class="form-control">            
+            <mat-form-field appearance="outline">
+                <mat-label>Abertas / Fechadas</mat-label>
+                <mat-select [(ngModel)]="statusSelecionado" name="status" class="tmp">
+                    <mat-option *ngFor="let s of status" [value]="s">
+                        {{ s }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-control">
+            <mat-form-field appearance="outline">
+                <mat-label>Código da unidade gestora</mat-label>
+                <mat-select [(ngModel)]="unidadeGestoraSelecionada" name="unidadeGestora">
+                    <mat-option *ngFor="let unidadeGestora of unidadesGestoras" [value]="unidadeGestora">
+                        {{ unidadeGestora }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-control">
+            <mat-form-field appearance="outline">
+                <mat-label>Tipo do plano</mat-label>
+                <mat-select [(ngModel)]="planoTipoSelecionado" name="planoTipo">
+                    <mat-option *ngFor="let planoTipo of planosTipo" [value]="planoTipo">
+                        {{ planoTipo}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-control">
+            <mat-form-field appearance="outline">
+                <mat-label>Ano e mês do plano</mat-label>
+                <input 
+                    matInput 
+                    placeholder="YYYY/MM" 
+                    [textMask]="{mask: mask}"
+                    [(ngModel)]="planoAnoMes"
+                />
+            </mat-form-field>
+        </div>
+        <div class="form-control">
+            <button 
+                mat-raised-button 
+                [disabled]="!planoAnoMes"
+                class="export-button" 
+                color="primary" 
+                (click)="getFases()"
+            >
+                Pesquisar
+            </button>
+        </div>
+    </section>
+    <section id="data">
+        {{ fases | json }}
+    </section>
+</div>

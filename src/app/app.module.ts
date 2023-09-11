@@ -21,6 +21,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatSelectModule } from '@angular/material/select'
+import { MatInputModule } from '@angular/material/input'
 import { MatListModule } from '@angular/material/list';
 import { CustomPaginator } from './canvas/config/CustomPaginatorConfiguration';
 import { ConsultaFaseComponent } from './cjf/consulta-fase/consulta-fase.component';
@@ -46,6 +47,8 @@ import { TabelaUnidadeJudicialTipoComponent } from './cjf/consulta-tabela/tabela
 import { TabelaValorTipoComponent } from './cjf/consulta-tabela/tabela-valor-tipo/tabela-valor-tipo.component';
 import { TabelaDivergenciaTipoComponent } from './cjf/consulta-tabela/tabela-divergencia-tipo/tabela-divergencia-tipo.component';
 import { registerLocaleData } from '@angular/common';
+
+import { TextMaskModule } from 'angular2-text-mask';
 
 import localePt from '@angular/common/locales/pt';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
@@ -99,7 +102,9 @@ registerLocaleData(localePt, 'pt');
     MatSelectModule,
     MatProgressBarModule,
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+    MatInputModule,
+    TextMaskModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: CustomPaginator() },
