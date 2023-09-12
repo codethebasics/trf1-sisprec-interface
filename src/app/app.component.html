@@ -3,22 +3,17 @@
         <mat-toolbar color="primary">
             <span>TRF1-SISPREC</span>
         </mat-toolbar>
+        <mat-progress-bar mode="indeterminate" value="50" *ngIf="isLoading"></mat-progress-bar>
+    </div>
+    <div id="body-app-sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+    <div id="body-app-breadcrumb">
+        <app-breadcrumb [path]="['home', 'processos', 'enviar']"></app-breadcrumb>
     </div>
     <div id="body-app-container">
-        <!-- <app-canvas *ngIf="data?.length"
-            [headerColumns]="[
-                'select',
-                'processo', 
-                'numeroRequisicao', 
-                'beneficiario', 
-                'classe', 
-                'tipoRequisicao'
-                ]"
-                [tableData]="data"
-        >
-        </app-canvas> -->
-        <app-consulta-tabela></app-consulta-tabela>
+        <router-outlet></router-outlet>
     </div>
 </div>
+<app-status-bar *ngIf="isLoading"></app-status-bar>
 
-<router-outlet></router-outlet>
