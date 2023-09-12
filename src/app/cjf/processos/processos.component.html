@@ -1,0 +1,15 @@
+<div id="processos-container">
+    <div>
+        <mat-form-field>
+            <mat-label>Message</mat-label>
+            <input matInput value="Disco party!" #message>
+          </mat-form-field>
+          
+          <mat-form-field>
+            <mat-label>Action</mat-label>
+            <input matInput value="Dance" #action>
+          </mat-form-field>
+          
+          <button mat-stroked-button (click)="openSnackBar(message.value)">Show snack-bar</button>
+    </div>
+</div>

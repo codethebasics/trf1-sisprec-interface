@@ -9,9 +9,10 @@ import { ConsultaTabelaService } from './consulta-tabela.service';
 })
 export class ConsultaTabelaComponent {
 
+  loading: boolean = false;
+
   opcaoSelecionada: String;
   response: any[] = [];
-  mensagem: String;
   dados: any = [];
   beneficiarioSucessaoTipo: any[] = [
     { tipo: "CESSIONARIO" },
@@ -51,17 +52,20 @@ export class ConsultaTabelaComponent {
    * Realiza consulta em tabela do CJF
    */
   getTabela() {
+    this.dados = [];
+    this.loading = true;
 
     if (this.opcaoSelecionada === TabelaEnum.BENEFICIARIO_SUCESSAO_TIPO) {
       this.dados = this.beneficiarioSucessaoTipo;
     } 
     else {
-      this.mensagem = "Consultando tabela..."
       this.consultaTabelaService.getTabelaItens(this.opcaoSelecionada)
         .subscribe({
           next: response => this.dados = response.retorno,
           error: error => console.log(error),
-          complete: () => this.mensagem = ''
+          complete: () => {
+            this.loading = false;
+          }
         });
     }
 

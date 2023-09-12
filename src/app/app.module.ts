@@ -14,15 +14,21 @@ import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button'
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { CanvasComponent } from './canvas/canvas.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox'
 import { MatSelectModule } from '@angular/material/select'
+import { MatInputModule } from '@angular/material/input'
+import { MatListModule } from '@angular/material/list';
+import { MatTreeModule } from '@angular/material/tree';
 import { CustomPaginator } from './canvas/config/CustomPaginatorConfiguration';
 import { ConsultaFaseComponent } from './cjf/consulta-fase/consulta-fase.component';
 import { ConsultaTabelaComponent } from './cjf/consulta-tabela/consulta-tabela.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PulseComponent } from './shared/pulse/pulse.component';
 import { DynamicTableComponent } from './shared/dynamic-table/dynamic-table.component';
 import { TabelaAssuntoComponent } from './cjf/consulta-tabela/tabela-assunto/tabela-assunto.component';
@@ -42,9 +48,16 @@ import { TabelaSentencaTipoComponent } from './cjf/consulta-tabela/tabela-senten
 import { TabelaUnidadeJudicialTipoComponent } from './cjf/consulta-tabela/tabela-unidade-judicial-tipo/tabela-unidade-judicial-tipo.component';
 import { TabelaValorTipoComponent } from './cjf/consulta-tabela/tabela-valor-tipo/tabela-valor-tipo.component';
 import { TabelaDivergenciaTipoComponent } from './cjf/consulta-tabela/tabela-divergencia-tipo/tabela-divergencia-tipo.component';
-import {registerLocaleData} from '@angular/common';
+import { registerLocaleData } from '@angular/common';
+
+import { TextMaskModule } from 'angular2-text-mask';
 
 import localePt from '@angular/common/locales/pt';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { StatusBarComponent } from './layout/status-bar/status-bar.component';
+import { BreadcrumbComponent } from './layout/breadcrumb/breadcrumb.component';
+import { ProcessosComponent } from './cjf/processos/processos.component';
+import { LoadingInterceptor } from './shared/loading-interceptor';
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
@@ -71,7 +84,11 @@ registerLocaleData(localePt, 'pt');
     TabelaSentencaTipoComponent,
     TabelaUnidadeJudicialTipoComponent,
     TabelaValorTipoComponent,
-    TabelaDivergenciaTipoComponent
+    TabelaDivergenciaTipoComponent,
+    SidebarComponent,
+    StatusBarComponent,
+    BreadcrumbComponent,
+    ProcessosComponent
   ],
   imports: [
     BrowserModule,
@@ -89,12 +106,24 @@ registerLocaleData(localePt, 'pt');
     MatToolbarModule,
     MatPaginatorModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressBarModule,
+    MatExpansionModule,
+    MatListModule,
+    MatInputModule,
+    MatTreeModule,
+    TextMaskModule,
+    MatSnackBarModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: CustomPaginator() },
     { provide: LOCALE_ID, useValue: 'pt' }, // Configurando idioma
-    { provide:  DEFAULT_CURRENCY_CODE, useValue: 'BRL' }, // Configurando moeda
+    { provide:  DEFAULT_CURRENCY_CODE, useValue: 'BRL' }, // Configurando moeda,
+    { 
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoadingInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

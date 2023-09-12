@@ -28,7 +28,7 @@ export class ConsultaFaseService {
     unidadeGestoraCodigo?: String, 
     planoTipo?: String, 
     planoAnoMes?: String): Observable<SwaggerFaseRetorno> {
-      return this.http.get<SwaggerFaseRetorno>(`${environments.apiUrl}/${fase}/${unidadeGestoraCodigo}/plano/${planoTipo}/${planoAnoMes}`);
+      return this.http.get<SwaggerFaseRetorno>(`${environments.apiUrl}/fase/${fase}/${unidadeGestoraCodigo}/plano/${planoTipo}/${planoAnoMes}`);
     }
 
 }

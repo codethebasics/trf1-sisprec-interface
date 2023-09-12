@@ -6,7 +6,7 @@ import { UnidadeGestora } from "./unidade-gestora";
 export interface FaseWS {
     id?: number,
     aberta?: boolean;
-    aberturaData?: String;
+    aberturaData?: Date;
     ano?: number;
     anoExercicioOrcamentario?: number;
     cancelamentoData?: String;

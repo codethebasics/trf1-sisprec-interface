@@ -26,6 +26,7 @@
         </div>
         <!-- /botao-pesquisa -->
 
+        
     </div>
     <div class="result-container" [ngSwitch]="opcaoSelecionada" *ngIf="dados.length">
         <app-tabela-assunto                            [tableData]="dados" *ngSwitchCase="'assunto'"></app-tabela-assunto>
