@@ -3,6 +3,7 @@
         <mat-toolbar color="primary">
             <span>TRF1-SISPREC</span>
         </mat-toolbar>
+        <mat-progress-bar mode="indeterminate" value="50" *ngIf="isLoading"></mat-progress-bar>
     </div>
     <div id="body-app-sidebar">
         <app-sidebar></app-sidebar>
@@ -14,5 +15,5 @@
         <router-outlet></router-outlet>
     </div>
 </div>
-<!-- <app-status-bar></app-status-bar> -->
+<app-status-bar *ngIf="isLoading"></app-status-bar>
 

@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { ConsultaFaseService } from './consulta-fase.service';
 import { FaseWS } from '../model/fase-ws';
 
@@ -11,6 +11,7 @@ export class ConsultaFaseComponent {
 
   loading: boolean = false;
   mask = [/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/];
+  panelOpenState = false;
 
   status: string[] = ['todas', 'abertas', 'fechadas'];
   planosTipo = ['pct', 'rpv'];

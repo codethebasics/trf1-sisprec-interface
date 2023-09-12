@@ -28,9 +28,6 @@
 
         
     </div>
-    <div *ngIf="loading">
-        <mat-progress-bar mode="indeterminate" value="50"></mat-progress-bar>
-    </div>
     <div class="result-container" [ngSwitch]="opcaoSelecionada" *ngIf="dados.length">
         <app-tabela-assunto                            [tableData]="dados" *ngSwitchCase="'assunto'"></app-tabela-assunto>
         <app-tabela-unidade-judicial                   [tableData]="dados" *ngSwitchCase="'unidade-judicial'"></app-tabela-unidade-judicial>
