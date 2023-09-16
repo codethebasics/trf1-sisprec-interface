@@ -1,17 +1,22 @@
 <div id="sidebar-container">
     <div class="nav-container">
         <div class="nav-links">
-            <div class="nav-link" [routerLink]="['/']">
+            <div class="nav-link" [routerLink]="['/']" (click)="triggerRouteChangeEvent('')">
+                <mat-icon class="icon" aria-hidden="false" aria-label="Consulta tabela" fontIcon="home"></mat-icon>
+                <span>Início</span>
+            </div>
+            <mat-divider></mat-divider>
+            <div class="nav-link" [routerLink]="['/consulta-tabela']" (click)="triggerRouteChangeEvent('consulta-tabela')">
                 <mat-icon class="icon" aria-hidden="false" aria-label="Consulta tabela" fontIcon="list_alt"></mat-icon>
                 <span>Consulta tabela</span>
             </div>
             <mat-divider></mat-divider>
-            <div class="nav-link" [routerLink]="['/consulta-fase']">
+            <div class="nav-link" [routerLink]="['/consulta-fase']" (click)="triggerRouteChangeEvent('consulta-fase')">
                 <mat-icon class="icon" aria-hidden="false" aria-label="Consulta fase" fontIcon="event"></mat-icon>
                 <span>Consulta fase</span>
             </div>
             <mat-divider></mat-divider>
-            <div class="nav-link" [routerLink]="['/processos']">
+            <div class="nav-link" [routerLink]="['/processos']" (click)="triggerRouteChangeEvent('processos')">
                 <mat-icon class="icon" aria-hidden="false" aria-label="Processos" fontIcon="gavel"></mat-icon>
                 <span>Processos</span>
             </div>

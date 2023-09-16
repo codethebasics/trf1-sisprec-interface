@@ -19,6 +19,7 @@
             <button 
             mat-raised-button 
             color="primary" 
+            [disabled]="!opcaoSelecionada"
             (click)="getTabela()"
             >
                 Pesquisar

@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FetchdataService } from './fetchdata.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { LoadingService } from 'src/app/shared/loading.service';
+import { Breadcrumb } from './layout/breadcrumb/breadcrumb';
 
 /**
  * Componente inicial da aplicação
@@ -17,6 +18,13 @@ export class AppComponent implements OnInit, OnDestroy {
   
   title = 'trf1-sisprec';
 
+  breadcrumbs: Breadcrumb[] = [
+    {
+      path: '/',
+      label: 'Início'
+    }
+  ];
+
   // Armazena estado de loading
   loading: boolean = false;
   
@@ -26,10 +34,6 @@ export class AppComponent implements OnInit, OnDestroy {
   isLoading: boolean = false;
   
   private loadingSubscription: Subscription;
-
-  ngOnDestroy(): void {
-    this.loadingSubscription.unsubscribe();
-  }
 
   constructor(private _fetchDataService: FetchdataService, private loadingService: LoadingService) {
 
@@ -41,6 +45,10 @@ export class AppComponent implements OnInit, OnDestroy {
     this.fetchData();
   }
 
+  ngOnDestroy(): void {
+    this.loadingSubscription.unsubscribe();
+  }
+
   /**
    * O serviço dispara uma requisição para obter os dados a serem apresentados
    */
@@ -49,4 +57,9 @@ export class AppComponent implements OnInit, OnDestroy {
       .then(response => this.data = response)
       .catch(error => console.error('Houve um erro durante a listagem dos dados', error));
   }
+
+  setBreadcrumb(evt: any) {
+    this.breadcrumbs = evt;
+  }
+  
 }

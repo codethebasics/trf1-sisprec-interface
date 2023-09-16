@@ -1,0 +1,36 @@
+.c-message {
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 7px #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+
+    &__icon,
+    &__text {
+        padding: 1rem;
+    }
+
+    &--info {
+        background-color: #f3f4ff;
+        color: #3F51B5;
+        border: 1px solid #3F51B5;
+    }
+
+    &--success {
+        background-color: #eefdf6;
+        color: #92af92;
+        border: 1px solid #92af92;
+    }
+
+    &--warn {
+        background-color: #f5f2ee;
+        color: #c29a50;
+        border: 1px solid #c29a50;
+    }
+
+    &--danger {
+        background-color: #f3e9e9;
+        color: #ce6e6e;
+        border: 1px solid #ce6e6e;
+    }
+}

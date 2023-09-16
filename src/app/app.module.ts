@@ -58,6 +58,8 @@ import { StatusBarComponent } from './layout/status-bar/status-bar.component';
 import { BreadcrumbComponent } from './layout/breadcrumb/breadcrumb.component';
 import { ProcessosComponent } from './cjf/processos/processos.component';
 import { LoadingInterceptor } from './shared/loading-interceptor';
+import { HomeComponent } from './system/home/home.component';
+import { MessageComponent } from './shared/message/message.component';
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
@@ -88,7 +90,9 @@ registerLocaleData(localePt, 'pt');
     SidebarComponent,
     StatusBarComponent,
     BreadcrumbComponent,
-    ProcessosComponent
+    ProcessosComponent,
+    HomeComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
