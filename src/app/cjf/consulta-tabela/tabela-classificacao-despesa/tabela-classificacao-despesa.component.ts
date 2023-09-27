@@ -34,7 +34,6 @@ export class TabelaClassificacaoDespesaComponent {
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {
     this.headerColumns = Colunas.colunasClassificacaoDespesa;
-    this.headerColumns.unshift('select');
   }
 
   @ViewChild(MatSort) sort: MatSort;

@@ -1,7 +1,7 @@
 <div id="breadcrumb-container">
-    <ng-container *ngFor="let p of path">
-        <div>
-            <div class="label">{{ p }}</div>
+    <ng-container *ngFor="let breadcrumb of breadcrumbs">
+        <div [routerLink]="[breadcrumb.path]">
+            <div class="label">{{ breadcrumb.label }}</div>
             <div class="icon">
                 <mat-icon>arrow_right</mat-icon>
             </div>

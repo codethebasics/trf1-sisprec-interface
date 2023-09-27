@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Breadcrumb } from './breadcrumb';
 
 @Component({
   selector: 'app-breadcrumb',
@@ -7,6 +8,6 @@ import { Component, Input } from '@angular/core';
 })
 export class BreadcrumbComponent {
 
-  @Input() path: string[];
+  @Input() breadcrumbs: Breadcrumb[];
   
 }

@@ -33,14 +33,16 @@ export class TabelaAssuntoComponent implements OnInit {
   private requisicoesBackup: AssuntoWS[] = [];
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {
-    this.headerColumns = Colunas.colunasAssunto;
-    this.headerColumns.unshift('select');
+    
   }
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit(): void {    
+    this.headerColumns = Colunas.colunasAssunto;
+    console.log('add select', this.headerColumns);
+
     // Ao iniciar a aplicação, atribuímos os dados recebidos na tabela
     this.dataSource = new MatTableDataSource(this.tableData);
   }

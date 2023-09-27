@@ -34,7 +34,6 @@ export class TabelaBeneficiarioTipoComponent {
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {
     this.headerColumns = Colunas.colunasBeneficiarioTipo;
-    this.headerColumns.unshift('select');
   }
 
   @ViewChild(MatSort) sort: MatSort;

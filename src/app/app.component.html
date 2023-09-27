@@ -6,10 +6,10 @@
         <mat-progress-bar mode="indeterminate" value="50" *ngIf="isLoading"></mat-progress-bar>
     </div>
     <div id="body-app-sidebar">
-        <app-sidebar></app-sidebar>
+        <app-sidebar (changeRouteEvent)="setBreadcrumb($event)"></app-sidebar>
     </div>
     <div id="body-app-breadcrumb">
-        <app-breadcrumb [path]="['home', 'processos', 'enviar']"></app-breadcrumb>
+        <app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
     </div>
     <div id="body-app-container">
         <router-outlet></router-outlet>

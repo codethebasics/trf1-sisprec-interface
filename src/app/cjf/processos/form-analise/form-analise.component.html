@@ -1,0 +1,293 @@
+<div id="form-analise">
+    
+    <!-- form -->
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+        <mat-tab label="dados do processo">
+            <div class="form">
+                <div class="row">
+                    <!-- sequencial -->
+                    <div class="form-control">
+                        <label>Sequencial</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.sequencial"
+                        />
+                    </div>
+              
+                    <!-- precatorioAnteriorSequencial -->
+                    <div class="form-control">
+                        <label>Sequencial do precatório anterior</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.precatorioAnteriorSequencial"
+                        />
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- processoNumero -->
+                    <div class="form-control">
+                        <label>Número de processo</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.processoNumero"
+                        />                        
+                    </div>
+                    
+                    <!-- processoNumeroOrigem -->
+                    <div class="form-control">
+                        <label>Número do processo de origem</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.processoNumeroOrigem"
+                        />
+                    </div>
+                </div>
+                
+                <div class="row">
+        
+                    <!-- autuacaoData -->
+                    <div class="form-control">
+                        <label>Data de autuação</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.autuacaoData"
+                        />
+                    </div>
+                    
+                    <!-- transitoJulgadoData -->
+                    <div class="form-control">
+                        <label>Data de trânsito em julgado</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.transitoJulgadoData"
+                        />                        
+                    </div>
+                </div>
+                
+                <div class="row">
+        
+                    <!-- bloqueio -->
+                    <div class="form-control">
+                        <label>Bloqueio</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.bloqueio"
+                        />
+                    </div>
+                    
+                    <!-- inclusaoData -->
+                    <div class="form-control">
+                        <label>Data de inclusão</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.inclusaoData"
+                        />
+                    </div>
+                </div>
+                
+                <div class="row">
+        
+                    <!-- exclusaoData -->
+                    <div class="form-control">
+                        <label>Data de exclusão</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.exclusaoData"
+                        />
+                    </div>
+                    
+                    <!-- registroData -->
+                    <div class="form-control">
+                        <label>Data de registro</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.registroData"
+                        />
+                    </div>
+                </div>
+                
+                <div class="row">
+        
+                    <!-- cancelamentoData -->
+                    <div class="form-control">
+                        <label>Data de cancelamento</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.cancelamentoData"
+                        />
+                    </div>
+                    
+                    <!-- processoAjuizamentoData -->
+                    <div class="form-control">             
+                        <label>Data de ajuizamento do processo</label>       
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.processoAjuizamentoData"
+                        />                        
+                    </div>
+                </div>
+                
+                <div class="row">
+        
+                    <!-- mesPrevisaoPagamento -->
+                    <div class="form-control">
+                        <label>Mês de previsão do pagamento</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.mesPrevisaoPagamento"
+                        />
+                    </div>
+                    
+                    <!-- tributario -->
+                    <div class="form-control">
+                        <label>Tributário</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.tributario"
+                        />
+                    </div>
+                </div>
+                
+                <div class="row">
+        
+                    <!-- paragrafo20Artigo1100ConsituticaoFederal -->
+                    <div class="form-control">
+                        <label>Parágrafo 20 Artigo 1100 (CF)</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.paragrafo20Artigo1100ConsituticaoFederal"
+                        />
+                    </div>
+                    
+                    <!-- reinclusaoLei13463 -->
+                    <div class="form-control">
+                        <label>Reinclusão Lei 14.463</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.reinclusaoLei13463"
+                        />
+                    </div>
+                </div>
+                
+                <div class="row">
+        
+                    <!-- autuacaoOriginariaData -->
+                    <div class="form-control">
+                        <label>Data de autuação originária</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.autuacaoOriginariaData"
+                        />
+                    </div>
+                    
+                    <!-- gru_Numero -->
+                    <div class="form-control">
+                        <label>Número GRU</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.gru_Numero"
+                        />
+                    </div>
+                </div>
+                
+                <div class="row">
+        
+                    <!-- unidadeJudicialTipo -->
+                    <div class="form-control">
+                        <label>Unidade judicial tipo</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.unidadeJudicialTipo"
+                        />
+                    </div>
+                    
+                    <!-- dataBaseUltimoCalculo -->
+                    <div class="form-control">
+                        <label>Data base do último cálculo</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.dataBaseUltimoCalculo"
+                        />
+                    </div>
+                </div>
+                
+                <div class="row">
+        
+                    <!-- valorOriginalUltimoCalculo -->
+                    <div class="form-control">
+                        <label>Valor original do último cálculo</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.valorOriginalUltimoCalculo"
+                        />
+                    </div>
+                    
+                    <!-- nomeIndiceAdotadoAtualizacaoMonetaria -->
+                    <div class="form-control">
+                        <label>Índice adotado atualização monetária</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.nomeIndiceAdotadoAtualizacaoMonetaria"
+                        />
+                    </div>
+                </div>
+                
+                <div class="row">
+        
+                    <!-- observacao -->
+                    <div class="form-control">
+                        <label>Observação</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.observacao"
+                        />
+                    </div>
+                    
+                    <!-- causa tipo -->
+                    <div class="form-control">
+                        <label>Causa tipo</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.causaTipo"
+                        />
+                    </div>
+                </div>
+                
+                <div class="row">
+        
+                    <!-- beneficiariosSomaValores -->
+                    <div class="form-control">
+                        <label>Soma dos valores</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.beneficiariosSomaValores"
+                        />
+                    </div>
+                    
+                    <!-- beneficiariosConta -->
+                    <div class="form-control">
+                        <label>Conta dos beneficiários</label>
+                        <input 
+                            matInput 
+                            [(ngModel)]="processo.beneficiariosConta"
+                        />
+                    </div>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Assunto">Content 2</mat-tab>
+        <mat-tab label="Unidade executada">Content 3</mat-tab>
+        <mat-tab label="Unidade cadastradora">Content 4</mat-tab>
+        <mat-tab label="Sentença tipo">Content 4</mat-tab>
+        <mat-tab label="Conta bancária">Content 5</mat-tab>
+        <mat-tab label="Movimento tipo">Content 6</mat-tab>
+        <mat-tab label="Despesa classificacao">Content 6</mat-tab>
+        <mat-tab label="Valores">Content 6</mat-tab>
+        <mat-tab label="Advogados">Content 6</mat-tab>
+        <mat-tab label="Requerentes">Content 6</mat-tab>
+        <mat-tab label="Beneficiários">Content 6</mat-tab>
+        <mat-tab label="Ação originária">Content 6</mat-tab>
+        <mat-tab label="Fase">Fase</mat-tab>
+    </mat-tab-group>         
+</div>

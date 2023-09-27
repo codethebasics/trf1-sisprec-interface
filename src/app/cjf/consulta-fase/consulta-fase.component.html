@@ -54,19 +54,6 @@
         </div>
     </section>
     <section id="data">
-        <!-- <mat-accordion *ngIf="fases.length">
-            <mat-expansion-panel *ngFor="let fase of fases">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Fase {{fase.aberturaData | date: 'dd/MM/yyyy hh:mm:ss'}}
-                </mat-panel-title>                
-              </mat-expansion-panel-header>
-              <div class="fase-container">
-                <div>Fase aberta?</div>
-                <div>{{ fase.aberta ? 'Sim' : 'Não' }}</div>
-              </div>
-            </mat-expansion-panel>            
-        </mat-accordion> -->
         <mat-accordion *ngIf="fases.length">
             <mat-expansion-panel *ngFor="let fase of fases">
               <mat-expansion-panel-header>
@@ -345,5 +332,12 @@
               </div>
             </mat-expansion-panel>            
         </mat-accordion>
+        <div *ngIf="!fases.length">
+            <app-message 
+                type="info" 
+                icon="info" 
+                text="Nenhuma fase encontrada">
+            </app-message>
+        </div>
     </section>
 </div>
