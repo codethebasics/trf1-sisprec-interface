@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FetchdataService } from './fetchdata.service';
-import { Subscription, Observable } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { LoadingService } from 'src/app/shared/loading.service';
 import { Breadcrumb } from './layout/breadcrumb/breadcrumb';
 
@@ -22,6 +22,10 @@ export class AppComponent implements OnInit, OnDestroy {
     {
       path: '/',
       label: 'Início'
+    },
+    {
+      path: '/consulta-tabela',
+      label: 'Consulta tabela'
     }
   ];
 

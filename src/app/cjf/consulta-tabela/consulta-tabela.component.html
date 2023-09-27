@@ -48,4 +48,9 @@
         <app-tabela-valor-tipo                         [tableData]="dados" *ngSwitchCase="'valor-tipo'"></app-tabela-valor-tipo>
         <app-tabela-divergencia-tipo                   [tableData]="dados" *ngSwitchCase="'divergencia-tipo'"></app-tabela-divergencia-tipo>
     </div>
+    <div class="result-container" *ngIf="!dados.length">
+        <div style="padding: 1rem">
+            <app-message type="info" icon="info" text="Nenhuma tabela encontrada"></app-message>
+        </div>
+    </div>
 </div>

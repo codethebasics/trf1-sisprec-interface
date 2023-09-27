@@ -1,4 +1,6 @@
 <div id="processos">
+
+    <!-- seção de menus internos -->
     <section id="processos__sidebar">
         <div class="nav-container">
             <div class="nav-links">
@@ -21,12 +23,27 @@
                     <mat-icon class="icon" aria-hidden="false" aria-label="Processos" fontIcon="delete"></mat-icon>
                     <span>Deletar</span>
                 </div>
-                <mat-divider></mat-divider>                
+                <mat-divider></mat-divider>
+                <div class="nav-link" (click)="setView('receber')">
+                    <mat-icon class="icon" aria-hidden="false" aria-label="Receber" fontIcon="cloud_download"></mat-icon>
+                    <span>Receber</span>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="nav-link" (click)="setView('analisar')">
+                    <mat-icon class="icon" aria-hidden="false" aria-label="Analisar" fontIcon="remove_red_eye"></mat-icon>
+                    <span>Analisar</span>
+                </div>
+                <mat-divider></mat-divider>
             </div>
         </div>
     </section>
-    <section id="processos__form">
+    <!-- fim da seção de menus internos -->
+
+    <!-- seção de formulário de processo -->
+    <section id="processos__form">    
         <ng-container [ngSwitch]="viewSelect">
+            
+            <!-- Consultar -->
             <div id="processos__form__consultar" *ngSwitchCase="'consultar'">
                 <div>
                     <div class="form-control">
@@ -64,10 +81,13 @@
                     <app-message 
                         icon="info"
                         type="info" 
-                        text="Nenhum dado encontrado">
+                        text="Nenhum processo encontrado">
                     </app-message>
                 </div>
             </div>
+            <!-- /consultar -->
+
+            <!-- cadastrar -->
             <div id="processos__form__cadastrar" *ngSwitchCase="'cadastrar'">
                 <div>
                     <div class="form-control">
@@ -95,7 +115,7 @@
                         <button 
                             mat-raised-button 
                             color="primary" 
-                            (click)="getProcesso()"
+                            (click)="postProcesso()"
                         >
                             Cadastrar
                         </button>
@@ -108,6 +128,9 @@
                     </app-message>
                 </div>
             </div>
+            <!-- /cadastar -->
+
+            <!-- alterar -->
             <div id="processos__form__alterar" *ngSwitchCase="'alterar'">
                 <div>
                     <div class="form-control">
@@ -156,7 +179,7 @@
                         <button 
                             mat-raised-button 
                             color="primary" 
-                            (click)="getProcesso()"
+                            (click)="patchProcesso()"
                         >
                             Alterar
                         </button>
@@ -170,6 +193,9 @@
                     </app-message>
                 </div>
             </div>
+            <!-- /alterar -->
+
+            <!-- deletar -->
             <div id="processos__form__deletar" *ngSwitchCase="'deletar'">
                 <div>
                     <div class="form-control">
@@ -229,7 +255,7 @@
                         <button 
                             mat-raised-button 
                             color="primary" 
-                            (click)="getProcesso()"
+                            (click)="deleteProcesso()"
                         >
                             Deletar
                         </button>
@@ -239,10 +265,145 @@
                     <app-message 
                         icon="warning"
                         type="danger" 
-                        text="Ateção! A ação não poderá ser desfeita">
+                        text="Atenção! A ação não poderá ser desfeita">
                     </app-message>
                 </div>
             </div>
+            <!-- /deletar -->
+
+            <!-- receber -->
+            <div id="processos__form__receber" *ngSwitchCase="'receber'">
+                <div>
+                    <div class="form-control">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Número do processo</mat-label>
+                            <input 
+                                matInput 
+                                placeholder="0000000-00.0000.0.00.0000" 
+                                [textMask]="{mask: maskPlanoAnoMes}"
+                                [(ngModel)]="processo"
+                            />
+                        </mat-form-field>
+                    </div>
+                    <div class="form-control">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Unidade gestora</mat-label>
+                            <mat-select [(ngModel)]="unidadeGestoraSelecionada" name="unidadeGestora">
+                                <mat-option *ngFor="let unidadeGestora of unidadesGestoras" [value]="unidadeGestora">
+                                    {{ unidadeGestora }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-control">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Tipo do plano</mat-label>
+                            <mat-select [(ngModel)]="planoTipoSelecionado" name="planoTipo">
+                                <mat-option *ngFor="let planoTipo of planosTipo" [value]="planoTipo">
+                                    {{ planoTipo }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-control">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Ano e mês do plano</mat-label>
+                            <input 
+                                matInput 
+                                placeholder="YYYY/MM" 
+                                [textMask]="{mask: maskPlanoAnoMes}"
+                                [(ngModel)]="planoAnoMes"
+                            />
+                        </mat-form-field>
+                    </div>
+                    <div class="form-control">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Ano e mês da fase</mat-label>
+                            <input 
+                                matInput 
+                                placeholder="YYYY/MM" 
+                                [textMask]="{mask: maskPlanoAnoMes}"
+                                [(ngModel)]="faseAnoMes"
+                            />
+                        </mat-form-field>
+                    </div>                                        
+                    <div class="form-control">
+                        <button 
+                            mat-raised-button 
+                            color="primary" 
+                            (click)="deleteProcesso()"
+                        >
+                            Deletar
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <app-message 
+                        icon="warning"
+                        type="danger" 
+                        text="Atenção! A ação não poderá ser desfeita">
+                    </app-message>
+                </div>
+            </div>
+            <!-- /receber -->
+
+            <!-- analisar -->
+            <div id="processos__form__analisar" *ngSwitchCase="'analisar'">
+                <div>
+                    <div class="form-control">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Unidade gestora</mat-label>
+                            <mat-select [(ngModel)]="unidadeGestoraSelecionada" name="unidadeGestora">
+                                <mat-option *ngFor="let unidadeGestora of unidadesGestoras" [value]="unidadeGestora">
+                                    {{ unidadeGestora }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-control">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Tipo do plano</mat-label>
+                            <mat-select [(ngModel)]="planoTipoSelecionado" name="planoTipo">
+                                <mat-option *ngFor="let planoTipo of planosTipo" [value]="planoTipo">
+                                    {{ planoTipo }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>       
+                    <div class="form-control">
+                        <button 
+                            mat-raised-button 
+                            color="primary" 
+                            (click)="displayAddProcessoAnaliseFrame()"
+                        >
+                            Adicionar processos
+                        </button>
+                    </div>                                                  
+                    <div class="form-control">
+                        <button 
+                            [disabled]="!processosAnalise.length"
+                            mat-raised-button 
+                            color="primary" 
+                            (click)="deleteProcesso()"
+                        >
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <app-message 
+                        icon="info"
+                        type="info" 
+                        text="Preencha o formulário e adicione os processos a serem analisados">
+                    </app-message>
+                    <div class="body-container">
+                        <app-form-analise></app-form-analise>
+                    </div>
+                </div>
+            </div>
+            <!-- /analisar -->
+
         </ng-container>
     </section>
+    <!-- fim da seção de formulário de processo -->
 </div>

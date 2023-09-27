@@ -3,8 +3,12 @@ export default class Util {
         return [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, '.', /\d/, /\d/, /\d/, /\d/, '.', /\d/, '.', /\d/, /\d/, /\d/, /\d/, /\d/, /\d/];
     }
 
-    static  getPlanoAnoMesMask(): any[] {
+    static getPlanoAnoMesMask(): any[] {
         return [/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/];
+    }
+
+    static mask__yyyy_MM_dd_hh_mm_ss(): any[] {
+        return [/\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/,'-', /\d/, /\d/,' ',/\d/, /\d/,':',/\d/, /\d/,':',/\d/, /\d/];
     }
 
     static getUnidadesGestoras(): string[] {

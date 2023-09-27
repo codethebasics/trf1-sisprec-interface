@@ -1,0 +1,41 @@
+#form-analise {
+
+    margin-top: 1rem;
+    overflow-y: auto;
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        max-height: 100%;
+    }
+
+    .row {
+        display: flex;
+        flex: 1;
+
+        .form-control {
+            flex: 1;
+            padding: 1rem;
+
+            label {
+                display: block;
+                color: #aaa;
+            }
+
+            input {
+                width: 100%;
+                padding: 0.5rem;
+                border: 2px solid #ccc;
+                outline: none;
+                border-radius: 3px;
+                
+                &:focus {
+                    border-color: #3F51B5;
+                }
+            }
+        }
+    }
+
+}
+

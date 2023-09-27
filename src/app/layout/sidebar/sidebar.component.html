@@ -1,11 +1,6 @@
 <div id="sidebar-container">
     <div class="nav-container">
-        <div class="nav-links">
-            <div class="nav-link" [routerLink]="['/']" (click)="triggerRouteChangeEvent('')">
-                <mat-icon class="icon" aria-hidden="false" aria-label="Consulta tabela" fontIcon="home"></mat-icon>
-                <span>Início</span>
-            </div>
-            <mat-divider></mat-divider>
+        <div class="nav-links">            
             <div class="nav-link" [routerLink]="['/consulta-tabela']" (click)="triggerRouteChangeEvent('consulta-tabela')">
                 <mat-icon class="icon" aria-hidden="false" aria-label="Consulta tabela" fontIcon="list_alt"></mat-icon>
                 <span>Consulta tabela</span>

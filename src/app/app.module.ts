@@ -25,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select'
 import { MatInputModule } from '@angular/material/input'
 import { MatListModule } from '@angular/material/list';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatDialogModule } from '@angular/material/dialog';
 import { CustomPaginator } from './canvas/config/CustomPaginatorConfiguration';
 import { ConsultaFaseComponent } from './cjf/consulta-fase/consulta-fase.component';
 import { ConsultaTabelaComponent } from './cjf/consulta-tabela/consulta-tabela.component';
@@ -60,6 +61,9 @@ import { ProcessosComponent } from './cjf/processos/processos.component';
 import { LoadingInterceptor } from './shared/loading-interceptor';
 import { HomeComponent } from './system/home/home.component';
 import { MessageComponent } from './shared/message/message.component';
+import { FormAnaliseComponent } from './cjf/processos/form-analise/form-analise.component';
+import { MatTabsModule } from '@angular/material/tabs';
+
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
@@ -92,7 +96,8 @@ registerLocaleData(localePt, 'pt');
     BreadcrumbComponent,
     ProcessosComponent,
     HomeComponent,
-    MessageComponent
+    MessageComponent,
+    FormAnaliseComponent
   ],
   imports: [
     BrowserModule,
@@ -117,7 +122,9 @@ registerLocaleData(localePt, 'pt');
     MatInputModule,
     MatTreeModule,
     TextMaskModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDialogModule, 
+    MatTabsModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: CustomPaginator() },

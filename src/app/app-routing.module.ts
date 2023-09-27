@@ -6,7 +6,7 @@ import { ProcessosComponent } from './cjf/processos/processos.component';
 import { HomeComponent } from './system/home/home.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: ConsultaTabelaComponent },
   { path: 'consulta-tabela', component: ConsultaTabelaComponent },
   { path: 'consulta-fase', component: ConsultaFaseComponent },
   { path: 'processos', component: ProcessosComponent },
