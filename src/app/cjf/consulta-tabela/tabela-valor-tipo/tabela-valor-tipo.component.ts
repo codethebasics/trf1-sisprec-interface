@@ -34,7 +34,6 @@ export class TabelaValorTipoComponent {
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {
     this.headerColumns = Colunas.colunasValorTipo;
-    this.headerColumns.unshift('select');
   }
 
   @ViewChild(MatSort) sort: MatSort;

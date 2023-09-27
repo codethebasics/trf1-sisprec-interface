@@ -34,7 +34,6 @@ export class TabelaUnidadeComponent {
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {
     this.headerColumns = Colunas.colunasUnidade;
-    this.headerColumns.unshift('select');
   }
 
   @ViewChild(MatSort) sort: MatSort;

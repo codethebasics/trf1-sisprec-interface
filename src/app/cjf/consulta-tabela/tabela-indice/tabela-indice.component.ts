@@ -34,7 +34,6 @@ export class TabelaIndiceComponent {
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {
     this.headerColumns = Colunas.colunasIndice;
-    this.headerColumns.unshift('select');
   }
 
   @ViewChild(MatSort) sort: MatSort;

@@ -53,6 +53,7 @@ export class ConsultaTabelaComponent {
    */
   getTabela() {
     this.dados = [];
+    this.response = [];
     this.loading = true;
 
     if (this.opcaoSelecionada === TabelaEnum.BENEFICIARIO_SUCESSAO_TIPO) {

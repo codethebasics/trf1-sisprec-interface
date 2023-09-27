@@ -1,4 +1,5 @@
 export const colunasAssunto = [
+    'select',
     'codigo',
     'descricao',
     'codigoCnj',
@@ -8,6 +9,7 @@ export const colunasAssunto = [
 ];
 
 export const colunasUnidadeJudicial = [
+    'select',
     'codigo',
     'descricao',
     'utilizacaoInicioData',
@@ -18,6 +20,7 @@ export const colunasUnidadeJudicial = [
 ];
 
 export const colunasUnidade = [
+    'select',
     'codigo',
     'nome',
     'abreviatura',
@@ -28,6 +31,7 @@ export const colunasUnidade = [
 ];
 
 export const colunasClassificacaoDespesa = [
+    'select',
     'naturezaDespesaDescricao',
     'despesaTipoCodigo',
     'despesaTipoDescricao',
@@ -41,6 +45,7 @@ export const colunasClassificacaoDespesa = [
 ];
 
 export const colunasIndice = [
+    'select',
     'indiceTipo',
     'registro',
     'validadeInicio',
@@ -52,6 +57,7 @@ export const colunasIndice = [
 ];
 
 export const colunasIndiceTipo = [
+    'select',
     'codigo',
     'descricao',
     'usoCodigo',
@@ -59,6 +65,7 @@ export const colunasIndiceTipo = [
 ];
 
 export const colunasBeneficiarioTipo = [
+    'select',
     'codigo',
     'descricao',
     'utilizacaoFim',
@@ -66,10 +73,12 @@ export const colunasBeneficiarioTipo = [
 ];
 
 export const colunasBeneficiarioSucessaoTipo = [
+    'select',
     'tipo'
 ];
 
 export const colunasBeneficiarioValorOrdemPagamento107ATipo = [
+    'select',
     'descricao',
     'codigo',
     'utilizacaoFim',
@@ -78,6 +87,7 @@ export const colunasBeneficiarioValorOrdemPagamento107ATipo = [
 ];
 
 export const colunasServidorCondicaoTipo = [
+    'select',
     'codigo',
     'descricao',
     'utilizacaoFim',
@@ -85,6 +95,7 @@ export const colunasServidorCondicaoTipo = [
 ];
 
 export const colunasFaseTipo = [
+    'select',
     'codigo',
     'descricao',
     'origem',
@@ -95,6 +106,7 @@ export const colunasFaseTipo = [
 ];
 
 export const colunasIdentificacaoTipo = [
+    'select',
     'codigo',
     'descricao',
     'utilizacaoFim',
@@ -102,6 +114,7 @@ export const colunasIdentificacaoTipo = [
 ];
 
 export const colunasMovimentoTipo = [
+    'select',
     'codigo',
     'descricao',
     'utilizacaoFim',
@@ -109,6 +122,7 @@ export const colunasMovimentoTipo = [
 ];
 
 export const colunasSentencaTipo = [
+    'select',
     'codigo',
     'descricao',
     'codigoPctRpv',
@@ -118,6 +132,7 @@ export const colunasSentencaTipo = [
 ];
 
 export const colunasUnidadeJudicialTipo = [
+    'select',
     'codigo',
     'descricao',
     'utilizacaoFim',
@@ -126,6 +141,7 @@ export const colunasUnidadeJudicialTipo = [
 ];
 
 export const colunasValorTipo = [
+    'select',
     'codigo',
     'descricao',
     'observacao',
@@ -136,6 +152,7 @@ export const colunasValorTipo = [
 ];
 
 export const colunasDivergenciaTipo = [
+    'select',
     'codigo',
     'contexto',
     'motivo'

@@ -34,7 +34,6 @@ export class TabelaIdentificacaoTipoComponent {
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {
     this.headerColumns = Colunas.colunasIdentificacaoTipo;
-    this.headerColumns.unshift('select');
   }
 
   @ViewChild(MatSort) sort: MatSort;

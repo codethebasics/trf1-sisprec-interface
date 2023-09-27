@@ -34,7 +34,6 @@ export class TabelaServidorCondicaoTipoComponent {
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {
     this.headerColumns = Colunas.colunasServidorCondicaoTipo;
-    this.headerColumns.unshift('select');
   }
 
   @ViewChild(MatSort) sort: MatSort;
