@@ -41,7 +41,6 @@ export class TabelaAssuntoComponent implements OnInit {
 
   ngOnInit(): void {    
     this.headerColumns = Colunas.colunasAssunto;
-    console.log('add select', this.headerColumns);
 
     // Ao iniciar a aplicação, atribuímos os dados recebidos na tabela
     this.dataSource = new MatTableDataSource(this.tableData);

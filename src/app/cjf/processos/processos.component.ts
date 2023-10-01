@@ -138,11 +138,10 @@ export class ProcessosComponent implements OnInit {
 
   getProcesso() {
     if (this.processo && this.unidadeGestoraSelecionada) {
-      console.log('get processo', Util.stripProcesso(this.processo));
       this.processosService.getProcesso(this.processo, this.unidadeGestoraSelecionada)
         .subscribe({
           next: (response) => console.log('response', response),
-          error: (error) => console.log('error', error),
+          error: (error) => console.error('error', error),
           complete: () => console.log('complete')
         })
     }
@@ -150,7 +149,6 @@ export class ProcessosComponent implements OnInit {
 
   postProcessoAnalise() {
     if (this.unidadeGestoraSelecionada && this.planoTipoSelecionado && this.processosSelecionados.length) {
-      console.log('post processoAnalise');
       this.processosService.postProcessoAnalise(this.unidadeGestoraSelecionada, this.planoTipoSelecionado, this.processosSelecionados)
         .subscribe({
           next: (response) => console.log('response', response),
