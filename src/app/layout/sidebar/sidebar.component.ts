@@ -1,14 +1,18 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Breadcrumb } from '../breadcrumb/breadcrumb';
+import { fadeInAnimation, fadeOutAnimation, slideInAnimation } from '../../shared/animations/animations';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.scss'],
+  animations: [fadeInAnimation, fadeOutAnimation, slideInAnimation],
 })
 export class SidebarComponent {
 
   @Output() changeRouteEvent: EventEmitter<Breadcrumb[]> = new EventEmitter<Breadcrumb[]>();
+
+  showChangelog: boolean = false;
 
   triggerRouteChangeEvent(path: string) {
     switch (path) {
@@ -28,5 +32,13 @@ export class SidebarComponent {
         { path: '/', label: 'Início' }
       ]); break;
     }
+  }
+
+  displayChangelog() {
+    this.showChangelog = true;
+  }
+
+  closeEventHandler(event: any) {
+    this.showChangelog = event;
   }
 }

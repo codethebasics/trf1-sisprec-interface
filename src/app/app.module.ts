@@ -64,6 +64,7 @@ import { MessageComponent } from './shared/message/message.component';
 import { FormAnaliseComponent } from './cjf/processos/form-analise/form-analise.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TabelaAssuntoDetalheComponent } from './cjf/consulta-tabela/tabela-assunto/tabela-assunto-detalhe/tabela-assunto-detalhe.component';
+import { ChangelogComponent } from './system/changelog/changelog.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -99,7 +100,8 @@ registerLocaleData(localePt, 'pt');
     HomeComponent,
     MessageComponent,
     FormAnaliseComponent,
-    TabelaAssuntoDetalheComponent
+    TabelaAssuntoDetalheComponent,
+    ChangelogComponent
   ],
   imports: [
     BrowserModule,

@@ -11,6 +11,12 @@
 
     #header-app-container {
         grid-area: header;
+
+        .toolbar-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
     }
     
     #body-app-sidebar {
