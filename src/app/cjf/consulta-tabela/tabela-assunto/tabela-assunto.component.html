@@ -38,7 +38,7 @@
                         Código
                     </th>
                     <td mat-cell *matCellDef="let element">
-                        <a [routerLink]="element.codigo.toString()">{{ element.codigo }}</a>
+                        <a [routerLink]="[element.codigo]">{{ element.codigo }}</a>
                     </td>
                 </ng-container>
                 

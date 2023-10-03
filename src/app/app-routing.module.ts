@@ -11,8 +11,7 @@ const routes: Routes = [
     path: 'consulta-tabela', 
     component: ConsultaTabelaComponent, 
     children: [
-      { path: '', component: ConsultaTabelaComponent },
-      { path: ':cod', component: TabelaAssuntoDetalheComponent}
+      { path: ':cod', component: TabelaAssuntoDetalheComponent }
     ] 
   },
   { path: 'consulta-fase', component: ConsultaFaseComponent },

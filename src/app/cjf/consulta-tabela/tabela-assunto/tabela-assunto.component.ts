@@ -7,6 +7,7 @@ import { SelectionModel } from '@angular/cdk/collections';
 import { AssuntoWS } from '../../model/assunto-ws';
 
 import * as Colunas from '../tabela-colunas'
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-tabela-assunto',
@@ -32,7 +33,7 @@ export class TabelaAssuntoComponent implements OnInit {
   // Armazena o backup de todas as requisições alteradas
   private requisicoesBackup: AssuntoWS[] = [];
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {
+  constructor(private _liveAnnouncer: LiveAnnouncer, private dialog: MatDialog) {
     
   }
 
