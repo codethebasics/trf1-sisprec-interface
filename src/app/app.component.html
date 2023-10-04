@@ -1,9 +1,6 @@
 <div id="app-container">
     <div id="header-app-container">
-        <mat-toolbar color="primary">
-            <div>TRF1-SISPREC :: Interface de integração com o SISPREC</div>
-        </mat-toolbar>
-        <mat-progress-bar mode="indeterminate" value="50" *ngIf="isLoading"></mat-progress-bar>
+        <app-header></app-header>
     </div>
     <div id="body-app-sidebar">
         <app-sidebar (changeRouteEvent)="setBreadcrumb($event)"></app-sidebar>
@@ -15,5 +12,4 @@
         <router-outlet></router-outlet>
     </div>
 </div>
-<app-status-bar *ngIf="isLoading"></app-status-bar>
 
