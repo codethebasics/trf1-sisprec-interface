@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ConsultaTabelaService } from '../../consulta-tabela.service';
 
 @Component({
   selector: 'app-tabela-assunto-detalhe',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabelaAssuntoDetalheComponent implements OnInit {
 
+  constructor(private route: ActivatedRoute, private consultaTabelaService: ConsultaTabelaService) {
+
+  }
+
   ngOnInit(): void {
-      console.log('detalhe tabela');
+      this.route.params.subscribe(params => {
+        const cod = +params['cod'];
+        console.log('código', cod);
+      });
   }
 }

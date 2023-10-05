@@ -102,7 +102,7 @@ export class ProcessosComponent implements OnInit {
   maskProcesso: any[];
   maskPlanoAnoMes: any[];
 
-  viewSelect = 'analisar';
+  viewSelect = 'consultar';
 
   processos: [
     {

@@ -7,13 +7,8 @@ import { TabelaAssuntoDetalheComponent } from './cjf/consulta-tabela/tabela-assu
 
 const routes: Routes = [
   { path: '', component: ConsultaTabelaComponent },
-  { 
-    path: 'consulta-tabela', 
-    component: ConsultaTabelaComponent, 
-    children: [
-      { path: ':cod', component: TabelaAssuntoDetalheComponent }
-    ] 
-  },
+  { path: 'consulta-tabela', component: ConsultaTabelaComponent },
+  { path: 'consulta-tabela/:cod', component: TabelaAssuntoDetalheComponent },  
   { path: 'consulta-fase', component: ConsultaFaseComponent },
   { path: 'processos', component: ProcessosComponent },
 ];
