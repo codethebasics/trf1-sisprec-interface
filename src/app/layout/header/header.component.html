@@ -1,0 +1,19 @@
+<div class="header">
+    <mat-toolbar>
+        <div class="flex">
+            <div style="display: flex; align-items: center; gap: 1rem">
+                <div>
+                    <img src="../../../assets/images/logo-transparente.png" alt="TRF1" width="35">
+                </div>
+                <div>
+                    <span>TRF1 - SISPREC</span>
+                </div>
+            </div>
+            <div class="user-name">
+                <span>{{ computedName }}</span>
+            </div>
+        </div>
+    </mat-toolbar>
+    <mat-progress-bar mode="indeterminate" value="50" *ngIf="isLoading"></mat-progress-bar>
+</div>
+<app-status-bar *ngIf="isLoading"></app-status-bar>

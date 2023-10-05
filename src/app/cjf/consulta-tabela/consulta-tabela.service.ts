@@ -23,7 +23,7 @@ export class ConsultaTabelaService {
    * @returns 
    */
   getTabelaItens(tabela?: String): Observable<SwaggerTabelaRetorno> {
-    return this.http.get<SwaggerTabelaRetorno>(`${environments.apiUrl}/tabela/itens/${tabela}`);
+    return this.http.get<SwaggerTabelaRetorno>(`${environments.apiUrl}/tabela/consultar?nome-da-tabela=${tabela}`);
   }
 
   /**
@@ -33,6 +33,6 @@ export class ConsultaTabelaService {
    * @returns 
    */
   getTabelaItem(tabela?: String, codigo?: String): Observable<SwaggerTabelaRetorno> {
-    return this.http.get<SwaggerTabelaRetorno>(`${environments.apiUrl}/tabela/itens/${tabela}/${codigo}`);
+    return this.http.get<SwaggerTabelaRetorno>(`${environments.apiUrl}/tabela/consultar?nome-da-tabela=${tabela}&identificacao-do-registro=${codigo}`);
   }
 }

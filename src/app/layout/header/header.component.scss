@@ -1,0 +1,19 @@
+.header {
+    border-bottom: 1px solid #ddd;
+}
+
+.header .flex {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-name {
+    background-color: #222;
+    color: #dfe0eb;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}

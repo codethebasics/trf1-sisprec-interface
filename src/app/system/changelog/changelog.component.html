@@ -1,0 +1,34 @@
+<div id="overlay">
+    <div class="changelog">
+        <section class="changelog__header">
+            <div>
+                <div>Histórico de evolução</div>
+                <div>
+                    <mat-icon
+                        aria-hidden="false" 
+                        aria-label="histórico" 
+                        fontIcon="history">
+                    </mat-icon>
+                </div>
+            </div>
+        </section>
+        <section class="changelog__body">
+            <div class="changes" *ngFor="let version of changes">
+                <div class="version">
+                    <div>{{version.version}}</div>
+                    <div>{{version.date}}</div>
+                </div>
+                <div class="features" *ngFor="let feature of version.features">                    
+                    <div class="feature">
+                        &#x21AA; {{ feature.name }}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="changelog__footer">
+            <div class="changelog__footer__cta" (click)="triggerCloseEvent()">
+                Fechar
+            </div>
+        </div>
+    </div>
+</div>

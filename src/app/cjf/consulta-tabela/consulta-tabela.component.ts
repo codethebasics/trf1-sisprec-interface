@@ -12,6 +12,7 @@ export class ConsultaTabelaComponent {
   loading: boolean = false;
 
   opcaoSelecionada: String;
+  message: string;
   response: any[] = [];
   dados: any = [];
   beneficiarioSucessaoTipo: any[] = [
@@ -62,11 +63,16 @@ export class ConsultaTabelaComponent {
     else {
       this.consultaTabelaService.getTabelaItens(this.opcaoSelecionada)
         .subscribe({
-          next: response => this.dados = response.retorno,
-          error: error => console.log(error),
-          complete: () => {
-            this.loading = false;
-          }
+          next: response => {
+            if (response && response.result) {
+              this.dados = response.result?.retorno;
+            }
+            else  {
+              this.message = 'Nenhum registro encontrado';
+            }
+          },
+          error: error => console.error(error),
+          complete: () => this.loading = false
         });
     }
 

@@ -37,7 +37,10 @@
                     <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Ordenar pelo código">
                         Código
                     </th>
-                    <td mat-cell *matCellDef="let element">{{ element.codigo }}</td>
+                    <td mat-cell *matCellDef="let element">
+                        <!-- <a [routerLink]="[element.codigo]">{{ element.codigo }}</a> -->
+                        {{ element.codigo }}
+                    </td>
                 </ng-container>
                 
                 <!-- CÓDIGO CNJ -->
