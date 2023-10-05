@@ -28,7 +28,7 @@ export class ProcessosService {
    */
   getProcesso(processoNumero: string, unidadeGestoraCodigo: string): Observable<any> {
     const sanitizedProcesso = Util.stripProcesso(processoNumero);
-    return this.http.get(`${environments.apiUrl}/processo/${sanitizedProcesso}/ug/${unidadeGestoraCodigo}`)
+    return this.http.get(`${environments.apiUrl}/processos/consultar?numero-processo=${sanitizedProcesso}&ug=${unidadeGestoraCodigo}`)
   }
 
   /**
@@ -43,11 +43,11 @@ export class ProcessosService {
     unidadeGestoraCodigo: string, 
     planoTipo: string,
     processos: ProcessoWS[]): Observable<any> {
-      return this.http.post(`${environments.apiUrl}/processo/analise/ug/${unidadeGestoraCodigo}/plano/${planoTipo}`, processos);
+      return this.http.post(`${environments.apiUrl}/processo/validar?ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}`, processos);
   }
 
   /**
-   * Solicita o cadastro de um processo
+   * Solicita o cadastro de processos
    * 
    * @param unidadeGestoracodigo 
    * @param planoTipo 
@@ -62,7 +62,28 @@ export class ProcessosService {
     planoAnoMes: string, 
     faseAnoMes:string,
     processos: ProcessoWS[]): Observable<any> {
-      return this.http.post(`${environments.apiUrl}/processo/ug/${unidadeGestoraCodigo}/plano/${planoTipo}/${planoAnoMes}/fase/${faseAnoMes}`, processos);
+      return this.http.post(`${environments.apiUrl}/processo/enviar?ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}&plano-ano-mes=${planoAnoMes}&fase-ano-mes=${faseAnoMes}`, processos);
+  }
+
+  /**
+   * Solicita o cadastro de processos
+   * 
+   * @param unidadeGestoracodigo 
+   * @param planoTipo 
+   * @param planoAnoMes 
+   * @param faseAnoMes 
+   * @param processos 
+   * @returns 
+   */
+  postProcessoOrcamentario(
+    unidadeGestoraCodigo: String, 
+    planoTipo: string, 
+    planoAnoMes: string, 
+    faseAnoMes:string,
+    parcela: string,
+    anoExercicio: string,
+    processos: ProcessoWS[]): Observable<any> {
+      return this.http.post(`${environments.apiUrl}/processo/enviar?ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}&plano-ano-mes=${planoAnoMes}&fase-ano-mes=${faseAnoMes}&parcela=${parcela}&ano-exericio=${anoExercicio}`, processos);
   }
 
   /**
@@ -81,7 +102,7 @@ export class ProcessosService {
     faseAnoMes:string,
     processoNumero: string
   ) {
-    return this.http.delete(`${environments.apiUrl}/processo/${processoNumero}/ug/${unidadeGestoraCodigo}/plano/${planoTipo}/${planoAnoMes}/fase/${faseAnoMes}`);
+    return this.http.delete(`${environments.apiUrl}/processo?numero-processo=${processoNumero}&ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}&plano-ano-mes=${planoAnoMes}&fase-ano-mes=${faseAnoMes}`);
   }
 
   /**
@@ -99,7 +120,7 @@ export class ProcessosService {
     planoTipo: string,
     planoAnoMes: string,
     faseAnoMes: string): Observable<any> {
-      return this.http.patch(`${environments.apiUrl}/processo/ug/${unidadeGestoraCodigo}/plano/${planoTipo}/${planoAnoMes}/fase/${faseAnoMes}`, processo);
+      return this.http.patch(`${environments.apiUrl}/processo?ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}&plano-ano-mes=${planoAnoMes}&fase-ano-mes=${faseAnoMes}`, processo);
   }
 
 }

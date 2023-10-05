@@ -24,10 +24,13 @@
         </div>
         <div class="bottom-links">
             <mat-divider></mat-divider>
-            <div class="nav-link" [routerLink]="['/sair']">
+            <div class="nav-link" (click)="displayChangelog()">
                 <mat-icon class="icon" aria-hidden="false" aria-label="Versão" fontIcon="help_outline"></mat-icon>
                 <span>TRF1-SISPREC V1.0</span>
             </div>
         </div>
     </div>
+</div>
+<div *ngIf="showChangelog">
+    <app-changelog (closeEvent)="closeEventHandler($event)" />
 </div>

@@ -44,8 +44,8 @@ export class ConsultaFaseComponent {
       this.unidadeGestoraSelecionada,
       this.planoTipoSelecionado,
       this.planoAnoMes.replaceAll('/', '')).subscribe({
-        next: response => this.fases = response.retorno,
-        error: error => console.log(error),
+        next: response => this.fases = response.result,
+        error: error => console.error(error),
         complete: () => this.loading = false
       })
   }
