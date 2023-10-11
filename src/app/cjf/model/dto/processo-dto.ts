@@ -1,6 +1,7 @@
 import { AcaoOriginariaDTO } from "./acao-originaria-dto"
 import { AdvogadoDTO } from "./advogado-dto"
 import { AssuntoDTO } from "./assunto-dto"
+import { BeneficiarioDTO } from "./beneficiario-dto"
 import { BeneficiarioTipoDTO } from "./beneficiario-tipo-dto"
 import { ContaBancariaDTO } from "./conta-bancaria-dto"
 import { DespesaClassificacaoDTO } from "./despesa-classificacao-dto"
@@ -14,43 +15,42 @@ import { ValorDTO } from "./valor-dto"
 
 export interface ProcessoDTO {
     sequencial?: number
-    precatorioAnteriorSequencial?: any
-    processoNumero?: string
-    processoNumeroOrigem?: any
-    autuacaoData?: string
-    transitoJulgadoData?: string
-    bloqueio?: boolean
-    inclusaoData?: any
-    exclusaoData?: any
-    registroData?: string
-    cancelamentoData?: string
-    processoAjuizamentoData?: string
-    mesPrevisaoPagamento?: number
-    tributario?: boolean
-    paragrafo20Artigo1100ConsituticaoFederal?: boolean
-    reinclusaoLei13463?: boolean
-    autuacaoOriginariaData?: any
-    gru_Numero?: any
-    assunto?: AssuntoDTO
-    unidadeExecutada?: UnidadeExecutadaDTO
-    unidadeCadastradora?: UnidadeCadastradoraDTO
-    sentencaTipo?: SentencaTipoDTO
-    unidadeJudicialTipo?: any
-    contaBancaria?: ContaBancariaDTO
-    movimentoTipo?: MovimentoTipoDTO
-    despesaClassificacao?: DespesaClassificacaoDTO
-    valores?: ValorDTO[]
-    advogados?: AdvogadoDTO[]
-    requerentes?: RequerenteDTO[]
-    beneficiarios?: BeneficiarioTipoDTO[]
-    processosAnteriores?: any[]
     acaoOriginaria?: AcaoOriginariaDTO
-    fase?: FaseDTO
+    advogados?: AdvogadoDTO[]
+    assunto?: AssuntoDTO
+    autuacaoData?: string
+    autuacaoOriginariaData?: any
+    beneficiarios?: BeneficiarioDTO[]
+    beneficiariosConta?: any
+    beneficiariosSomaValores?: any
+    bloqueio?: boolean
+    cancelamentoData?: string
+    causaTipo?: string
+    contaBancaria?: ContaBancariaDTO
     dataBaseUltimoCalculo?: any
-    valorOriginalUltimoCalculo?: any
+    despesaClassificacao?: DespesaClassificacaoDTO
+    exclusaoData?: any
+    fase?: FaseDTO
+    gruNumero?: any
+    inclusaoData?: any
+    mesPrevisaoPagamento?: number
+    movimentoTipo?: MovimentoTipoDTO
     nomeIndiceAdotadoAtualizacaoMonetaria?: any
     observacao?: any
-    causaTipo?: string
-    beneficiariosSomaValores?: any
-    beneficiariosConta?: any
+    paragrafo20Artigo1100ConsituticaoFederal?: boolean
+    processoAjuizamentoData?: string
+    processoNumero?: string
+    processoNumeroOrigem?: any
+    processosAnteriores?: ProcessoDTO[]
+    registroData?: string
+    reinclusaoLei13463?: boolean
+    requerentes?: RequerenteDTO[]
+    sentencaTipo?: SentencaTipoDTO
+    transitoJulgadoData?: string
+    tributario?: boolean
+    unidadeCadastradora?: UnidadeCadastradoraDTO
+    unidadeExecutada?: UnidadeExecutadaDTO
+    unidadeJudicialTipo?: any
+    valorOriginalUltimoCalculo?: any
+    valores?: ValorDTO[]
   }

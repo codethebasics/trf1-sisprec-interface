@@ -1,12 +1,15 @@
 import { UnidadeGestoraDTO } from "./unidade-gestora-dto"
 
 export interface PlanoDTO {
-    sequencial: number
-    mes: number
-    ano: number
-    tipo: string
-    unidadeGestora: UnidadeGestoraDTO
-    fases: any[]
-    tipoDescricao: string
-    descricao: string
+    ano: number;
+    descricao: string;
+    fases: any[];
+    mes: number;
+    precatorio: any;
+    rps: string;
+    rpv: string;
+    sequencial: number;
+    tipo: string;
+    tipoDescricao: string;
+    unidadeGestora: UnidadeGestoraDTO;
   }

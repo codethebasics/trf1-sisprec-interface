@@ -1,9 +1,11 @@
 export interface FaseTipoDTO {
-    sequencial?: number
-    codigo?: string
-    descricao?: string
-    origem?: string
-    utilizacaoFim?: any
-    observacao?: any
-    parcelaNumero?: number
+    codigo?: string;
+    descricao?: string;
+    observacao?: any;
+    ordem: string;
+    origem?: string;
+    parcelaNumero?: number;
+    retificacaoGrupoCodigo?: string;
+    sequencial?: number;
+    utilizacaoFim?: any;
   }
