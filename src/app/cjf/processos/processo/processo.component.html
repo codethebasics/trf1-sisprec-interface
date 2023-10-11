@@ -1,0 +1,1182 @@
+<!-- processo -->
+<div class="processo">
+
+    <!-- processo -->
+    <mat-accordion *ngIf="processo?.processoNumero">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Processo N° {{ formatNumeroProcesso() }}
+                </mat-panel-title>                
+            </mat-expansion-panel-header>
+            <div class="container">
+
+                <div class="processo__sequencial">
+                    <div>Sequencial</div>
+                    <div>{{ processo?.sequencial }}</div>
+                </div>
+                <div class="processo__autuacaoData">
+                    <div>Data autuação</div>
+                    <div>{{ processo?.autuacaoData }}</div>
+                </div>
+                <div class="processo__autuacaoOriginariaData">
+                    <div>Data autuação originária</div>
+                    <div>{{ processo?.autuacaoOriginariaData }}</div>
+                </div>
+            
+                <div class="processo__beneficiariosConta">
+                    <div>Beneficiários conta</div>
+                    <div>{{ processo?.beneficiariosConta }}</div>
+                </div>
+                <div class="processo__beneficiariosSomaValores">
+                    <div>beneficiariosSomaValores</div>
+                    <div>{{ processo?.beneficiariosSomaValores }}</div>
+                </div>
+                <div class="processo__bloqueio">
+                    <div>bloqueio</div>
+                    <div>{{ processo?.bloqueio }}</div>
+                </div>
+                <div class="processo__cancelamentoData">
+                    <div>cancelamentoData</div>
+                    <div>{{ processo?.cancelamentoData }}</div>
+                </div>
+                <div class="processo__causaTipo">
+                    <div>causa tipo</div>
+                    <div></div>
+                </div>
+                <div class="processo__dataBaseUltimoCalculo">
+                    <div>Data base último cálculo</div>
+                    <div>{{ processo?.dataBaseUltimoCalculo }}</div>
+                </div>
+                <div class="processo__exclusaoData">
+                    <div>Exclusão data</div>
+                    <div>{{ processo?.exclusaoData }}</div>
+                </div>
+                <div class="processo__gruNumero">
+                    <div>GRU número</div>
+                    <div>{{ processo?.gruNumero }}</div>
+                </div>
+                <div class="processo__inclusaoData">
+                    <div>inclusaoData</div>
+                    <div>{{ processo?.inclusaoData }}</div>
+                </div>
+                <div class="processo__mesPrevisaoPagamento">
+                    <div>mesPrevisaoPagamento</div>
+                    <div>{{ processo?.mesPrevisaoPagamento }}</div>
+                </div>
+                <div class="processo__nomeIndiceAdotadoAtualizacaoMonetaria">
+                    <div>nomeIndiceAdotadoAtualizacaoMonetaria</div>
+                    <div>{{ processo?.nomeIndiceAdotadoAtualizacaoMonetaria }}</div>
+                </div>
+                <div class="processo__observacao">
+                    <div>observacao</div>
+                    <div>{{ processo?.observacao }}</div>
+                </div>
+                <div class="processo__paragrafo20Artigo1100ConsituticaoFederal">
+                    <div>paragrafo20Artigo1100ConsituticaoFederal</div>
+                    <div>{{ processo?.paragrafo20Artigo1100ConsituticaoFederal }}</div>
+                </div>
+                <div class="processo__processoAjuizamentoData">
+                    <div>processoAjuizamentoData</div>
+                    <div>{{ processo?.processoAjuizamentoData }}</div>
+                </div>
+                <div class="processo__processoNumero">
+                    <div>processoNumero</div>
+                    <div>{{ processo?.processoNumero }}</div>
+                </div>
+                <div class="processo__processoNumeroOrigem">
+                    <div>processoNumeroOrigem</div>
+                    <div>{{ processo?.processoNumeroOrigem }}</div>
+                </div>
+                <div class="processo__processosAnteriores">
+                    <div>processosAnteriores</div>
+                    <div>{{ processo?.processosAnteriores }}</div>
+                </div>
+                <div class="processo__registroData">
+                    <div>registroData</div>
+                    <div>{{ processo?.registroData }}</div>
+                </div>
+                <div class="processo__reinclusaoLei13463">
+                    <div>reinclusaoLei13463</div>
+                    <div>{{ processo?.reinclusaoLei13463 }}</div>
+                </div>
+                <div class="processo__transitoJulgadoData">
+                    <div>transitoJulgadoData</div>
+                    <div>{{ processo?.transitoJulgadoData }}</div>
+                </div>
+                <div class="processo__tributario">
+                    <div>tributario</div>
+                    <div>{{ processo?.tributario }}</div>
+                </div>
+                <div class="processo__unidadeJudicialTipo">
+                    <div>UnidadeJudicialTipo</div>
+                    <div>{{ processo?.unidadeJudicialTipo }}</div>
+                </div>
+                <div class="processo__valorOriginalUltimoCalculo">
+                    <div>valorOriginalUltimoCalculo</div>
+                    <div>{{ processo?.valorOriginalUltimoCalculo }}</div>
+                </div>
+
+                <!-- acaoOriginaria -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Ação originária
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__acaoOriginaria" *ngIf="processo?.acaoOriginaria">
+                            <div class="processo__acaoOriginaria__ajuizamentoData">
+                                <div>Data de ajuizamento</div>
+                                <div>{{ processo?.acaoOriginaria?.ajuizamentoData }}</div>
+                            </div>
+                            <div class="processo__acaoOriginaria__numero">
+                                <div>Número</div>
+                                <div>{{ processo?.acaoOriginaria?.numero }}</div>
+                            </div>
+                            <div class="processo__acaoOriginaria__sequencial">
+                                <div>Sequencial</div>
+                                <div>{{ processo?.acaoOriginaria?.sequencial }}</div>
+                            </div>
+                            <div class="processo__acaoOriginaria__unidadeJudicial">
+                                <div>Unidade judicial</div>
+                                <div>{{ processo?.acaoOriginaria?.unidadeJudicial }}</div>
+                            </div>
+                            <div class="processo__acaoOriginaria__unidadesJudiciais" *ngIf="processo?.acaoOriginaria?.unidadesJudiciais">
+                                <ng-container *ngFor="let unidadeJudicial of processo?.acaoOriginaria?.unidadesJudiciais">
+                                    <div>{{ unidadeJudicial | json }}</div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /acaoOriginaria -->
+
+                <!-- advogados -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Advogados
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__advogados" *ngIf="processo?.advogados">
+                            <ng-container *ngFor="let advogado of processo?.advogados">
+                                <div class="processo__advogados__codigoCpfCnpj">
+                                    <div>Código CPF/CNPJ</div>
+                                    <div>{{ advogado?.codigoCpfCnpj }}</div>
+                                </div>
+                                <div class="processo__advogados__falecimentoData">
+                                    <div>Data falecimento</div>
+                                    <div>{{ advogado?.falecimentoData }}</div>
+                                </div>
+                                <div class="processo__advogados__nascimentoData">
+                                    <div>Data nascimento</div>
+                                    <div>{{ advogado?.nascimentoData }}</div>
+                                </div>
+                                <div class="processo__advogados__nome">
+                                    <div>Nome</div>
+                                    <div>{{ advogado?.nome }}</div>
+                                </div>
+                                <div class="processo__advogados__nomeSocial">
+                                    <div>Nome social</div>
+                                    <div>{{ advogado?.nomeSocial }}</div>
+                                </div>
+                                <div class="processo__advogados__principal">
+                                    <div>Principal</div>
+                                    <div>{{ advogado?.principal }}</div>
+                                </div>
+                                <div class="processo__advogados__razaoSocial">
+                                    <div>Razão social</div>
+                                    <div>{{ advogado?.razaoSocial }}</div>
+                                </div>
+                                <div class="processo__advogados__sequencial">
+                                    <div>Sequencial</div>
+                                    <div>{{ advogado?.sequencial }}</div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /advogados -->
+
+                <!-- assunto -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Assunto
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__assunto">
+                            <div class="processo__assunto__codigo">
+                                <div>Código</div>
+                                <div>{{ processo?.assunto?.codigo }}</div>
+                            </div>
+                            <div class="processo__assunto__codigoCnj">
+                                <div>Código CNJ</div>
+                                <div>{{ processo?.assunto?.codigoCnj }}</div>
+                            </div>
+                            <div class="processo__assunto__dataAtualizacao">
+                                <div>Data atualização</div>
+                                <div>{{ processo?.assunto?.dataAtualizacao }}</div>
+                            </div>
+                            <div class="processo__assunto__descricao">
+                                <div>Descrição</div>
+                                <div>{{ processo?.assunto?.descricao }}</div>
+                            </div>
+                            <div class="processo__assunto__descricaoCnj">
+                                <div>Descrição CNJ</div>
+                                <div>{{ processo?.assunto?.descricaoCnj }}</div>
+                            </div>
+                            <div class="processo__assunto__sequencial">
+                                <div>Sequencial</div>
+                                <div>{{ processo?.assunto?.sequencial }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /assunto -->
+
+                <!-- beneficiarios -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Benficiários
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__beneficiarios">
+                            <ng-container *ngFor="let beneficiario of processo?.beneficiarios">
+                                <div class="processo__beneficiarios__advogadoCausa">
+                                    <div>Advogado causa</div>
+                                    <div>{{ beneficiario | json }}</div>
+                                </div>
+                                <div class="processo__beneficiarios__antecessores">
+                                    <div>Antecessores</div>
+                                    <div></div>
+                                </div>
+                    
+                                <!-- beneficiarioTipo -->
+                                <div class="processo__beneficiarios__beneficiarioTipo" *ngIf="beneficiario.beneficiarioTipo">
+                                    <div class="processo__beneficiarios__beneficiarioTipo__codigo">
+                                        <div>Código</div>
+                                        <div>{{ beneficiario.beneficiarioTipo.codigo }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__beneficiarioTipo__descricao">
+                                        <div>Descrição</div>
+                                        <div>{{ beneficiario.beneficiarioTipo.descricao }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__beneficiarioTipo__sequencial">
+                                        <div>sequencial</div>
+                                        <div>{{ beneficiario.beneficiarioTipo.sequencial }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__beneficiarioTipo__utilizacaoFim">
+                                        <div>utilizacaofim</div>
+                                        <div>{{ beneficiario.beneficiarioTipo.utilizacaoFim }}</div>
+                                    </div>
+                                </div>
+                                <!-- /beneficiarioTipo -->
+                    
+                                <div class="processo__beneficiarios__cancelamentoData">
+                                    <div>Cancelamento data</div>
+                                    <div>{{ beneficiario.cancelamentoData }}</div>
+                                </div>
+                                <div class="processo__beneficiarios__codigoBeneficiarioCompensacaoGPS">
+                                    <div>Código beneficiário compensação GPS</div>
+                                    <div>{{ beneficiario.codigoBeneficiarioCompensacaoGPS }}</div>
+                                </div>
+                                <div class="processo__beneficiarios__compensacaoData">
+                                    <div>Compensação data</div>
+                                    <div>{{ beneficiario.compensacaoData }}</div>
+                                </div>
+                                <div class="processo__beneficiarios__competenciaExpedicaoAno">
+                                    <div>Competência expedição ano</div>
+                                    <div>{{ beneficiario.competenciaExpedicaoAno }}</div>
+                                </div>
+                                <div class="processo__beneficiarios__condicaoServidorTipo">
+                                    <div>Condição servidor tipo</div>
+                                    <div>{{ beneficiario.condicaoServidorTipo }}</div>
+                                </div>
+                    
+                                <!-- contaBancaria -->
+                                <div class="processo__beneficiarios__contaBancaria" *ngIf="beneficiario.contaBancaria">
+                                    <div class="processo__beneficiarios__contaBancaria__agenciaNumero">
+                                        <div>Agência número</div>
+                                        <div>{{ beneficiario.contaBancaria.agenciaNumero }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__contaBancaria__bancoNumero">
+                                        <div>Banco número</div>
+                                        <div>{{ beneficiario.contaBancaria.bancoNumero }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__contaBancaria__contaCodigo">
+                                        <div>Conta código</div>
+                                        <div>{{ beneficiario.contaBancaria.contaCodigo }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__contaBancaria__sequencial">
+                                        <div>Sequencial</div>
+                                        <div>{{ beneficiario.contaBancaria.sequencial }}</div>
+                                    </div>
+                                </div>
+                                <!-- /contaBancaria -->
+                    
+                                <div class="processo__beneficiarios__exercicioAnteriorNumeroMeses">
+                                    <div>Exercício anterior número meses</div>
+                                    <div>{{ beneficiario.exercicioAnteriorNumeroMeses }}</div>
+                                </div>
+                                <div class="processo__beneficiarios__exercicioCorrenteNumeroMeses">
+                                    <div>Exercício corrente número meses</div>
+                                    <div>{{ beneficiario.exercicioCorrenteNumeroMeses }}</div>
+                                </div>
+                    
+                                <!-- identificacaoTipo -->
+                                <div class="processo__beneficiarios__identificacaoTipo" *ngIf="beneficiario.identificacaoTipo">
+                                    <div class="processo__beneficiarios__identificacaoTipo__codigo">
+                                        <div>Código</div>
+                                        <div>{{ beneficiario.identificacaoTipo.codigo }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__identificacaoTipo__descricao">
+                                        <div>Descrição</div>
+                                        <div>{{ beneficiario.identificacaoTipo.descricao }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__identificacaoTipo__sequencial">
+                                        <div>Sequencial</div>
+                                        <div>{{ beneficiario.identificacaoTipo.sequencial }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__identificacaoTipo__utilizacaoFim">
+                                        <div>Utilização fim</div>
+                                        <div>{{ beneficiario.identificacaoTipo.utilizacaoFim }}</div>
+                                    </div>
+                                </div>
+                                <!-- /identificacaoTipo -->
+                    
+                                <div class="processo__beneficiarios__intimacaoData">
+                                    <div>Intimação data</div>
+                                    <div>{{ beneficiario.intimacaoData }}</div>
+                                </div>
+                                <div class="processo__beneficiarios__isentoIRRF">
+                                    <div>Isento IRRF</div>
+                                    <div>{{ beneficiario.isentoIRRF }}</div>
+                                </div>
+                    
+                                <!-- movimentoTipo -->
+                                <div class="processo__beneficiarios__movimentoTipo" *ngIf="beneficiario.movimentoTipo">
+                                    <div class="processo__beneficiarios__movimentoTipo__codigo">
+                                        <div>Código</div>
+                                        <div>{{ beneficiario.movimentoTipo.codigo }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__movimentoTipo__descricao">
+                                        <div>Descrição</div>
+                                        <div>{{ beneficiario.movimentoTipo.descricao }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__movimentoTipo__sequencial">
+                                        <div>Sequencial</div>
+                                        <div>{{ beneficiario.movimentoTipo.sequencial }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__movimentoTipo__utilizacaoFim">
+                                        <div>Utilização fim</div>
+                                        <div>{{ beneficiario.movimentoTipo.utilizacaoFim }}</div>
+                                    </div>
+                                </div>
+                                <!-- /movimentoTipo -->
+                    
+                                <div class="processo__beneficiarios__nascimentoData">
+                                    <div>Nascimento data</div>
+                                    <div>{{ beneficiario.nascimentoData }}</div>
+                                </div>
+                    
+                                <!-- pessoa -->
+                                <div class="processo__beneficiarios__pessoa" *ngIf="beneficiario.pessoa">
+                                    <div class="processo__beneficiarios__pessoa__codigoCpfCnpj">
+                                        <div>Código CPF/CNPJ</div>
+                                        <div>{{ beneficiario.pessoa.codigoCpfCnpj }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__pessoa__falecimentoData">
+                                        <div>Falecimento Data</div>
+                                        <div>{{ beneficiario.pessoa.falecimentoData }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__pessoa__nascimentoData">
+                                        <div>Nascimento Data</div>
+                                        <div>{{ beneficiario.pessoa.nascimentoData }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__pessoa__nome">
+                                        <div>Nome</div>
+                                        <div>{{ beneficiario.pessoa.nome }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__pessoa__nomeSocial">
+                                        <div>Nome social</div>
+                                        <div>{{ beneficiario.pessoa.nomeSocial }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__pessoa__principal">
+                                        <div>Principal</div>
+                                        <div>{{ beneficiario.pessoa.principal }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__pessoa__razaoSocial">
+                                        <div>Razão social</div>
+                                        <div>{{ beneficiario.pessoa.razaoSocial }}</div>
+                                    </div>
+                                    <div class="processo__beneficiarios__pessoa__sequencial">
+                                        <div>Sequencial</div>
+                                        <div>{{ beneficiario.pessoa.sequencial }}</div>
+                                    </div>
+                                </div>
+                                <!-- /pessoa -->
+                    
+                                <div class="processo__beneficiarios__portadorDeficiencia">
+                                    <div>Portador deficiência</div>
+                                    <div>{{ beneficiario.portadorDeficiencia }}</div>
+                                </div>
+                                <div class="processo__beneficiarios__portadorDoencaGrave">
+                                    <div>Portador doença grave</div>
+                                    <div>{{ beneficiario.portadorDoencaGrave }}</div>
+                                </div>
+                                <div class="processo__beneficiarios__registroData">
+                                    <div>Registro data</div>
+                                    <div>{{ beneficiario.registroData }}</div>
+                                </div>
+                                <div class="processo__beneficiarios__sequencial">
+                                    <div>Sequencial</div>
+                                    <div>{{ beneficiario.sequencial }}</div>
+                                </div>
+                                <div class="processo__beneficiarios__sucessaoTipo">
+                                    <div>Sucessão tipo</div>
+                                    <div>{{ beneficiario.sucessaoTipo }}</div>
+                                </div>
+                                <div class="processo__beneficiarios__unidadeLotacao">
+                                    <div>Unidade lotação</div>
+                                    <div>{{ beneficiario.unidadeLotacao }}</div>
+                                </div>
+                    
+                                <!-- valores -->
+                                <div class="processo__beneficiarios__valores" *ngIf="beneficiario.valores && beneficiario.valores.length">
+                                    <ng-container *ngFor="let valor of beneficiario.valores">
+                                        <div class="processo__beneficiarios__valores__agenciaNumero">
+                                            <div>Agência número</div>
+                                            <div>{{ valor.agenciaNumero }}</div>
+                                        </div>
+                                        <div class="processo__beneficiarios__valores__bancoNumero">
+                                            <div>Banco número</div>
+                                            <div>{{ valor.bancoNumero }}</div>
+                                        </div>
+                                        <div class="processo__beneficiarios__valores__beneficiarioSequencial">
+                                            <div>beneficiarioSequencial</div>
+                                            <div>{{ valor.beneficiarioSequencial }}</div>
+                                        </div>
+                                        <div class="processo__beneficiarios__valores__contaCodigo">
+                                            <div>contaCodigo</div>
+                                            <div>{{ valor.contaCodigo }}</div>
+                                        </div>
+                                        <div class="processo__beneficiarios__valores__debitoIdentificacao">
+                                            <div>debitoIdentificacao</div>
+                                            <div>{{ valor.debitoIdentificacao }}</div>
+                                        </div>
+                                        <div class="processo__beneficiarios__valores__documentoTipo">
+                                            <div>documentoTipo</div>
+                                            <div>{{ valor.documentoTipo }}</div>
+                                        </div>
+                                        <div class="processo__beneficiarios__valores__eventoData">
+                                            <div>eventoData</div>
+                                            <div>{{ valor.eventoData }}</div>
+                                        </div>
+                                        <div class="processo__beneficiarios__valores__ordemPagamento107ATipo">
+                                            <div>ordemPagamento107ATipo</div>
+                                            <div>{{ valor.ordemPagamento107ATipo }}</div>
+                                        </div>
+                                        <div class="processo__beneficiarios__valores__parcelaNumero">
+                                            <div>parcelaNumero</div>
+                                            <div>{{ valor.parcelaNumero }}</div>
+                                        </div>
+                                        <div class="processo__beneficiarios__valores__receitaCodigo">
+                                            <div>receitaCodigo</div>
+                                            <div>{{ valor.receitaCodigo }}</div>
+                                        </div>
+                                        <div class="processo__beneficiarios__valores__sequencial">
+                                            <div>sequencial</div>
+                                            <div>{{ valor.sequencial }}</div>
+                                        </div>
+                                        <div class="processo__beneficiarios__valores__tipo" *ngIf="valor.tipo">
+                                            <div class="processo__beneficiarios__valores__tipo__codigo">
+                                                <div>Código</div>
+                                                <div>{{ valor.tipo.codigo }}</div>
+                                            </div>
+                                            <div class="processo__beneficiarios__valores__tipo__contextoUtilizacaoCodigo">
+                                                <div>contextoUtilizacaoCodigo</div>
+                                                <div>{{ valor.tipo.contextoUtilizacaoCodigo }}</div>
+                                            </div>
+                                            <div class="processo__beneficiarios__valores__tipo__descricao">
+                                                <div>descricao</div>
+                                                <div>{{ valor.tipo.descricao }}</div>
+                                            </div>
+                                            <div class="processo__beneficiarios__valores__tipo__observacao">
+                                                <div>observacao</div>
+                                                <div>{{ valor.tipo.observacao }}</div>
+                                            </div>
+                                            <div class="processo__beneficiarios__valores__tipo__processoBeneficiarioCodigo">
+                                                <div>processoBeneficiarioCodigo</div>
+                                                <div>{{ valor.tipo.processoBeneficiarioCodigo }}</div>
+                                            </div>
+                                            <div class="processo__beneficiarios__valores__tipo__sequencial">
+                                                <div>sequencial</div>
+                                                <div>{{ valor.tipo.sequencial }}</div>
+                                            </div>
+                                            <div class="processo__beneficiarios__valores__tipo__utilizacaoFim">
+                                                <div>utilizacaoFim</div>
+                                                <div>{{ valor.tipo.utilizacaoFim }}</div>
+                                            </div>
+                                        </div>
+                                        <div class="processo__beneficiarios__valores__valor">
+                                            <div>Valor</div>
+                                            <div>{{ valor.valor }}</div>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                                <!-- /valores -->
+                            </ng-container>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /beneficiarios -->
+
+                <!-- contaBancaria -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Conta bancária
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__contaBancaria" *ngIf="processo?.contaBancaria">
+                            <div class="processo__contaBancaria__agenciaNumero">
+                                <div>agenciaNumero</div>
+                                <div>{{ processo?.contaBancaria?.agenciaNumero }}</div>
+                            </div>
+                            <div class="processo__contaBancaria__bancoNumero">
+                                <div>bancoNumero</div>
+                                <div>{{ processo?.contaBancaria?.bancoNumero }}</div>
+                            </div>
+                            <div class="processo__contaBancaria__contaCodigo">
+                                <div>contaCodigo</div>
+                                <div>{{ processo?.contaBancaria?.contaCodigo }}</div>
+                            </div>
+                            <div class="processo__contaBancaria__sequencial">
+                                <div>sequencial</div>
+                                <div>{{ processo?.contaBancaria?.sequencial }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /contaBancaria -->
+
+                <!-- despesaClassificacao -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Despesa classificação
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__despesaClassificacao" *ngIf="processo?.despesaClassificacao">
+                            <div class="processo__despesaClassificacao__alimentar">
+                                <div>alimentar</div>
+                                <div>{{ processo?.despesaClassificacao?.alimentar }}</div>
+                            </div>
+                            <div class="processo__despesaClassificacao__despesaTipoCodigo">
+                                <div>despesaTipoCodigo</div>
+                                <div>{{ processo?.despesaClassificacao?.despesaTipoCodigo }}</div>
+                            </div>
+                            <div class="processo__despesaClassificacao__despesaTipoDescricao">
+                                <div>despesaTipoDescricao</div>
+                                <div>{{ processo?.despesaClassificacao?.despesaTipoDescricao }}</div>
+                            </div>
+                            <div class="processo__despesaClassificacao__despesaTipoSequencial">
+                                <div>despesaTipoSequencial</div>
+                                <div>{{ processo?.despesaClassificacao?.despesaTipoSequencial }}</div>
+                            </div>
+                            <div class="processo__despesaClassificacao__naturezaDespesaCodigo">
+                                <div>naturezaDespesaCodigo</div>
+                                <div>{{ processo?.despesaClassificacao?.naturezaDespesaCodigo }}</div>
+                            </div>
+                            <div class="processo__despesaClassificacao__naturezaDespesaDescricao">
+                                <div>naturezaDespesaDescricao</div>
+                                <div>{{ processo?.despesaClassificacao?.naturezaDespesaDescricao }}</div>
+                            </div>
+                            <div class="processo__despesaClassificacao__naturezaDespesaSequencial">
+                                <div>naturezaDespesaSequencial</div>
+                                <div>{{ processo?.despesaClassificacao?.naturezaDespesaSequencial }}</div>
+                            </div>
+                            <div class="processo__despesaClassificacao__sequencial">
+                                <div>sequencial</div>
+                                <div>{{ processo?.despesaClassificacao?.sequencial }}</div>
+                            </div>
+                            <div class="processo__despesaClassificacao__utilizacaoFimData">
+                                <div>utilizacaoFimData</div>
+                                <div>{{ processo?.despesaClassificacao?.utilizacaoFimData }}</div>
+                            </div>
+                            <div class="processo__despesaClassificacao__utilizacaoInicioData">
+                                <div>utilizacaoInicioData</div>
+                                <div>{{ processo?.despesaClassificacao?.utilizacaoInicioData }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /despesaClassificacao -->
+
+                <!-- fase -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Fase
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__fase" *ngIf="processo?.fase">
+                            <div class="processo__fase__aberta">
+                                <div>Aberta</div>
+                                <div>{{ processo?.fase?.aberta }}</div>
+                            </div>
+                            <div class="processo__fase__aberturaData">
+                                <div>aberturaData</div>
+                                <div>{{ processo?.fase?.aberturaData }}</div>
+                            </div>
+                            <div class="processo__fase__ano">
+                                <div>ano</div>
+                                <div>{{ processo?.fase?.ano }}</div>
+                            </div>
+                            <div class="processo__fase__anoExercicioOrcamentario">
+                                <div>anoExercicioOrcamentario</div>
+                                <div>{{ processo?.fase?.anoExercicioOrcamentario }}</div>
+                            </div>
+                            <div class="processo__fase__cancelamentoData">
+                                <div>cancelamentoData</div>
+                                <div>{{ processo?.fase?.cancelamentoData }}</div>
+                            </div>
+                            <div class="processo__fase__codSufixoProcessoSiaf">
+                                <div>codSufixoProcessoSiaf</div>
+                                <div>{{ processo?.fase?.codSufixoProcessoSiaf }}</div>
+                            </div>
+                            <div class="processo__fase__consolidacoes">
+                                <div>consolidacoes</div>
+                                <div>{{ processo?.fase?.consolidacoes | json }}</div>
+                            </div>
+                            <div class="processo__fase__descricao">
+                                <div>descricao</div>
+                                <div>{{ processo?.fase?.descricao }}</div>
+                            </div>
+                            <div class="processo__fase__exclusaoData">
+                                <div>exclusaoData</div>
+                                <div>{{ processo?.fase?.exclusaoData }}</div>
+                            </div>
+                    
+                            <!-- faseTipo -->
+                            <div class="processo__fase__faseTipo" *ngIf="processo?.fase?.faseTipo">
+                                <div class="processo__fase__faseTipo__codigo">
+                                    <div>Código</div>
+                                    <div>{{ processo?.fase?.faseTipo?.codigo }}</div>
+                                </div>
+                                <div class="processo__fase__faseTipo__descricao">
+                                    <div>Descrição</div>
+                                    <div>{{ processo?.fase?.faseTipo?.descricao }}</div>
+                                </div>
+                                <div class="processo__fase__faseTipo__observacao">
+                                    <div>Observação</div>
+                                    <div>{{ processo?.fase?.faseTipo?.observacao }}</div>
+                                </div>
+                                <div class="processo__fase__faseTipo__ordem">
+                                    <div>ordem</div>
+                                    <div>{{ processo?.fase?.faseTipo?.ordem }}</div>
+                                </div>
+                                <div class="processo__fase__faseTipo__origem">
+                                    <div>origem</div>
+                                    <div>{{ processo?.fase?.faseTipo?.origem }}</div>
+                                </div>
+                                <div class="processo__fase__faseTipo__parcelaNumero">
+                                    <div>parcelaNumero</div>
+                                    <div>{{ processo?.fase?.faseTipo?.parcelaNumero }}</div>
+                                </div>
+                                <div class="processo__fase__faseTipo__retificacaoGrupoCodigo">
+                                    <div>retificacaoGrupoCodigo</div>
+                                    <div>{{ processo?.fase?.faseTipo?.retificacaoGrupoCodigo }}</div>
+                                </div>
+                                <div class="processo__fase__faseTipo__sequencial">
+                                    <div>sequencial</div>
+                                    <div>{{ processo?.fase?.faseTipo?.sequencial }}</div>
+                                </div>
+                                <div class="processo__fase__faseTipo__utilizacaoFim">
+                                    <div>utilizacaoFim</div>
+                                    <div>{{ processo?.fase?.faseTipo?.utilizacaoFim }}</div>
+                                </div>
+                            </div>
+                            <!-- /faseTipo -->
+                    
+                            <div class="processo__fase__fechamentoData">
+                                <div>Fechamento data</div>
+                                <div>{{ processo?.fase?.fechamentoData }}</div>
+                            </div>
+                            <div class="processo__fase__fimExclusaoData">
+                                <div>fimExclusaoData</div>
+                                <div>{{ processo?.fase?.fimExclusaoData }}</div>
+                            </div>
+                            <div class="processo__fase__mes">
+                                <div>mes</div>
+                                <div>{{ processo?.fase?.mes }}</div>
+                            </div>
+                    
+                            <!-- plano -->
+                            <div class="processo__fase__plano" *ngIf="processo?.fase?.plano">
+                                <div class="processo__fase__plano__ano">
+                                    <div>Ano</div>
+                                    <div>{{ processo?.fase?.plano?.ano }}</div>
+                                </div>
+                                <div class="processo__fase__plano__descricao">
+                                    <div>descricao</div>
+                                    <div>{{ processo?.fase?.plano?.descricao }}</div>
+                                </div>
+                                <div class="processo__fase__plano__fases">
+                                    <div>fases</div>
+                                    <div>{{ processo?.fase?.plano?.fases | json }}</div>
+                                </div>
+                                <div class="processo__fase__plano__mes">
+                                    <div>mes</div>
+                                    <div>{{ processo?.fase?.plano?.mes }}</div>
+                                </div>
+                                <div class="processo__fase__plano__precatorio">
+                                    <div>precatorio</div>
+                                    <div>{{ processo?.fase?.plano?.precatorio }}</div>
+                                </div>
+                                <div class="processo__fase__plano__rps">
+                                    <div>rps</div>
+                                    <div>{{ processo?.fase?.plano?.rps }}</div>
+                                </div>
+                                <div class="processo__fase__plano__rpv">
+                                    <div>rpv</div>
+                                    <div>{{ processo?.fase?.plano?.rpv }}</div>
+                                </div>
+                                <div class="processo__fase__plano__sequencial">
+                                    <div>sequencial</div>
+                                    <div>{{ processo?.fase?.plano?.sequencial }}</div>
+                                </div>
+                                <div class="processo__fase__plano__tipo">
+                                    <div>tipo</div>
+                                    <div>{{ processo?.fase?.plano?.tipo }}</div>
+                                </div>
+                                <div class="processo__fase__plano__tipoDescricao">
+                                    <div>tipoDescricao</div>
+                                    <div>{{ processo?.fase?.plano?.tipoDescricao }}</div>
+                                </div>
+                    
+                                <!-- unidadeGestora -->
+                                <div class="processo__fase__plano__unidadeGestora" *ngIf="processo?.fase?.plano?.unidadeGestora">
+                                    <div class="processo__fase__plano__unidadeGestora__abreviatura">
+                                        <div>Abreviatura</div>
+                                        <div>{{ processo?.fase?.plano?.unidadeGestora?.abreviatura }}</div>
+                                    </div>
+                                    <div class="processo__fase__plano__unidadeGestora__codigo">
+                                        <div>codigo</div>
+                                        <div>{{ processo?.fase?.plano?.unidadeGestora?.codigo }}</div>
+                                    </div>
+                                    <div class="processo__fase__plano__unidadeGestora__codigoAtribuicao">
+                                        <div>codigoAtribuicao</div>
+                                        <div>{{ processo?.fase?.plano?.unidadeGestora?.codigoAtribuicao }}</div>
+                                    </div>
+                                    <div class="processo__fase__plano__unidadeGestora__codigoAtribuicaoSiafi">
+                                        <div>codigoAtribuicaoSiafi</div>
+                                        <div>{{ processo?.fase?.plano?.unidadeGestora?.codigoAtribuicaoSiafi }}</div>
+                                    </div>
+                                    <div class="processo__fase__plano__unidadeGestora__descricao">
+                                        <div>descricao</div>
+                                        <div>{{ processo?.fase?.plano?.unidadeGestora?.descricao }}</div>
+                                    </div>
+                                    <div class="processo__fase__plano__unidadeGestora__numTribunal">
+                                        <div>numTribunal</div>
+                                        <div>{{ processo?.fase?.plano?.unidadeGestora?.numTribunal }}</div>
+                                    </div>
+                                    <div class="processo__fase__plano__unidadeGestora__sequencial">
+                                        <div>sequencial</div>
+                                        <div>{{ processo?.fase?.plano?.unidadeGestora?.sequencial }}</div>
+                                    </div>
+                                    <div class="processo__fase__plano__unidadeGestora__unidade">
+                                        <div>unidade</div>
+                                        <div>{{ processo?.fase?.plano?.unidadeGestora?.unidade }}</div>
+                                    </div>
+                                    <div class="processo__fase__plano__unidadeGestora__unidadeGestoraGestaoSuperior">
+                                        <div>unidadeGestoraGestaoSuperior</div>
+                                        <div>{{ processo?.fase?.plano?.unidadeGestora?.unidadeGestoraGestaoSuperior }}</div>
+                                    </div>
+                                    <div class="processo__fase__plano__unidadeGestora__utilizacaoFimData">
+                                        <div>utilizacaoFimData</div>
+                                        <div>{{ processo?.fase?.plano?.unidadeGestora?.utilizacaoFimData }}</div>
+                                    </div>
+                                    <div class="processo__fase__plano__unidadeGestora__utilizacaoInicioData">
+                                        <div>utilizacaoInicioData</div>
+                                        <div>{{ processo?.fase?.plano?.unidadeGestora?.utilizacaoInicioData }}</div>
+                                    </div>
+                                </div>
+                                <!-- /unidadeGestora -->
+                    
+                            </div>
+                            <!-- /plano -->
+                            <div class="processo__fase__processosIndicadosParaPagamentoEnviarExcluir">
+                                <div>processosIndicadosParaPagamentoEnviarExcluir</div>
+                                <div>{{ processo?.fase?.processosIndicadosParaPagamentoEnviarExcluir }}</div>
+                            </div>
+                            <div class="processo__fase__registroData">
+                                <div>registroData</div>
+                                <div>{{ processo?.fase?.registroData }}</div>
+                            </div>
+                            <div class="processo__fase__sequencial">
+                                <div>sequencial</div>
+                                <div>{{ processo?.fase?.sequencial }}</div>
+                            </div>
+                            <div class="processo__fase__siafExportacao">
+                                <div>siafExportacao</div>
+                                <div>{{ processo?.fase?.siafExportacao }}</div>
+                            </div>
+                            <div class="processo__fase__siopWebEnvio">
+                                <div>siopWebEnvio</div>
+                                <div>{{ processo?.fase?.siopWebEnvio }}</div>
+                            </div>
+                            <div class="processo__fase__unidadeGestora">
+                                <div>unidadeGestora</div>
+                                <div>{{ processo?.fase?.plano?.unidadeGestora | json }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /fase -->
+
+                <!-- movimentoTipo -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Movimento tipo
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__movimentoTipo__codigo">
+                            <div>Código</div>
+                            <div>{{ processo?.movimentoTipo?.codigo }}</div>
+                        </div>
+                        <div class="processo__movimentoTipo__descricao">
+                            <div>Descrição</div>
+                            <div>{{ processo?.movimentoTipo?.descricao }}</div>
+                        </div>
+                        <div class="processo__movimentoTipo__sequencial">
+                            <div>Sequencial</div>
+                            <div>{{ processo?.movimentoTipo?.sequencial }}</div>
+                        </div>
+                        <div class="processo__movimentoTipo__utilizacaoFim">
+                            <div>Utilização fim</div>
+                            <div>{{ processo?.movimentoTipo?.utilizacaoFim }}</div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /movimentoTipo -->
+
+                <!-- requerentes -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Requerentes
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__movimentoTipo__codigo">
+                            <div>Código</div>
+                            <div>{{ processo?.movimentoTipo?.codigo }}</div>
+                        </div>
+                        <div class="processo__movimentoTipo__descricao">
+                            <div>Descrição</div>
+                            <div>{{ processo?.movimentoTipo?.descricao }}</div>
+                        </div>
+                        <div class="processo__movimentoTipo__sequencial">
+                            <div>Sequencial</div>
+                            <div>{{ processo?.movimentoTipo?.sequencial }}</div>
+                        </div>
+                        <div class="processo__movimentoTipo__utilizacaoFim">
+                            <div>Utilização fim</div>
+                            <div>{{ processo?.movimentoTipo?.utilizacaoFim }}</div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /requerentes -->
+
+                <!-- sentencaTipo -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Sentença tipo
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__sentencaTipo__codigo">
+                            <div>Código</div>
+                            <div>{{ processo?.sentencaTipo?.codigo }}</div>
+                        </div>
+                        <div class="processo__sentencaTipo__descricao">
+                            <div>Descrição</div>
+                            <div>{{ processo?.sentencaTipo?.descricao }}</div>
+                        </div>
+                        <div class="processo__sentencaTipo__utilizacaoFim">
+                            <div>utilizacaoFim</div>
+                            <div>{{ processo?.sentencaTipo?.utilizacaoFim }}</div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /sentencaTipo -->
+
+                <!-- unidadeCadastradora -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Unidade cadastradora
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__unidadeCadastradora" *ngIf="processo?.unidadeCadastradora">
+                            <div class="processo__unidadeCadastradora__abreviatura">
+                                <div>Abreviatura</div>
+                                <div>{{ processo?.unidadeCadastradora?.abreviatura }}</div>
+                            </div>
+                            <div class="processo__unidadeCadastradora__codigo">
+                                <div>Código</div>
+                                <div>{{ processo?.unidadeCadastradora?.codigo }}</div>
+                            </div>
+                            <div class="processo__unidadeCadastradora__nome">
+                                <div>Nome</div>
+                                <div>{{ processo?.unidadeCadastradora?.nome }}</div>
+                            </div>
+                    
+                            <!-- /unidadeSuperior -->
+                            <div class="processo__unidadeCadastradora__unidadeSuperior" *ngIf="processo?.unidadeCadastradora?.unidadeSuperior">
+                                <div class="processo__unidadeCadastradora__unidadeSuperior__abreviatura">
+                                    <div>abreviatura</div>
+                                    <div>{{ processo?.unidadeCadastradora?.unidadeSuperior?.abreviatura }}</div>
+                                </div>
+                                <div class="processo__unidadeCadastradora__unidadeSuperior__codigo">
+                                    <div>codigo</div>
+                                    <div>{{ processo?.unidadeCadastradora?.unidadeSuperior?.codigo }}</div>
+                                </div>
+                                <div class="processo__unidadeCadastradora__unidadeSuperior__nome">
+                                    <div>nome</div>
+                                    <div>{{ processo?.unidadeCadastradora?.unidadeSuperior?.nome }}</div>
+                                </div>
+                                <div class="processo__unidadeCadastradora__unidadeSuperior__sequencial">
+                                    <div>sequencial</div>
+                                    <div>{{ processo?.unidadeCadastradora?.unidadeSuperior?.sequencial }}</div>
+                                </div>
+                                <div class="processo__unidadeCadastradora__unidadeSuperior__siafiCodigo">
+                                    <div>siafiCodigo</div>
+                                    <div>{{ processo?.unidadeCadastradora?.unidadeSuperior?.siafiCodigo }}</div>
+                                </div>
+                                <div class="processo__unidadeCadastradora__unidadeSuperior__siopCodigo">
+                                    <div>siopCodigo</div>
+                                    <div>{{ processo?.unidadeCadastradora?.unidadeSuperior?.siopCodigo }}</div>
+                                </div>
+                                <div class="processo__unidadeCadastradora__unidadeSuperior__unidadeSuperior">
+                                    <div>unidadeSuperior</div>
+                                    <div>{{ processo?.unidadeCadastradora?.unidadeSuperior?.unidadeSuperior }}</div>
+                                </div>
+                                <div class="processo__unidadeCadastradora__unidadeSuperior__utilizacaoFimData">
+                                    <div>utilizacaoFimData</div>
+                                    <div>{{ processo?.unidadeCadastradora?.unidadeSuperior?.utilizacaoFimData }}</div>
+                                </div>
+                                <div class="processo__unidadeCadastradora__unidadeSuperior__utilizacaoInicioData">
+                                    <div>utilizacaoInicioData</div>
+                                    <div>{{ processo?.unidadeCadastradora?.unidadeSuperior?.utilizacaoInicioData }}</div>
+                                </div>
+                            </div>
+                            <!-- /unidadeSuperior -->
+                    
+                            <!-- unidadeCadastradora -->
+                            <div class="processo__unidadeCadastradora">
+                                <div class="processo__unidadeCadastradora__utilizacaoFimData">
+                                    <div>utilizacaoFimData</div>
+                                    <div>{{ processo?.unidadeCadastradora?.utilizacaoFimData }}</div>
+                                </div>
+                                <div class="processo__unidadeCadastradora__utilizacaoInicioData">
+                                    <div>utilizacaoInicioData</div>
+                                    <div>{{ processo?.unidadeCadastradora?.utilizacaoInicioData }}</div>
+                                </div>
+                            </div>
+                            <!-- /unidadeCadastradora -->
+                    
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /unidadeCadastradora -->
+
+                <!-- unidadeExecutada -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Unidade executada
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__unidadeExecutada" *ngIf="processo?.unidadeExecutada">
+                            <div class="processo__unidadeExecutada__abreviatura">
+                                <div>Abreviatura</div>
+                                <div>{{ processo?.unidadeExecutada?.abreviatura }}</div>
+                            </div>
+                    
+                            <!-- unidadeExecutada -->
+                            <div class="processo__unidadeExecutada__codigo">
+                                <div>codigo</div>
+                                <div>{{ processo?.unidadeExecutada?.codigo }}</div>
+                            </div>
+                            <div class="processo__unidadeExecutada__nome">
+                                <div>nome</div>
+                                <div>{{ processo?.unidadeExecutada?.nome }}</div>
+                            </div>
+                            <div class="processo__unidadeExecutada__sequencial">
+                                <div>sequencial</div>
+                                <div>{{ processo?.unidadeExecutada?.sequencial }}</div>
+                            </div>
+                    
+                            <!-- unidadeSuperior -->
+                            <div class="processo__unidadeExecutada__unidadeSuperior" *ngIf="processo?.unidadeExecutada?.unidadeSuperior">
+                                <div class="processo__unidadeExecutada__unidadeSuperior__abreviatura">
+                                    <div>abreviatura</div>
+                                    <div>{{ processo?.unidadeExecutada?.unidadeSuperior?.abreviatura }}</div>
+                                </div>
+                                <div class="processo__unidadeExecutada__unidadeSuperior__codigo">
+                                    <div>codigo</div>
+                                    <div>{{ processo?.unidadeExecutada?.unidadeSuperior?.codigo }}</div>
+                                </div>
+                                <div class="processo__unidadeExecutada__unidadeSuperior__nome">
+                                    <div>nome</div>
+                                    <div>{{ processo?.unidadeExecutada?.unidadeSuperior?.nome }}</div>
+                                </div>
+                                <div class="processo__unidadeExecutada__unidadeSuperior__sequencial">
+                                    <div>sequencial</div>
+                                    <div>{{ processo?.unidadeExecutada?.unidadeSuperior?.sequencial }}</div>
+                                </div>
+                                <div class="processo__unidadeExecutada__unidadeSuperior__siafiCodigo">
+                                    <div>siafiCodigo</div>
+                                    <div>{{ processo?.unidadeExecutada?.unidadeSuperior?.siafiCodigo }}</div>
+                                </div>
+                                <div class="processo__unidadeExecutada__unidadeSuperior__siopCodigo">
+                                    <div>siopCodigo</div>
+                                    <div>{{ processo?.unidadeExecutada?.unidadeSuperior?.siopCodigo }}</div>
+                                </div>
+                                <div class="processo__unidadeExecutada__unidadeSuperior__unidadeSuperior">
+                                    <div>unidadeSuperior</div>
+                                    <div>{{ processo?.unidadeExecutada?.unidadeSuperior?.unidadeSuperior }}</div>
+                                </div>
+                                <div class="processo__unidadeExecutada__unidadeSuperior__utilizacaoFimData">
+                                    <div>utilizacaoFimData</div>
+                                    <div>{{ processo?.unidadeExecutada?.unidadeSuperior?.utilizacaoFimData }}</div>
+                                </div>
+                                <div class="processo__unidadeExecutada__unidadeSuperior__utilizacaoInicioData">
+                                    <div>utilizacaoInicioData</div>
+                                    <div>{{ processo?.unidadeExecutada?.unidadeSuperior?.utilizacaoInicioData }}</div>
+                                </div>
+                            </div>
+                            <!-- /unidadeSuperior -->
+                    
+                            <div class="processo__unidadeExecutada__utilizacaoFimData">
+                                <div>utilizacaoFimData</div>
+                                <div>{{ processo?.unidadeExecutada?.utilizacaoFimData }}</div>
+                            </div>
+                            <div class="processo__unidadeExecutada__utilizacaoInicioData">
+                                <div>utilizacaoInicioData</div>
+                                <div>{{ processo?.unidadeExecutada?.utilizacaoInicioData }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /unidadeExecutada -->
+
+                <!-- valores -->
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Valores
+                        </mat-panel-title>                
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div class="processo__valores" *ngIf="processo?.valores">
+                            <ng-container *ngFor="let valor of processo.valores">
+                                <div class="processo__valores__agenciaNumero">
+                                    <div>Agência número</div>
+                                    <div>{{ valor?.agenciaNumero }}</div>
+                                </div>
+                                <div class="processo__valores__bancoNumero">
+                                    <div>Banco número</div>
+                                    <div>{{ valor?.bancoNumero }}</div>
+                                </div>
+                                <div class="processo__valores__cancelamentoData">
+                                    <div>cancelamentoData</div>
+                                    <div>{{ valor?.cancelamentoData }}</div>
+                                </div>
+                                <div class="processo__valores__contaCodigo">
+                                    <div>contaCodigo</div>
+                                    <div>{{ valor?.contaCodigo }}</div>
+                                </div>
+                                <div class="processo__valores__parcelaCorrenteIndicador">
+                                    <div>parcelaCorrenteIndicador</div>
+                                    <div>{{ valor?.parcelaCorrenteIndicador }}</div>
+                                </div>
+                                <div class="processo__valores__parcelaNumero">
+                                    <div>parcelaNumero</div>
+                                    <div>{{ valor?.parcelaNumero }}</div>
+                                </div>
+                                <div class="processo__valores__registroData">
+                                    <div>registroData</div>
+                                    <div>{{ valor?.registroData }}</div>
+                                </div>
+                                <div class="processo__valores__sequencial">
+                                    <div>sequencial</div>
+                                    <div>{{ valor?.sequencial }}</div>
+                                </div>
+                        
+                                <!-- tipo -->
+                                <div class="processo__valores__tipo" *ngIf="valor.tipo">
+                                    <div class="processo__valores__tipo__codigo">
+                                        <div>codigo</div>
+                                        <div>{{ valor?.tipo?.codigo }}</div>
+                                    </div>
+                                    <div class="processo__valores__tipo__contextoUtilizacaoCodigo">
+                                        <div>contextoUtilizacaoCodigo</div>
+                                        <div>{{ valor?.tipo?.contextoUtilizacaoCodigo }}</div>
+                                    </div>
+                                    <div class="processo__valores__tipo__descricao">
+                                        <div>descricao</div>
+                                        <div>{{ valor?.tipo?.descricao }}</div>
+                                    </div>
+                                    <div class="processo__valores__tipo__observacao">
+                                        <div>observacao</div>
+                                        <div>{{ valor?.tipo?.observacao }}</div>
+                                    </div>
+                                    <div class="processo__valores__tipo__processoBeneficiarioCodigo">
+                                        <div>processoBeneficiarioCodigo</div>
+                                        <div>{{ valor?.tipo?.processoBeneficiarioCodigo }}</div>
+                                    </div>
+                                    <div class="processo__valores__tipo__sequencial">
+                                        <div>sequencial</div>
+                                        <div>{{ valor?.tipo?.sequencial }}</div>
+                                    </div>
+                                    <div class="processo__valores__tipo__utilizacaoFim">
+                                        <div>utilizacaoFim</div>
+                                        <div>{{ valor?.tipo?.utilizacaoFim }}</div>
+                                    </div>
+                                </div>
+                                <!-- /tipo -->
+                        
+                                <div class="processo__valores__valor">
+                                    <div>valor</div>
+                                    <div>{{ valor?.valor }}</div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <!-- /valores -->
+
+            </div>
+        </mat-expansion-panel>
+        <!-- /processo -->
+
+    </mat-accordion>
+
+</div>

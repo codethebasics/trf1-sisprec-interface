@@ -1,7 +1,7 @@
 import { MunicipioDTO } from "./municipio-dto"
 import { UnidadeTipoDTO } from "./unidade-tipo-dto"
 
-export interface UnidadesJudicialDTO {
+export interface UnidadeJudicialDTO {
     acaoOriginariaUnidadeJudicialSequencial?: any
     sequencial?: number
     codigo?: string

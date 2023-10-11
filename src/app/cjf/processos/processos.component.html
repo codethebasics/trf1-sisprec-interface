@@ -82,7 +82,11 @@
                         icon="info"
                         type="info" 
                         text="Nenhum processo encontrado" 
+                        *ngIf="!processoResponse"
                     />
+                    <div>
+                        <app-processo [processo]="processoResponse"/>
+                    </div>
                 </div>
             </div>
             <!-- /consultar -->

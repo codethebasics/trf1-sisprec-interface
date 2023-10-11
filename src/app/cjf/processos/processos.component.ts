@@ -5,6 +5,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { FormAnaliseComponent } from './form-analise/form-analise.component';
 
 import Util from 'src/app/shared/util';
+import { ProcessoDTO } from '../model/dto/processo-dto';
 
 @Component({
   selector: 'app-processos',
@@ -20,6 +21,7 @@ export class ProcessosComponent implements OnInit {
     dataAjuizamento: Util.mask__yyyy_MM_dd_hh_mm_ss()
   }
 
+  processoResponse: ProcessoDTO = {};
   processoRequest: ProcessoWS = {
     acaoOriginaria: {
       ajuizamentoData: '',
@@ -140,7 +142,7 @@ export class ProcessosComponent implements OnInit {
     if (this.processo && this.unidadeGestoraSelecionada) {
       this.processosService.getProcesso(this.processo, this.unidadeGestoraSelecionada)
         .subscribe({
-          next: (response) => console.log('response', response),
+          next: (response) => this.processoResponse = response.result,
           error: (error) => console.error('error', error),
           complete: () => console.log('complete')
         })

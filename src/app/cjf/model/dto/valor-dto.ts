@@ -1,14 +1,20 @@
 import { TipoDTO } from "./tipo-dto"
 
 export interface ValorDTO {
-    sequencial: number
-    tipo: TipoDTO
-    valor: number
-    parcelaNumero: number
-    parcelaCorrenteIndicador: boolean
-    bancoNumero: number
-    agenciaNumero: number
-    contaCodigo: any
-    registroData: string
-    cancelamentoData: any
+    agenciaNumero?: number;
+    bancoNumero?: number;
+    beneficiarioSequencial?: number;
+    debitoIdentificacao?: string;
+    documentoTipo?: any;
+    eventoData?: string;
+    ordemPagamento107ATipo?: string;
+    parcelaNumero?: number;
+    receitaCodigo: string;
+    sequencial?: number;
+    contaCodigo?: any;
+    tipo?: TipoDTO;
+    valor?: number;
+    parcelaCorrenteIndicador?: boolean;
+    registroData?: string;
+    cancelamentoData?: any;
   }
