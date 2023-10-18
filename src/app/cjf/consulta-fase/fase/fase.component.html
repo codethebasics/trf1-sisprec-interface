@@ -1,445 +1,163 @@
 <div class="fase">
-    <mat-accordion class="accordion">
+    
+    <Accordion>
+
         <!-- fase -->
-        <mat-expansion-panel class="panel">
-            <mat-expansion-panel-header>
-                <mat-panel-title>
-                    Fase {{ fase?.aberturaData | date: 'dd/MM/yyyy hh:mm:ss' }}
-                </mat-panel-title>
-            </mat-expansion-panel-header>
-            <div class="container">
-                <div>Sequencial</div>
-                <div>{{ fase?.sequencia }}</div>
-            </div>
-            <div class="container">
-                <div>Mês</div>
-                <div>{{ fase?.mes }}</div>
-            </div>
-            <div class="container">
-                <div>Ano</div>
-                <div>{{ fase?.ano }}</div>
-            </div>
-            <div class="container">
-                <div>Ano exercício orçamentário</div>
-                <div>{{ fase?.anoExercicioOrcamentario }}</div>
-            </div>
-            <div class="container">
-                <div>Código sufixo Siaf</div>
-                <div>{{ fase?.codSufixoProcessoSiaf }}</div>
-            </div>
-            <div class="container">
-                <div>Data de cancelamento</div>
-                <div>{{ fase?.cancelamentoData | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
-            </div>
-            <div class="container">
-                <div>Data de exclusao</div>
-                <div>{{ fase?.exclusaoData | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
-            </div>
-            <div class="container">
-                <div>Data fim de exclusao</div>
-                <div>{{ fase?.fimExclusaoData | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
-            </div>
-            <div class="container">
-                <div>Data de registro</div>
-                <div>{{ fase?.registroData | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
-            </div>
-            <div class="container">
-                <div>Data de abertura</div>
-                <div>{{ fase?.aberturaData | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
-            </div>
-            <div class="container">
-                <div>Data de fechamento</div>
-                <div>{{ fase?.fechamentoData | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
-            </div>
-            <div class="container">
-                <div>SiopWEB envio</div>
-                <div>{{ fase?.siopWebEnvio }}</div>
-            </div>
-            <div class="container">
-                <div>Processos indicados para pagamento enviar/excluir?</div>
-                <div>{{ fase?.processosIndicadosParaPagamentoEnviarExcluir }}</div>
-            </div>
-            <div class="container">
-                <div>Descrição</div>
-                <div>{{ fase?.descricao }}</div>
-            </div>
-            <div class="container">
-                <div>Mês</div>
-                <div>{{ fase?.mes }}</div>
-            </div>
-            <div class="container">
-                <div>Ano</div>
-                <div>{{ fase?.ano }}</div>
-            </div>
-            <div class="container">
-                <div>Ano exercício orçamentário</div>
-                <div>{{ fase?.anoExercicioOrcamentario }}</div>
-            </div>
-            <div class="container">
-                <div>Código sufixo Siaf</div>
-                <div>{{ fase?.codSufixoProcessoSiaf }}</div>
-            </div>            
+        <Expand title="Fase {{ fase?.aberturaData | date: 'dd/MM/yyyy hh:mm:ss' }}" *ngIf="fase">            
+            <ExpandContent key="Sequencial" [value]="fase.sequencial" />
+            <ExpandContent key="Mês" [value]="fase.mes" />
+            <ExpandContent key="Ano" [value]="fase.ano" />
+            <ExpandContent key="Ano exercício orçamentário" value="{{fase.anoExercicioOrcamentario}}" />
+            <ExpandContent key="Código sufixo Siaf" value="{{fase.codSufixoProcessoSiaf}}" />
+            <ExpandContent key="Data de cancelamento" value="{{fase.cancelamentoData | date: 'dd/MM/yyyy hh:mm:ss'}}" />
+            <ExpandContent key="Data de exclusao" value="{{fase.exclusaoData | date: 'dd/MM/yyyy hh:mm:ss'}}" />
+            <ExpandContent key="Data fim de exclusao" value="{{fase.fimExclusaoData | date: 'dd/MM/yyyy hh:mm:ss'}}" />
+            <ExpandContent key="Data de registro" value="{{fase.registroData | date: 'dd/MM/yyyy hh:mm:ss'}}" />
+            <ExpandContent key="Data de abertura" value="{{fase.aberturaData | date: 'dd/MM/yyyy hh:mm:ss'}}" />
+            <ExpandContent key="Data de fechamento" value="{{fase.fechamentoData | date: 'dd/MM/yyyy hh:mm:ss'}}" />
+            <ExpandContent key="Data de fechamento" value="{{fase.fechamentoData | date: 'dd/MM/yyyy hh:mm:ss'}}" />
+            <ExpandContent key="SiopWEB envio" value="{{fase.siopWebEnvio}}" />
+            <ExpandContent key="Processos indicados para pagamento enviar/excluir?" value="{{fase.processosIndicadosParaPagamentoEnviarExcluir}}" />
+            <ExpandContent key="Descrição" value="{{fase.descricao}}" />
+            <br>  
 
             <!-- plano -->
-            <mat-expansion-panel class="panel">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Plano #{{fase?.plano?.sequencial}}
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="container">
-                    <div>Sequencial</div>
-                    <div>{{ fase?.plano?.sequencial }}</div>
-                </div>
-                <div class="container">
-                    <div>Mês</div>
-                    <div>{{ fase?.plano?.mes }}</div>
-                </div>
-                <div class="container">
-                    <div>Tipo</div>
-                    <div>{{ fase?.plano?.tipo }}</div>
-                </div>
-                <div class="container">
-                    <div>Tipo descrição</div>
-                    <div>{{ fase?.plano?.tipoDescricao }}</div>
-                </div>
-                <div class="container">
-                    <div>Descrição</div>
-                    <div>{{ fase?.plano?.descricao }}</div>
-                </div>
-
+            <Expand title="Plano #{{fase?.plano?.sequencial}}" *ngIf="fase.plano">
+                <ExpandContent key="Sequencial" value="{{fase.plano.sequencial}}" />
+                <ExpandContent key="Mês" value="{{fase.plano.mes}}" />
+                <ExpandContent key="Tipo" value="{{fase.plano.tipo}}" />
+                <ExpandContent key="Tipo descrição" value="{{fase.plano.tipoDescricao}}" />
+                <ExpandContent key="Descrição" value="{{fase.plano.descricao}}" />
+                <br>
+    
                 <!-- unidade gestora -->
-                <mat-expansion-panel class="panel">
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            Unidade gestora #{{fase?.plano?.unidadeGestora?.sequencial}}
-                        </mat-panel-title>
-                    </mat-expansion-panel-header>
-                    <div class="container">
-                        <div>Sequencial</div>
-                        <div>{{ fase?.plano?.unidadeGestora?.sequencial }}</div>
-                    </div>
-                    <div class="container">
-                        <div>Código</div>
-                        <div>{{ fase?.plano?.unidadeGestora?.codigo }}</div>
-                    </div>
-                    <div class="container">
-                        <div>Descrição</div>
-                        <div>{{ fase?.plano?.unidadeGestora?.descricao }}</div>
-                    </div>
-                    <div class="container">
-                        <div>Abreviatura</div>
-                        <div>{{ fase?.plano?.unidadeGestora?.abreviatura }}</div>
-                    </div>
-                    <div class="container">
-                        <div>Número tribunal</div>
-                        <div>{{ fase?.plano?.unidadeGestora?.numTribunal }}</div>
-                    </div>
-                    <div class="container">
-                        <div>Tipo descrição</div>
-                        <div>{{ fase?.plano?.unidadeGestora?.tipoDescricao }}</div>
-                    </div>
-                    <div class="container">
-                        <div>Descrição</div>
-                        <div>{{ fase?.plano?.unidadeGestora?.descricao }}</div>
-                    </div>
-
+                <Expand title="Unidade gestora #{{fase?.plano?.unidadeGestora?.sequencial}}" *ngIf="fase.plano.unidadeGestora">                    
+                    <ExpandContent key="Sequencial" value="{{fase.plano.unidadeGestora.sequencial}}" />
+                    <ExpandContent key="Código" value="{{fase.plano.unidadeGestora.codigo}}" />
+                    <ExpandContent key="Descrição" value="{{fase.plano.unidadeGestora.descricao}}" />
+                    <ExpandContent key="Abreviatura" value="{{fase.plano.unidadeGestora.abreviatura}}" />
+                    <ExpandContent key="Número tribunal" value="{{fase.plano.unidadeGestora.numTribunal}}" />
+                    <ExpandContent key="Tipo descrição" value="{{fase.plano.unidadeGestora.tipoDescricao}}" />
+                    <ExpandContent key="Descrição" value="{{fase.plano.unidadeGestora.descricao}}" />
+                    <br>
+                    
                     <!-- unidade -->
-                    <mat-expansion-panel class="panel">
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                Unidade #{{ fase?.plano?.unidadeGestora?.unidade?.sequencial }}
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
-                        <div class="container">
-                            <div>Sequencial</div>
-                            <div>{{ fase?.plano?.unidadeGestora?.unidade?.sequencial }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Código</div>
-                            <div>{{ fase?.plano?.unidadeGestora?.unidade?.codigo }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Nome</div>
-                            <div>{{ fase?.plano?.unidadeGestora?.unidade?.nome }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Abreviatura</div>
-                            <div>{{ fase?.plano?.unidadeGestora?.unidade?.abreviatura }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Utilização início data</div>
-                            <div>{{ fase?.plano?.unidadeGestora?.unidade?.utilizacaoInicioData }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Utilização fim data</div>
-                            <div>{{ fase?.plano?.unidadeGestora?.unidade?.utilizacaoFimData }}</div>
-                        </div>
-
+                    <Expand title="Unidade #{{ fase?.plano?.unidadeGestora?.unidade?.sequencial }}" *ngIf="fase.plano.unidadeGestora.unidade">
+                        <ExpandContent key="Sequencial" value="{{fase.plano.unidadeGestora.codigo}}" />
+                        <ExpandContent key="Código" value="{{fase.plano.unidadeGestora.nome}}" />
+                        <ExpandContent key="Nome" value="{{fase.plano.unidadeGestora.abreviatura}}" />
+                        <ExpandContent key="Abreviatura" value="{{fase.plano.unidadeGestora.utilizacaoInicioData}}" />
+                        <ExpandContent key="Utilização início data" value="{{fase.plano.unidadeGestora.utilizacaoInicioData}}" />
+                        <ExpandContent key="Utilização fim data" value="{{fase.plano.unidadeGestora.utilizacaoFimData}}" />                        
+                        <br>
+                        
                         <!-- unidade superior -->
-                        <mat-expansion-panel class="panel">
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    Unidade superior #{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.sequencial }}
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <div class="container">
-                                <div>Sequencial</div>
-                                <div>{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.sequencial }}</div>
-                            </div>
-                            <div class="container">
-                                <div>Código</div>
-                                <div>{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.codigo }}</div>
-                            </div>
-                            <div class="container">
-                                <div>Nome</div>
-                                <div>{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.nome }}</div>
-                            </div>
-                            <div class="container">
-                                <div>Abreviatura</div>
-                                <div>{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.abreviatura }}</div>
-                            </div>
-                            <div class="container">
-                                <div>Utilização início data</div>
-                                <div>{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.utilizacaoInicioData }}</div>
-                            </div>
-                            <div class="container">
-                                <div>Utilização fim data</div>
-                                <div>{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.utilizacaoFimData }}</div>
-                            </div>
-                        </mat-expansion-panel>
+                        <Expand title="Unidade superior #{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.sequencial }}" *ngIf="fase.plano.unidadeGestora.unidade.unidadeSuperior">
+                            <ExpandContent key="Sequencial" value="{{fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.sequencial}}" />                        
+                            <ExpandContent key="Código" value="{{fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.codigo}}" />                        
+                            <ExpandContent key="Nome" value="{{fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.nome}}" />                        
+                            <ExpandContent key="Abreviatura" value="{{fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.abreviatura}}" />                        
+                            <ExpandContent key="Utilização início data" value="{{fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.utilizacaoInicioData}}" />                        
+                            <ExpandContent key="Utilização fim data" value="{{fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.utilizacaoFimData}}" />
+                        </Expand>
                         <!-- /unidade superior -->
-
-                    </mat-expansion-panel>
+                        
+                    </Expand>
                     <!-- /unidade -->
-
-                </mat-expansion-panel>
+                    
+                </Expand>
                 <!-- /unidade gestora -->
-
-            </mat-expansion-panel>
+                
+            </Expand>
             <!-- /plano -->
+            
+            <br>
 
             <!-- fase tipo -->
-            <mat-expansion-panel class="panel">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Fase tipo #{{fase?.faseTipo?.sequencial }}
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="container">
-                    <div>Sequencial</div>
-                    <div>{{ fase?.faseTipo?.sequencial }}</div>
-                </div>
-                <div class="container">
-                    <div>Código</div>
-                    <div>{{ fase?.faseTipo?.codigo }}</div>
-                </div>
-                <div class="container">
-                    <div>Descrição</div>
-                    <div>{{ fase?.faseTipo?.descricao }}</div>
-                </div>
-                <div class="container">
-                    <div>Origem</div>
-                    <div>{{ fase?.faseTipo?.origem }}</div>
-                </div>
-                <div class="container">
-                    <div>Utilização fim</div>
-                    <div>{{ fase?.faseTipo?.utilizacaoFim }}</div>
-                </div>
-                <div class="container">
-                    <div>Observação</div>
-                    <div>{{ fase?.faseTipo?.observacao }}</div>
-                </div>
-                <div class="container">
-                    <div>Parcela número</div>
-                    <div>{{ fase?.faseTipo?.parcelaNumero }}</div>
-                </div>
-            </mat-expansion-panel>
+            <Expand title="Fase tipo #{{fase?.faseTipo?.sequencial }}">
+                <ExpandContent key="Sequencial" value="{{fase?.faseTipo?.sequencial}}" />
+                <ExpandContent key="Código" value="{{fase?.faseTipo?.codigo}}" />
+                <ExpandContent key="Descrição" value="{{fase?.faseTipo?.descricao}}" />
+                <ExpandContent key="Origem" value="{{fase?.faseTipo?.origem}}" />
+                <ExpandContent key="Utilização fim" value="{{fase?.faseTipo?.utilizacaoFim}}" />
+                <ExpandContent key="Observação" value="{{fase?.faseTipo?.observacao}}" />
+                <ExpandContent key="Parcela número" value="{{fase?.faseTipo?.parcelaNumero}}" />
+            </Expand>
+            <br>
             <!-- /fase tipo -->
-
+            
             <!-- unidade gestora -->
-            <mat-expansion-panel class="panel">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Unidade gestora #{{fase?.unidadeGestora?.sequencial}}
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="container">
-                    <div>Sequencial</div>
-                    <div>{{ fase?.unidadeGestora?.sequencial }}</div>
-                </div>
-                <div class="container">
-                    <div>Código</div>
-                    <div>{{ fase?.unidadeGestora?.codigo }}</div>
-                </div>
-                <div class="container">
-                    <div>Descrição</div>
-                    <div>{{ fase?.unidadeGestora?.descricao }}</div>
-                </div>
-                <div class="container">
-                    <div>Abreviatura</div>
-                    <div>{{ fase?.unidadeGestora?.abreviatura }}</div>
-                </div>
-                <div class="container">
-                    <div>Número tribunal</div>
-                    <div>{{ fase?.unidadeGestora?.numTribunal }}</div>
-                </div>
-                <div class="container">
-                    <div>Tipo descrição</div>
-                    <div>{{ fase?.unidadeGestora?.tipoDescricao }}</div>
-                </div>
-                <div class="container">
-                    <div>Descrição</div>
-                    <div>{{ fase?.unidadeGestora?.descricao }}</div>
-                </div>
+            <Expand title="Unidade gestora #{{fase?.unidadeGestora?.sequencial}}">                
+                <ExpandContent key="Sequencial" value="{{fase?.unidadeGestora?.sequencial}}" />
+                <ExpandContent key="Código" value="{{fase?.unidadeGestora?.codigo}}" />
+                <ExpandContent key="Descrição" value="{{fase?.unidadeGestora?.descricao}}" />
+                <ExpandContent key="Abreviatura" value="{{fase?.unidadeGestora?.abreviatura}}" />
+                <ExpandContent key="Número tribunal" value="{{fase?.unidadeGestora?.nomeTribunal}}" />
+                <ExpandContent key="Tipo descrição" value="{{fase?.unidadeGestora?.tipoDescricao}}" />
+                <ExpandContent key="Descrição" value="{{fase?.unidadeGestora?.descricao}}" />
+                <br>
 
                 <!-- unidade -->
-                <mat-expansion-panel class="panel">
-                    <mat-expansion-panel-header>
-                        <mat-panel-title>
-                            Unidade #{{ fase?.unidadeGestora?.unidade?.sequencial }}
-                        </mat-panel-title>
-                    </mat-expansion-panel-header>
-                    <div class="container">
-                        <div>Sequencial</div>
-                        <div>{{ fase?.unidadeGestora?.unidade?.sequencial }}</div>
-                    </div>
-                    <div class="container">
-                        <div>Código</div>
-                        <div>{{ fase?.unidadeGestora?.unidade?.codigo }}</div>
-                    </div>
-                    <div class="container">
-                        <div>Nome</div>
-                        <div>{{ fase?.unidadeGestora?.unidade?.nome }}</div>
-                    </div>
-                    <div class="container">
-                        <div>Abreviatura</div>
-                        <div>{{ fase?.unidadeGestora?.unidade?.abreviatura }}</div>
-                    </div>
-                    <div class="container">
-                        <div>Utilização início data</div>
-                        <div>{{ fase?.unidadeGestora?.unidade?.utilizacaoInicioData }}</div>
-                    </div>
-                    <div class="container">
-                        <div>Utilização fim data</div>
-                        <div>{{ fase?.unidadeGestora?.unidade?.utilizacaoFimData }}</div>
-                    </div>
+                <Expand title="Unidade #{{ fase?.unidadeGestora?.unidade?.sequencial }}">    
+                    <ExpandContent key="Sequencial" value="{{fase?.unidadeGestora?.unidade?.sequencial}}" />
+                    <ExpandContent key="Código" value="{{fase?.unidadeGestora?.unidade?.codigo}}" />
+                    <ExpandContent key="Nome" value="{{fase?.unidadeGestora?.unidade?.nome}}" />
+                    <ExpandContent key="Abreviatura" value="{{fase?.unidadeGestora?.abreviatura}}" />
+                    <ExpandContent key="Utilização início data" value="{{fase?.unidadeGestora?.utilizacaoInicioData}}" />
+                    <ExpandContent key="Utilização fim data" value="{{fase?.unidadeGestora?.utilizacaoFimData}}" />
+                    <br>
 
                     <!-- unidade superior -->
-                    <mat-expansion-panel class="panel">
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                Unidade superior #{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.sequencial }}
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
-                        <div class="container">
-                            <div>Sequencial</div>
-                            <div>{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.sequencial }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Código</div>
-                            <div>{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.codigo }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Nome</div>
-                            <div>{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.nome }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Abreviatura</div>
-                            <div>{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.abreviatura }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Utilização início data</div>
-                            <div>{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.utilizacaoInicioData }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Utilização fim data</div>
-                            <div>{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.utilizacaoFimData }}</div>
-                        </div>
-                    </mat-expansion-panel>
+                    <Expand title="Unidade superior #{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.sequencial }}">
+                        <ExpandContent key="Sequencial" value="{{fase?.unidadeGestora?.unidade?.unidadeSuperior?.sequencial}}" />
+                        <ExpandContent key="Código" value="{{fase?.unidadeGestora?.unidade?.unidadeSuperior?.codigo}}" />
+                        <ExpandContent key="Nome" value="{{fase?.unidadeGestora?.unidade?.unidadeSuperior?.nome}}" />
+                        <ExpandContent key="Abreviatura" value="{{fase?.unidadeGestora?.unidade?.unidadeSuperior?.abreviatura}}" />
+                        <ExpandContent key="UtilizacaoInicioData" value="{{fase?.unidadeGestora?.unidade?.unidadeSuperior?.utilizacaoInicioData}}" />
+                        <ExpandContent key="utilizacaoFimData" value="{{fase?.unidadeGestora?.unidade?.unidadeSuperior?.utilizacaoFimData}}" />
+                    </Expand>
                     <!-- /unidade superior -->
-
-                </mat-expansion-panel>
+    
+                </Expand>
+                <br>
                 <!-- /unidade -->
-
-            </mat-expansion-panel>
+                
+            </Expand>
+            <br>
             <!-- /unidade gestora -->
-
+            
             <!-- consolidacoes -->
-            <mat-expansion-panel class="panel">
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        Consolidações
-                    </mat-panel-title>
-                </mat-expansion-panel-header>
+            <Expand title="Consolidações">                
                 <ng-container *ngFor="let consolidacao of fase.consolidacoes">
                     
                     <!-- consolidacao -->
-                    <mat-expansion-panel class="panel">
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                Consolidacao #{{consolidacao?.sequencial}}
-                            </mat-panel-title>
-                        </mat-expansion-panel-header>
-                        <div class="container">
-                            <div>Sequencial</div>
-                            <div>{{ consolidacao?.sequencial }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Fase sequencial</div>
-                            <div>{{ consolidacao?.faseSequencial }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Ordem</div>
-                            <div>{{ consolidacao?.ordem }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Data registro</div>
-                            <div>{{ consolidacao?.registroData }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Parcela</div>
-                            <div>{{ consolidacao?.parcela }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Soma</div>
-                            <div>{{ consolidacao?.soma }}</div>
-                        </div>
-                        <div class="container">
-                            <div>Conta</div>
-                            <div>{{ consolidacao?.conta }}</div>
-                        </div>
+                    <Expand title="Consolidacao #{{consolidacao?.sequencial}}">                        
+                        <ExpandContent key="Sequencial" value="{{consolidacao?.sequencial}}" />
+                        <ExpandContent key="Fase sequencial" value="{{consolidacao?.faseSequencial}}" />
+                        <ExpandContent key="Ordem" value="{{consolidacao?.ordem}}" />
+                        <ExpandContent key="Registro data" value="{{consolidacao?.registroData}}" />
+                        <ExpandContent key="Parcela" value="{{consolidacao?.parcela}}" />
+                        <ExpandContent key="Soma" value="{{consolidacao?.soma}}" />
+                        <ExpandContent key="Conta" value="{{consolidacao?.conta}}" />
+                        <br>
 
                         <!-- tipo -->
-                        <mat-expansion-panel class="panel">
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    Tipo #{{consolidacao?.codigo}}
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <div class="container">
-                                <div>Sequencial</div>
-                                <div>{{ consolidacao?.tipo?.sequencial }}</div>
-                            </div>
-                            <div class="container">
-                                <div>Sequencial</div>
-                                <div>{{ consolidacao?.tipo?.codigo }}</div>
-                            </div>
-                            <div class="container">
-                                <div>Sequencial</div>
-                                <div>{{ consolidacao?.tipo?.descricao }}</div>
-                            </div>
-                        </mat-expansion-panel>
+                        <Expand title="Tipo #{{consolidacao?.tipo?.codigo}}">                            
+                            <ExpandContent key="Sequencial" value="{{consolidacao?.tipo?.sequencial}}" />
+                            <ExpandContent key="Código" value="{{consolidacao?.tipo?.codigo}}" />
+                            <ExpandContent key="Descrição" value="{{consolidacao?.tipo?.descricao}}" />
+                        </Expand>
                         <!-- /tipo -->
-
-                    </mat-expansion-panel>
+    
+                    </Expand>
+                    <br>
                     <!-- /consolidacao -->
-
+    
                 </ng-container>
-            </mat-expansion-panel>
+            </Expand>
             <!-- /consolidacoes -->
-        </mat-expansion-panel>
+        </Expand>
         <!-- /fsae -->
-
-    </mat-accordion>
+    </Accordion>
+    
 </div>
