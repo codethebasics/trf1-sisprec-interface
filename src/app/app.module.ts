@@ -67,6 +67,7 @@ import { TabelaAssuntoDetalheComponent } from './cjf/consulta-tabela/tabela-assu
 import { ChangelogComponent } from './system/changelog/changelog.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ProcessoComponent } from './cjf/processos/processo/processo.component';
+import { FaseComponent } from './cjf/consulta-fase/fase/fase.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -105,7 +106,8 @@ registerLocaleData(localePt, 'pt');
     TabelaAssuntoDetalheComponent,
     ChangelogComponent,
     HeaderComponent,
-    ProcessoComponent
+    ProcessoComponent,
+    FaseComponent
   ],
   imports: [
     BrowserModule,

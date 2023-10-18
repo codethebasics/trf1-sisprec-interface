@@ -159,10 +159,6 @@
                                         <div>Entrada</div>
                                         <div>{{ unidadeJudicial.entrada }}</div>
                                     </div>
-                                    <div class="processo__acaoOriginaria__unidadesJudiciais__municipio">
-                                        <div>Município</div>
-                                        <div>{{ unidadeJudicial.municipio | json }}</div>
-                                    </div>
                                     <div class="processo__acaoOriginaria__unidadesJudiciais__registroData">
                                         <div>Registro data</div>
                                         <div>{{ unidadeJudicial.registroData }}</div>
@@ -175,10 +171,6 @@
                                         <div>Sequencial</div>
                                         <div>{{ unidadeJudicial.sequencial }}</div>
                                     </div>
-                                    <div class="processo__acaoOriginaria__unidadesJudiciais__unidadeTipo">
-                                        <div>Unidade tipo</div>
-                                        <div>{{ unidadeJudicial.unidadeTipo | json }}</div>
-                                    </div>
                                     <div class="processo__acaoOriginaria__unidadesJudiciais__utilizacaoFimData">
                                         <div>Utilização data fim</div>
                                         <div>{{ unidadeJudicial.utilizacaoFimData }}</div>
@@ -187,6 +179,64 @@
                                         <div>Utilização data início</div>
                                         <div>{{ unidadeJudicial.utilizacaoInicioData }}</div>
                                     </div>
+                                    <div class="processo__acaoOriginaria__unidadesJudiciais__municipio" *ngIf="unidadeJudicial?.municipio">
+                                        <mat-expansion-panel class="panel">
+                                            <mat-expansion-panel-header>
+                                                <mat-panel-title>
+                                                    Município
+                                                </mat-panel-title>                
+                                            </mat-expansion-panel-header>
+                                            <div class="container">
+                                                <div class="processo__acaoOriginaria__unidadesJudiciais__municipio__codigo">
+                                                    <div>Código</div>
+                                                    <div>{{ unidadeJudicial?.municipio?.codigo }}</div>
+                                                </div>
+                                                <div class="processo__acaoOriginaria__unidadesJudiciais__municipio__uf">
+                                                    <div>UF</div>
+                                                    <div>{{ unidadeJudicial?.municipio?.uf }}</div>
+                                                </div>
+                                                <div class="processo__acaoOriginaria__unidadesJudiciais__municipio__descricao">
+                                                    <div>Descrição</div>
+                                                    <div>{{ unidadeJudicial?.municipio?.descricao }}</div>
+                                                </div>
+                                                <div class="processo__acaoOriginaria__unidadesJudiciais__municipio__sequencial">
+                                                    <div>Sequencial</div>
+                                                    <div>{{ unidadeJudicial?.municipio?.sequencial }}</div>
+                                                </div>
+                                            </div>
+                                        </mat-expansion-panel>
+                                    </div>                                    
+                                    <div class="processo__acaoOriginaria__unidadesJudiciais__unidadeTipo" *ngIf="unidadeJudicial?.unidadeTipo">
+                                        <mat-expansion-panel class="panel">
+                                            <mat-expansion-panel-header>
+                                                <mat-panel-title>
+                                                    Unidade tipo
+                                                </mat-panel-title>                
+                                            </mat-expansion-panel-header>
+                                            <div class="container">
+                                                <div class="processo__acaoOriginaria__unidadesJudiciais__unidadeTipo__codigo">
+                                                    <div>Código</div>
+                                                    <div>{{ unidadeJudicial?.unidadeTipo?.codigo }}</div>
+                                                </div>
+                                                <div class="processo__acaoOriginaria__unidadesJudiciais__unidadeTipo__descricao">
+                                                    <div>Descrição</div>
+                                                    <div>{{ unidadeJudicial?.unidadeTipo?.descricao }}</div>
+                                                </div>
+                                                <div class="processo__acaoOriginaria__unidadesJudiciais__unidadeTipo__natureza">
+                                                    <div>Natureza</div>
+                                                    <div>{{ unidadeJudicial?.unidadeTipo?.natureza }}</div>
+                                                </div>
+                                                <div class="processo__acaoOriginaria__unidadesJudiciais__unidadeTipo__sequencial">
+                                                    <div>Sequencial</div>
+                                                    <div>{{ unidadeJudicial?.unidadeTipo?.sequencial }}</div>
+                                                </div>
+                                                <div class="processo__acaoOriginaria__unidadesJudiciais__unidadeTipo__utilizacaoFim">
+                                                    <div>Utilizacação fim</div>
+                                                    <div>{{ unidadeJudicial?.unidadeTipo?.utilizacaoFim }}</div>
+                                                </div>
+                                            </div>
+                                        </mat-expansion-panel>
+                                    </div>                                    
                                 </ng-container>
                             </div>
                         </div>

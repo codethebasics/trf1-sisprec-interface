@@ -1,0 +1,446 @@
+<div class="fase">
+    <mat-accordion>
+
+        <!-- fase -->
+        <mat-expansion-panel class="panel">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Fase {{ fase?.aberturaData | date: 'dd/MM/yyyy hh:mm:ss' }}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="container">
+                <div>Sequencial</div>
+                <div>{{ fase?.sequencia }}</div>
+            </div>
+            <div class="container">
+                <div>Mês</div>
+                <div>{{ fase?.mes }}</div>
+            </div>
+            <div class="container">
+                <div>Ano</div>
+                <div>{{ fase?.ano }}</div>
+            </div>
+            <div class="container">
+                <div>Ano exercício orçamentário</div>
+                <div>{{ fase?.anoExercicioOrcamentario }}</div>
+            </div>
+            <div class="container">
+                <div>Código sufixo Siaf</div>
+                <div>{{ fase?.codSufixoProcessoSiaf }}</div>
+            </div>
+            <div class="container">
+                <div>Data de cancelamento</div>
+                <div>{{ fase?.cancelamentoData | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
+            </div>
+            <div class="container">
+                <div>Data de exclusao</div>
+                <div>{{ fase?.exclusaoData | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
+            </div>
+            <div class="container">
+                <div>Data fim de exclusao</div>
+                <div>{{ fase?.fimExclusaoData | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
+            </div>
+            <div class="container">
+                <div>Data de registro</div>
+                <div>{{ fase?.registroData | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
+            </div>
+            <div class="container">
+                <div>Data de abertura</div>
+                <div>{{ fase?.aberturaData | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
+            </div>
+            <div class="container">
+                <div>Data de fechamento</div>
+                <div>{{ fase?.fechamentoData | date: 'dd/MM/yyyy hh:mm:ss' }}</div>
+            </div>
+            <div class="container">
+                <div>SiopWEB envio</div>
+                <div>{{ fase?.siopWebEnvio }}</div>
+            </div>
+            <div class="container">
+                <div>Processos indicados para pagamento enviar/excluir?</div>
+                <div>{{ fase?.processosIndicadosParaPagamentoEnviarExcluir }}</div>
+            </div>
+            <div class="container">
+                <div>Descrição</div>
+                <div>{{ fase?.descricao }}</div>
+            </div>
+            <div class="container">
+                <div>Mês</div>
+                <div>{{ fase?.mes }}</div>
+            </div>
+            <div class="container">
+                <div>Ano</div>
+                <div>{{ fase?.ano }}</div>
+            </div>
+            <div class="container">
+                <div>Ano exercício orçamentário</div>
+                <div>{{ fase?.anoExercicioOrcamentario }}</div>
+            </div>
+            <div class="container">
+                <div>Código sufixo Siaf</div>
+                <div>{{ fase?.codSufixoProcessoSiaf }}</div>
+            </div>            
+
+            <!-- plano -->
+            <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Plano #{{fase?.plano?.sequencial}}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="container">
+                    <div>Sequencial</div>
+                    <div>{{ fase?.plano?.sequencial }}</div>
+                </div>
+                <div class="container">
+                    <div>Mês</div>
+                    <div>{{ fase?.plano?.mes }}</div>
+                </div>
+                <div class="container">
+                    <div>Tipo</div>
+                    <div>{{ fase?.plano?.tipo }}</div>
+                </div>
+                <div class="container">
+                    <div>Tipo descrição</div>
+                    <div>{{ fase?.plano?.tipoDescricao }}</div>
+                </div>
+                <div class="container">
+                    <div>Descrição</div>
+                    <div>{{ fase?.plano?.descricao }}</div>
+                </div>
+
+                <!-- unidade gestora -->
+                <mat-expansion-panel class="panel">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Unidade gestora #{{fase?.plano?.unidadeGestora?.sequencial}}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div>Sequencial</div>
+                        <div>{{ fase?.plano?.unidadeGestora?.sequencial }}</div>
+                    </div>
+                    <div class="container">
+                        <div>Código</div>
+                        <div>{{ fase?.plano?.unidadeGestora?.codigo }}</div>
+                    </div>
+                    <div class="container">
+                        <div>Descrição</div>
+                        <div>{{ fase?.plano?.unidadeGestora?.descricao }}</div>
+                    </div>
+                    <div class="container">
+                        <div>Abreviatura</div>
+                        <div>{{ fase?.plano?.unidadeGestora?.abreviatura }}</div>
+                    </div>
+                    <div class="container">
+                        <div>Número tribunal</div>
+                        <div>{{ fase?.plano?.unidadeGestora?.numTribunal }}</div>
+                    </div>
+                    <div class="container">
+                        <div>Tipo descrição</div>
+                        <div>{{ fase?.plano?.unidadeGestora?.tipoDescricao }}</div>
+                    </div>
+                    <div class="container">
+                        <div>Descrição</div>
+                        <div>{{ fase?.plano?.unidadeGestora?.descricao }}</div>
+                    </div>
+
+                    <!-- unidade -->
+                    <mat-expansion-panel class="panel">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Unidade #{{ fase?.plano?.unidadeGestora?.unidade?.sequencial }}
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="container">
+                            <div>Sequencial</div>
+                            <div>{{ fase?.plano?.unidadeGestora?.unidade?.sequencial }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Código</div>
+                            <div>{{ fase?.plano?.unidadeGestora?.unidade?.codigo }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Nome</div>
+                            <div>{{ fase?.plano?.unidadeGestora?.unidade?.nome }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Abreviatura</div>
+                            <div>{{ fase?.plano?.unidadeGestora?.unidade?.abreviatura }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Utilização início data</div>
+                            <div>{{ fase?.plano?.unidadeGestora?.unidade?.utilizacaoInicioData }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Utilização fim data</div>
+                            <div>{{ fase?.plano?.unidadeGestora?.unidade?.utilizacaoFimData }}</div>
+                        </div>
+
+                        <!-- unidade superior -->
+                        <mat-expansion-panel class="panel">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Unidade superior #{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.sequencial }}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="container">
+                                <div>Sequencial</div>
+                                <div>{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.sequencial }}</div>
+                            </div>
+                            <div class="container">
+                                <div>Código</div>
+                                <div>{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.codigo }}</div>
+                            </div>
+                            <div class="container">
+                                <div>Nome</div>
+                                <div>{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.nome }}</div>
+                            </div>
+                            <div class="container">
+                                <div>Abreviatura</div>
+                                <div>{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.abreviatura }}</div>
+                            </div>
+                            <div class="container">
+                                <div>Utilização início data</div>
+                                <div>{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.utilizacaoInicioData }}</div>
+                            </div>
+                            <div class="container">
+                                <div>Utilização fim data</div>
+                                <div>{{ fase?.plano?.unidadeGestora?.unidade?.unidadeSuperior?.utilizacaoFimData }}</div>
+                            </div>
+                        </mat-expansion-panel>
+                        <!-- /unidade superior -->
+
+                    </mat-expansion-panel>
+                    <!-- /unidade -->
+
+                </mat-expansion-panel>
+                <!-- /unidade gestora -->
+
+            </mat-expansion-panel>
+            <!-- /plano -->
+
+            <!-- fase tipo -->
+            <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Fase tipo #{{fase?.faseTipo?.sequencial }}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="container">
+                    <div>Sequencial</div>
+                    <div>{{ fase?.faseTipo?.sequencial }}</div>
+                </div>
+                <div class="container">
+                    <div>Código</div>
+                    <div>{{ fase?.faseTipo?.codigo }}</div>
+                </div>
+                <div class="container">
+                    <div>Descrição</div>
+                    <div>{{ fase?.faseTipo?.descricao }}</div>
+                </div>
+                <div class="container">
+                    <div>Origem</div>
+                    <div>{{ fase?.faseTipo?.origem }}</div>
+                </div>
+                <div class="container">
+                    <div>Utilização fim</div>
+                    <div>{{ fase?.faseTipo?.utilizacaoFim }}</div>
+                </div>
+                <div class="container">
+                    <div>Observação</div>
+                    <div>{{ fase?.faseTipo?.observacao }}</div>
+                </div>
+                <div class="container">
+                    <div>Parcela número</div>
+                    <div>{{ fase?.faseTipo?.parcelaNumero }}</div>
+                </div>
+            </mat-expansion-panel>
+            <!-- /fase tipo -->
+
+            <!-- unidade gestora -->
+            <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Unidade gestora #{{fase?.unidadeGestora?.sequencial}}
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="container">
+                    <div>Sequencial</div>
+                    <div>{{ fase?.unidadeGestora?.sequencial }}</div>
+                </div>
+                <div class="container">
+                    <div>Código</div>
+                    <div>{{ fase?.unidadeGestora?.codigo }}</div>
+                </div>
+                <div class="container">
+                    <div>Descrição</div>
+                    <div>{{ fase?.unidadeGestora?.descricao }}</div>
+                </div>
+                <div class="container">
+                    <div>Abreviatura</div>
+                    <div>{{ fase?.unidadeGestora?.abreviatura }}</div>
+                </div>
+                <div class="container">
+                    <div>Número tribunal</div>
+                    <div>{{ fase?.unidadeGestora?.numTribunal }}</div>
+                </div>
+                <div class="container">
+                    <div>Tipo descrição</div>
+                    <div>{{ fase?.unidadeGestora?.tipoDescricao }}</div>
+                </div>
+                <div class="container">
+                    <div>Descrição</div>
+                    <div>{{ fase?.unidadeGestora?.descricao }}</div>
+                </div>
+
+                <!-- unidade -->
+                <mat-expansion-panel class="panel">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Unidade #{{ fase?.unidadeGestora?.unidade?.sequencial }}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="container">
+                        <div>Sequencial</div>
+                        <div>{{ fase?.unidadeGestora?.unidade?.sequencial }}</div>
+                    </div>
+                    <div class="container">
+                        <div>Código</div>
+                        <div>{{ fase?.unidadeGestora?.unidade?.codigo }}</div>
+                    </div>
+                    <div class="container">
+                        <div>Nome</div>
+                        <div>{{ fase?.unidadeGestora?.unidade?.nome }}</div>
+                    </div>
+                    <div class="container">
+                        <div>Abreviatura</div>
+                        <div>{{ fase?.unidadeGestora?.unidade?.abreviatura }}</div>
+                    </div>
+                    <div class="container">
+                        <div>Utilização início data</div>
+                        <div>{{ fase?.unidadeGestora?.unidade?.utilizacaoInicioData }}</div>
+                    </div>
+                    <div class="container">
+                        <div>Utilização fim data</div>
+                        <div>{{ fase?.unidadeGestora?.unidade?.utilizacaoFimData }}</div>
+                    </div>
+
+                    <!-- unidade superior -->
+                    <mat-expansion-panel class="panel">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Unidade superior #{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.sequencial }}
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="container">
+                            <div>Sequencial</div>
+                            <div>{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.sequencial }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Código</div>
+                            <div>{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.codigo }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Nome</div>
+                            <div>{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.nome }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Abreviatura</div>
+                            <div>{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.abreviatura }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Utilização início data</div>
+                            <div>{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.utilizacaoInicioData }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Utilização fim data</div>
+                            <div>{{ fase?.unidadeGestora?.unidade?.unidadeSuperior?.utilizacaoFimData }}</div>
+                        </div>
+                    </mat-expansion-panel>
+                    <!-- /unidade superior -->
+
+                </mat-expansion-panel>
+                <!-- /unidade -->
+
+            </mat-expansion-panel>
+            <!-- /unidade gestora -->
+
+            <!-- consolidacoes -->
+            <mat-expansion-panel class="panel">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Consolidações
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <ng-container *ngFor="let consolidacao of fase.consolidacoes">
+                    
+                    <!-- consolidacao -->
+                    <mat-expansion-panel class="panel">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Consolidacao #{{consolidacao?.sequencial}}
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <div class="container">
+                            <div>Sequencial</div>
+                            <div>{{ consolidacao?.sequencial }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Fase sequencial</div>
+                            <div>{{ consolidacao?.faseSequencial }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Ordem</div>
+                            <div>{{ consolidacao?.ordem }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Data registro</div>
+                            <div>{{ consolidacao?.registroData }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Parcela</div>
+                            <div>{{ consolidacao?.parcela }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Soma</div>
+                            <div>{{ consolidacao?.soma }}</div>
+                        </div>
+                        <div class="container">
+                            <div>Conta</div>
+                            <div>{{ consolidacao?.conta }}</div>
+                        </div>
+
+                        <!-- tipo -->
+                        <mat-expansion-panel class="panel">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    Tipo #{{consolidacao?.codigo}}
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <div class="container">
+                                <div>Sequencial</div>
+                                <div>{{ consolidacao?.tipo?.sequencial }}</div>
+                            </div>
+                            <div class="container">
+                                <div>Sequencial</div>
+                                <div>{{ consolidacao?.tipo?.codigo }}</div>
+                            </div>
+                            <div class="container">
+                                <div>Sequencial</div>
+                                <div>{{ consolidacao?.tipo?.descricao }}</div>
+                            </div>
+                        </mat-expansion-panel>
+                        <!-- /tipo -->
+
+                    </mat-expansion-panel>
+                    <!-- /consolidacao -->
+
+                </ng-container>
+            </mat-expansion-panel>
+            <!-- /consolidacoes -->
+        </mat-expansion-panel>
+        <!-- /fsae -->
+
+    </mat-accordion>
+</div>

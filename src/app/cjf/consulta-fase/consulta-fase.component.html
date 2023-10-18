@@ -53,8 +53,18 @@
             </button>
         </div>
     </section>
-    <section id="data">
-        <mat-accordion *ngIf="fases.length">
+    <div id="data">
+        <ng-container *ngFor="let fase of fases">
+            <div class="fases-container">
+                <div>
+                    <app-fase 
+                        *ngIf="fases.length" 
+                        [fase]="fase"
+                    />
+                </div>
+            </div>
+        </ng-container>
+        <!-- <mat-accordion *ngIf="fases.length">
             <mat-expansion-panel *ngFor="let fase of fases">
               <mat-expansion-panel-header>
                 <mat-panel-title>
@@ -331,13 +341,13 @@
                 </div>
               </div>
             </mat-expansion-panel>            
-        </mat-accordion>
-        <div *ngIf="!fases.length">
+        </mat-accordion> -->
+        <div *ngIf="!fases.length" style="padding: 1rem">
             <app-message 
                 type="info" 
                 icon="info" 
                 text="Nenhuma fase encontrada">
             </app-message>
         </div>
-    </section>
+    </div>
 </div>
