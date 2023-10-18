@@ -55,13 +55,11 @@
     </section>
     <div id="data">
         <ng-container *ngFor="let fase of fases">
-            <div class="fases-container">
-                <div>
-                    <app-fase 
-                        *ngIf="fases.length" 
-                        [fase]="fase"
-                    />
-                </div>
+            <div class="fases-container">                
+                <app-fase 
+                    *ngIf="fases.length" 
+                    [fase]="fase"
+                />                
             </div>
         </ng-container>
         <!-- <mat-accordion *ngIf="fases.length">
