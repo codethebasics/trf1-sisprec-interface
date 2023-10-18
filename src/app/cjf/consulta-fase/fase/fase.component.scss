@@ -5,18 +5,19 @@
 
 .container {
     display: flex;    
+    border: 1px solid inherit;
     
     &:hover {
         border: 1px solid #222;
     }
 
-    >div {
+    div {
         padding: 1rem;
         flex: 1;
         border: 1px solid #ddd;
     }
 
-    >div:first-child {
+    div:first-child {
         background-color: #fafafa;
     }
 }

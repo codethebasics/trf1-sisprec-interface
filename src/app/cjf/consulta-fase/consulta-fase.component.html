@@ -3,8 +3,15 @@
         <div class="form-control">            
             <mat-form-field appearance="outline">
                 <mat-label>Abertas / Fechadas</mat-label>
-                <mat-select [(ngModel)]="statusSelecionado" name="status" class="tmp">
-                    <mat-option *ngFor="let s of status" [value]="s">
+                <mat-select 
+                    [(ngModel)]="statusSelecionado" 
+                    name="status" 
+                    class="tmp"
+                >
+                    <mat-option 
+                        *ngFor="let s of status" 
+                        [value]="s"
+                    >
                         {{ s }}
                     </mat-option>
                 </mat-select>
@@ -13,8 +20,14 @@
         <div class="form-control">
             <mat-form-field appearance="outline">
                 <mat-label>Código da unidade gestora</mat-label>
-                <mat-select [(ngModel)]="unidadeGestoraSelecionada" name="unidadeGestora">
-                    <mat-option *ngFor="let unidadeGestora of unidadesGestoras" [value]="unidadeGestora">
+                <mat-select 
+                    [(ngModel)]="unidadeGestoraSelecionada" 
+                    name="unidadeGestora"
+                >
+                    <mat-option 
+                        *ngFor="let unidadeGestora of unidadesGestoras" 
+                        [value]="unidadeGestora"
+                    >
                         {{ unidadeGestora }}
                     </mat-option>
                 </mat-select>
@@ -23,8 +36,14 @@
         <div class="form-control">
             <mat-form-field appearance="outline">
                 <mat-label>Tipo do plano</mat-label>
-                <mat-select [(ngModel)]="planoTipoSelecionado" name="planoTipo">
-                    <mat-option *ngFor="let planoTipo of planosTipo" [value]="planoTipo">
+                <mat-select 
+                    [(ngModel)]="planoTipoSelecionado" 
+                    name="planoTipo"
+                >
+                    <mat-option 
+                        *ngFor="let planoTipo of planosTipo" 
+                        [value]="planoTipo"
+                    >
                         {{ planoTipo }}
                     </mat-option>
                 </mat-select>
@@ -62,284 +81,6 @@
                 />                
             </div>
         </ng-container>
-        <!-- <mat-accordion *ngIf="fases.length">
-            <mat-expansion-panel *ngFor="let fase of fases">
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Fase {{ fase.aberturaData | date: 'dd/MM/yyyy dd:mm:ss' }}
-                </mat-panel-title>                
-              </mat-expansion-panel-header>
-              <div class="fase-container">
-                <div class="row">
-                    <div>Aberta</div>
-                    <div>{{ fase.aberta ? 'Sim' : 'Não' }}</div>
-                </div>
-                <div class="row">
-                    <div>Data de abertura</div>
-                    <div>{{ fase.aberturaData | date: 'dd/MM/yyyy dd:mm:ss' }}</div>
-                </div>
-                <div class="row">
-                    <div>Ano</div>
-                    <div>2021</div>
-                </div>
-                <div class="row">
-                    <div>Ano do exercício orçamentário</div>
-                    <div>{{ fase.ano }}</div>
-                </div>
-                <div class="row">
-                    <div>Data de cancelamento</div>
-                    <div>{{ fase.cancelamentoData }}</div>
-                </div>
-                <div class="row">
-                    <div>Código sufixo processo SIAF</div>
-                    <div>{{ fase.codSufixoProcessoSiaf }}</div>
-                </div>
-                <div class="row">
-                    <div>Consolidações</div>
-                    <div class="consolidacoes">
-                        <mat-accordion>
-                            <mat-expansion-panel>
-                              <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                  Consolidação #1
-                                </mat-panel-title>                
-                              </mat-expansion-panel-header>
-                              <div class="fase-container">
-                                <div class="row">
-                                    <div>conta</div>
-                                    <div>25767</div>
-                                </div>
-                                <div class="row">
-                                    <div>Sequencial fase</div>
-                                    <div>100230</div>
-                                </div>
-                                <div class="row">
-                                    <div>Ordem</div>
-                                    <div>1</div>
-                                </div>
-                                <div class="row">
-                                    <div>Parcela</div>
-                                    <div>0</div>
-                                </div>
-                                <div class="row">
-                                    <div>Registro data</div>
-                                    <div>02/08/2021 06:23:51</div>
-                                </div>
-                                <div class="row">
-                                    <div>Sequencial</div>
-                                    <div>7363</div>
-                                </div>
-                                <div class="row">
-                                    <div>Soma</div>
-                                    <div>-</div>
-                                </div>
-                                <div class="row">
-                                    <div>Consolidação tipo</div>
-                                    <div>-</div>
-                                </div>
-                            </div>
-                            </mat-expansion-panel>
-                        </mat-accordion>                        
-                        <mat-accordion>
-                            <mat-expansion-panel>
-                              <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                  Consolidação #2
-                                </mat-panel-title>                
-                              </mat-expansion-panel-header>
-                              <div class="fase-container">
-                                <div class="row">
-                                    <div>conta</div>
-                                    <div>25767</div>
-                                </div>
-                                <div class="row">
-                                    <div>Sequencial fase</div>
-                                    <div>100230</div>
-                                </div>
-                                <div class="row">
-                                    <div>Ordem</div>
-                                    <div>1</div>
-                                </div>
-                                <div class="row">
-                                    <div>Parcela</div>
-                                    <div>0</div>
-                                </div>
-                                <div class="row">
-                                    <div>Registro data</div>
-                                    <div>02/08/2021 06:23:51</div>
-                                </div>
-                                <div class="row">
-                                    <div>Sequencial</div>
-                                    <div>7364</div>
-                                </div>
-                                <div class="row">
-                                    <div>Soma</div>
-                                    <div>-</div>
-                                </div>
-                                <div class="row">
-                                    <div>Consolidação tipo</div>
-                                    <div>-</div>
-                                </div>
-                            </div>
-                            </mat-expansion-panel>
-                        </mat-accordion>                        
-                    </div>
-                </div>
-                <div class="row">
-                    <div>Descrição</div>
-                    <div>RPVs da UG090049 do plano 5/2021 da fase PAGO de 5/2021</div>
-                </div>
-                <div class="row">
-                    <div>Exclusão data</div>
-                    <div>-</div>
-                </div>
-                <div class="row">
-                    <div>Fase tipo</div>
-                    <div class="fases-tipo">
-                        <mat-accordion>
-                            <mat-expansion-panel>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        Fase tipo PAGO
-                                    </mat-panel-title>                
-                                </mat-expansion-panel-header>
-                                <div class="fase-container">
-                                    <div class="row">
-                                        <div>Código</div>
-                                        <div>PAGO</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>descrição</div>
-                                        <div>Pago</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Observação</div>
-                                        <div>-</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Ordem</div>
-                                        <div>-</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Origem</div>
-                                        <div>ARQUIVO</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Número da parcela</div>
-                                        <div>0</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Sequencial</div>
-                                        <div>3</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Utilização fim</div>
-                                        <div>-</div>
-                                    </div>
-                                </div>
-                            </mat-expansion-panel>
-                        </mat-accordion>
-                    </div>
-                </div>
-                <div class="row">
-                    <div>Data de fechamento</div>
-                    <div>2021-08-02T18:23:51</div>
-                </div>
-                <div class="row">
-                    <div>Data fim exclusão</div>
-                    <div>-</div>
-                </div>
-                <div class="row">
-                    <div>Mês</div>
-                    <div>5</div>
-                </div>
-                <div class="row">
-                    <div>Plano</div>
-                    <div class="planos">
-                        <mat-accordion>
-                            <mat-expansion-panel>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        Plano requisição de pequeno valor de 05/2021 (50045)
-                                    </mat-panel-title>                
-                                </mat-expansion-panel-header>
-                                <div class="fase-container">
-                                    <div class="row">
-                                        <div>Ano</div>
-                                        <div>2021</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Descrição</div>
-                                        <div>requisição de pequeno valor de 05/2021 (50045)</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Fases</div>
-                                        <div>-</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Mês</div>
-                                        <div>5</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Precatório</div>
-                                        <div>-</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>RPS</div>
-                                        <div>-</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>RPV</div>
-                                        <div>-</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Sequencial</div>
-                                        <div>50045</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Tipo</div>
-                                        <div>RPV</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Tipo descrição</div>
-                                        <div>requisição de pequeno valor</div>
-                                    </div>
-                                    <div class="row">
-                                        <div>Unidade Gestora</div>
-                                        <div>TRIBUNAL REGIONAL FEDERAL DA 1º REGIÃO</div>
-                                    </div>
-                                </div>
-                            </mat-expansion-panel>
-                        </mat-accordion>
-                    </div>
-                </div>
-                <div class="row">
-                    <div>Processos indicados para pagamento enviar/excluir</div>
-                    <div>Não</div>
-                </div>
-                <div class="row">
-                    <div>Data de registro</div>
-                    <div>2021-08-02T18:23:51</div>
-                </div>
-                <div class="row">
-                    <div>Sequencial</div>
-                    <div>100230</div>
-                </div>
-                <div class="row">
-                    <div>SIAF exportacao</div>
-                    <div>-</div>
-                </div>
-                <div class="row">
-                    <div>SIOP web envio</div>
-                    <div>-</div>
-                </div>
-                <div class="row">
-                    <div>Unidade gestora</div>
-                    <div>TRIBUNAL REGIONAL FEDERAL DA 1º REGIÃO</div>
-                </div>
-              </div>
-            </mat-expansion-panel>            
-        </mat-accordion> -->
         <div *ngIf="!fases.length" style="padding: 1rem">
             <app-message 
                 type="info" 

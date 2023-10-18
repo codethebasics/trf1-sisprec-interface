@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    border: 1px solid #ddd;
+    
+    &:hover {
+        border: 1px solid #222;
+    }
+
+    div {
+        padding: 1rem;
+        flex: 1;
+    }
+
+    div:first-child {
+        background-color: #fafafa;
+        border-right: 1px solid #ddd;
+    }
+}

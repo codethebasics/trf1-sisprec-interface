@@ -68,6 +68,9 @@ import { ChangelogComponent } from './system/changelog/changelog.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { ProcessoComponent } from './cjf/processos/processo/processo.component';
 import { FaseComponent } from './cjf/consulta-fase/fase/fase.component';
+import { ExpandComponent } from './layout/expand/expand.component';
+import { AccordionComponent } from './layout/accordion/accordion.component';
+import { ExpandContentComponent } from './layout/expand/expand-content/expand-content.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -107,7 +110,10 @@ registerLocaleData(localePt, 'pt');
     ChangelogComponent,
     HeaderComponent,
     ProcessoComponent,
-    FaseComponent
+    FaseComponent,
+    ExpandComponent,
+    AccordionComponent,
+    ExpandContentComponent
   ],
   imports: [
     BrowserModule,

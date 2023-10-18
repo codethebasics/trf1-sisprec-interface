@@ -1,0 +1,15 @@
+<div class="expand">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                {{ title }}
+            </mat-panel-title>
+            <mat-panel-description *ngIf="description">
+                {{ description }}
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div class="content">
+            <ng-content></ng-content>
+        </div>
+    </mat-expansion-panel>
+</div>
