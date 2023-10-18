@@ -56,12 +56,12 @@
     <div id="data">
         <ng-container *ngFor="let fase of fases">
             <div class="fases-container">
-                <div>
+                
                     <app-fase 
                         *ngIf="fases.length" 
                         [fase]="fase"
                     />
-                </div>
+                
             </div>
         </ng-container>
         <!-- <mat-accordion *ngIf="fases.length">
