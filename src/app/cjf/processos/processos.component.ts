@@ -114,16 +114,20 @@ export class ProcessosComponent implements OnInit {
     }
   ];
 
-  processosSelecionados: ProcessoWS[];
+  processosSelecionados: ProcessoWS[] = [
+    {
+      processoNumero: '88899953020224013400',
+      assunto: {},
+      registroData: '222222',
+    }
+  ];
+
   processoSelecionado: ProcessoWS;
 
   planosTipo = ['pct', 'rpv'];
   planoTipoSelecionado: string = 'pct';
   planoAnoMes: string;
   faseAnoMes: string;
-
-  planoAnoMesSelecionado: string = '';
-  faseAnoMesSelecionada: string = '';
 
   // Lista de processos a serem enviados para análise do CJF
   processosAnalise: ProcessoWS[] = [];
@@ -169,16 +173,17 @@ export class ProcessosComponent implements OnInit {
   postProcesso() {
     const canPostProcesso = this.unidadeGestoraSelecionada 
       && this.planoTipoSelecionado 
-      && this.planoAnoMesSelecionado 
-      && this.faseAnoMesSelecionada 
-      && this.processos.length;
+      && this.planoAnoMes 
+      && this.faseAnoMes 
+      && this.processosSelecionados.length;
 
     if (canPostProcesso) {
+      
       this.processosService.postProcesso(
         this.unidadeGestoraSelecionada, 
         this.planoTipoSelecionado, 
-        this.planoAnoMesSelecionado, 
-        this.faseAnoMesSelecionada, 
+        this.planoAnoMes, 
+        this.faseAnoMes, 
         this.processosSelecionados
       )
         .subscribe({
@@ -196,16 +201,16 @@ export class ProcessosComponent implements OnInit {
     const canPatchProcesso = this.unidadeGestoraSelecionada
       && this.processoSelecionado
       && this.planoTipoSelecionado
-      && this.planoAnoMesSelecionado
-      && this.faseAnoMesSelecionada
+      && this.planoAnoMes
+      && this.faseAnoMes
 
     if (canPatchProcesso) {
       this.processosService.patchProcesso(
         this.unidadeGestoraSelecionada,
         this.processoSelecionado,
         this.planoTipoSelecionado,
-        this.planoAnoMesSelecionado,
-        this.faseAnoMesSelecionada
+        this.planoAnoMes,
+        this.faseAnoMes
       )
         .subscribe({
           next: (response) => {
@@ -222,16 +227,16 @@ export class ProcessosComponent implements OnInit {
     const canDeleteProcesso = this.unidadeGestoraSelecionada
       && this.processoSelecionado
       && this.planoTipoSelecionado
-      && this.planoAnoMesSelecionado
-      && this.faseAnoMesSelecionada
+      && this.planoAnoMes
+      && this.faseAnoMes
     
       if (canDeleteProcesso) {
         this.processosService.deleteProcesso(
           this.unidadeGestoraSelecionada,
           this.processo,
           this.planoTipoSelecionado,
-          this.planoAnoMesSelecionado,
-          this.faseAnoMesSelecionada
+          this.planoAnoMes,
+          this.faseAnoMes
         )
           .subscribe({
             next: (response) => console.log('response', response),
