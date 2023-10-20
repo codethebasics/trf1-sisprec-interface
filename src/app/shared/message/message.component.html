@@ -1,8 +1,16 @@
-<div class="c-message" [ngClass]="classType">
+<div class="c-message" [ngClass]="classType" *ngIf="visible">
     <div class="c-message__icon">
-        <mat-icon class="icon" aria-hidden="false" aria-label="Consulta tabela" [fontIcon]="icon"></mat-icon>
+        <mat-icon 
+            class="icon" 
+            aria-hidden="false" 
+            aria-label="Consulta tabela" 
+            [fontIcon]="icon" 
+        />
     </div>
     <div class="c-message__text">
         {{ text }}
+    </div>
+    <div class="c-message__close">
+        <div class="link" (click)="close()">Fechar</div>
     </div>
 </div>

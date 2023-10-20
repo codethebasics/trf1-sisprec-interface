@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ConsultaFaseService } from './consulta-fase.service';
 import { FaseWS } from '../model/fase-ws';
+import { GlobalMessageService } from 'src/app/shared/global-message.service';
 
 @Component({
   selector: 'app-consulta-fase',
   templateUrl: './consulta-fase.component.html',
   styleUrls: ['./consulta-fase.component.scss']
 })
-export class ConsultaFaseComponent {
+export class ConsultaFaseComponent implements OnInit {
 
   loading: boolean = false;
   mask = [/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/];
@@ -34,8 +35,14 @@ export class ConsultaFaseComponent {
   planoAnoMes: string;
   fases: FaseWS[] = [];
 
-  constructor(private consultaFaseService: ConsultaFaseService) {
+  constructor(
+    private consultaFaseService: ConsultaFaseService,
+    private globalMessageService: GlobalMessageService) {
 
+  }
+
+  ngOnInit(): void {
+      // this.globalMessageService.hideMessage({}) TODO esconder mensagem global
   }
 
   getFases() {
@@ -44,8 +51,24 @@ export class ConsultaFaseComponent {
       this.unidadeGestoraSelecionada,
       this.planoTipoSelecionado,
       this.planoAnoMes.replaceAll('/', '')).subscribe({
-        next: response => this.fases = response.result,
-        error: error => console.error(error),
+        next: response => {
+          this.fases = response.result
+          if (!this.fases.length) {
+            this.globalMessageService.displayMessage({
+              text: 'Nenhuma fase encontrada',
+              icon: 'info',
+              type: 'info'
+            })
+          }
+        },
+        error: error => {
+          this.globalMessageService.displayMessage({
+            text: error.message,
+            icon: 'error',
+            type: 'danger'
+          });
+          this.fases = [];
+        },
         complete: () => this.loading = false
       })
   }

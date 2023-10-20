@@ -143,7 +143,10 @@ export class ProcessosComponent implements OnInit {
       this.processosService.getProcesso(this.processo, this.unidadeGestoraSelecionada)
         .subscribe({
           next: (response) => this.processoResponse = response.result,
-          error: (error) => console.error('error', error),
+          error: (error) => {
+            console.error('error', error);
+            this.processoResponse = {};
+          },
           complete: () => console.log('complete')
         })
     }
@@ -154,7 +157,10 @@ export class ProcessosComponent implements OnInit {
       this.processosService.postProcessoAnalise(this.unidadeGestoraSelecionada, this.planoTipoSelecionado, this.processosSelecionados)
         .subscribe({
           next: (response) => console.log('response', response),
-          error: (error) => console.log('error', error),
+          error: (error) => {
+            console.log('error', error);
+            // TODO: armazenar response
+          },
           complete: () => console.log('complete')
         })
     }
@@ -176,7 +182,10 @@ export class ProcessosComponent implements OnInit {
         this.processosSelecionados
       )
         .subscribe({
-          next: (response) => console.log('response', response),
+          next: (response) => {
+            console.log('response', response);
+            // TODO: armazenar response
+          },
           error: (error) => console.log('error', error),
           complete: () => console.log('complete')
         });
@@ -199,7 +208,10 @@ export class ProcessosComponent implements OnInit {
         this.faseAnoMesSelecionada
       )
         .subscribe({
-          next: (response) => console.log('response', response),
+          next: (response) => {
+            console.log('response', response);
+            // TODO: armazenar response
+          },
           error: (error) => console.log('error', error),
           complete: () => console.log('complete')
         })
@@ -223,7 +235,9 @@ export class ProcessosComponent implements OnInit {
         )
           .subscribe({
             next: (response) => console.log('response', response),
-            error: (error) => console.log('error', error),
+            error: (error) => {
+              // TODO armazenar response
+            },
             complete: () => console.log('complete')
           })
       }

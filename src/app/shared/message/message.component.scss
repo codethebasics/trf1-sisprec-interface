@@ -1,19 +1,33 @@
 .c-message {
     border: 1px solid #ddd;
     box-shadow: 0 3px 7px #ddd;
-    border-radius: 4px;
     display: flex;
     align-items: center;
 
     &__icon,
-    &__text {
+    &__text,
+    &__close {
         padding: 1rem;
+    }
+
+    &__text {
+        flex: 1;
+    }
+    
+    .link {
+        font-weight: 500;
+
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
     }
 
     &--info {
         background-color: #f3f4ff;
         color: #3F51B5;
         border: 1px solid #3F51B5;
+
     }
 
     &--success {

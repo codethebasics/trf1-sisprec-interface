@@ -71,6 +71,7 @@ import { FaseComponent } from './cjf/consulta-fase/fase/fase.component';
 import { ExpandComponent } from './layout/expand/expand.component';
 import { AccordionComponent } from './layout/accordion/accordion.component';
 import { ExpandContentComponent } from './layout/expand/expand-content/expand-content.component';
+import { GlobalMessageComponent } from './layout/global-message/global-message.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -113,7 +114,8 @@ registerLocaleData(localePt, 'pt');
     FaseComponent,
     ExpandComponent,
     AccordionComponent,
-    ExpandContentComponent
+    ExpandContentComponent,
+    GlobalMessageComponent
   ],
   imports: [
     BrowserModule,
