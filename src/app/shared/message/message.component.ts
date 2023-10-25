@@ -1,15 +1,25 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { 
+  Component, 
+  Input, 
+  Output, 
+  OnInit, 
+  OnDestroy, 
+  EventEmitter 
+} from '@angular/core';
 
 @Component({
-  selector: 'app-message',
+  selector: 'Message',
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.scss']
 })
-export class MessageComponent implements OnInit {
+export class MessageComponent implements OnInit, OnDestroy {
 
   @Input() type: string;
   @Input() text: string;
   @Input() icon: string;
+  @Input() visible: boolean = true;
+
+  @Output() closeEvent = new EventEmitter<boolean>();
 
   classType: string
 
@@ -21,5 +31,13 @@ export class MessageComponent implements OnInit {
         case 'danger': this.classType = 'c-message--danger'; break;
         default: this.classType = 'c-message--info';
       }
+  }
+
+  ngOnDestroy(): void {
+      
+  }
+
+  close() {    
+    this.closeEvent.emit(false);
   }
 }

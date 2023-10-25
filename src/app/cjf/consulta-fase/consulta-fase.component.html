@@ -8,10 +8,7 @@
                     name="status" 
                     class="tmp"
                 >
-                    <mat-option 
-                        *ngFor="let s of status" 
-                        [value]="s"
-                    >
+                    <mat-option *ngFor="let s of status" [value]="s">
                         {{ s }}
                     </mat-option>
                 </mat-select>
@@ -80,13 +77,6 @@
                     [fase]="fase"
                 />                
             </div>
-        </ng-container>
-        <div *ngIf="!fases.length" style="padding: 1rem">
-            <app-message 
-                type="info" 
-                icon="info" 
-                text="Nenhuma fase encontrada">
-            </app-message>
-        </div>
+        </ng-container>        
     </div>
 </div>

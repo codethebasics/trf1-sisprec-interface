@@ -5,32 +5,62 @@
         <div class="nav-container">
             <div class="nav-links">
                 <div class="nav-link" (click)="setView('consultar')">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="Consulta tabela" fontIcon="search"></mat-icon>
+                    <mat-icon 
+                        class="icon" 
+                        aria-hidden="false" 
+                        aria-label="Consulta tabela" 
+                        fontIcon="search"
+                    />
                     <span>Consultar</span>
                 </div>
                 <mat-divider></mat-divider>
                 <div class="nav-link" (click)="setView('cadastrar')">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="Consulta tabela" fontIcon="add"></mat-icon>
-                    <span>Cadastrar</span>
+                    <mat-icon 
+                        class="icon" 
+                        aria-hidden="false" 
+                        aria-label="Enviar" 
+                        fontIcon="cloud_upload"
+                    />
+                    <span>Enviar</span>
+                </div>
+                <mat-divider></mat-divider>
+                <div class="nav-link" (click)="setView('receber')">
+                    <mat-icon 
+                        class="icon" 
+                        aria-hidden="false" 
+                        aria-label="Receber" 
+                        fontIcon="cloud_download"
+                    />
+                    <span>Receber</span>
                 </div>
                 <mat-divider></mat-divider>
                 <div class="nav-link" (click)="setView('alterar')">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="Consulta fase" fontIcon="sync"></mat-icon>
+                    <mat-icon 
+                        class="icon" 
+                        aria-hidden="false" 
+                        aria-label="Alterar" 
+                        fontIcon="sync"
+                    />
                     <span>Alterar</span>
                 </div>
                 <mat-divider></mat-divider>
                 <div class="nav-link" (click)="setView('deletar')">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="Processos" fontIcon="delete"></mat-icon>
+                    <mat-icon 
+                        class="icon" 
+                        aria-hidden="false" 
+                        aria-label="Deletar" 
+                        fontIcon="delete"
+                    />
                     <span>Deletar</span>
                 </div>
                 <mat-divider></mat-divider>
-                <div class="nav-link" (click)="setView('receber')">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="Receber" fontIcon="cloud_download"></mat-icon>
-                    <span>Receber</span>
-                </div>
-                <mat-divider></mat-divider>
                 <div class="nav-link" (click)="setView('analisar')">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="Analisar" fontIcon="remove_red_eye"></mat-icon>
+                    <mat-icon 
+                        class="icon" 
+                        aria-hidden="false" 
+                        aria-label="Analisar" 
+                        fontIcon="remove_red_eye"
+                    />
                     <span>Analisar</span>
                 </div>
                 <mat-divider></mat-divider>
@@ -72,21 +102,18 @@
                             mat-raised-button 
                             color="primary" 
                             (click)="getProcesso()"
-                            >
-                                Pesquisar
-                            </button>
+                        >
+                            Pesquisar
+                        </button>
                     </div>
                 </div>
                 <div>
-                    <app-message 
+                    <Message 
                         icon="info"
                         type="info" 
                         text="Nenhum processo encontrado" 
-                        *ngIf="!processoResponse"
-                    />
-                    <div>
-                        <app-processo [processo]="processoResponse"/>
-                    </div>
+                        *ngIf="!processoResponse?.length"
+                    />                    
                 </div>
             </div>
             <!-- /consultar -->
@@ -103,15 +130,36 @@
                                 </mat-option>
                             </mat-select>
                         </mat-form-field>
+                    </div>                   
+                    <div class="form-control">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Tipo do plano</mat-label>
+                            <mat-select [(ngModel)]="planoTipoSelecionado" name="planoTipo">
+                                <mat-option *ngFor="let planoTipo of planosTipo" [value]="planoTipo">
+                                    {{ planoTipo }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
                     </div>
                     <div class="form-control">
                         <mat-form-field appearance="outline">
-                            <mat-label>Número do processo</mat-label>
+                            <mat-label>Ano e mês do plano</mat-label>
                             <input 
                                 matInput 
-                                placeholder="0000000-00.0000.0.00.0000" 
-                                [textMask]="{mask: maskProcesso}"
-                                [(ngModel)]="processo"
+                                placeholder="YYYY/MM" 
+                                [textMask]="{mask: maskPlanoAnoMes}"
+                                [(ngModel)]="planoAnoMes"
+                            />
+                        </mat-form-field>
+                    </div>
+                    <div class="form-control">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Ano e mês da fase</mat-label>
+                            <input 
+                                matInput 
+                                placeholder="YYYY/MM" 
+                                [textMask]="{mask: maskPlanoAnoMes}"
+                                [(ngModel)]="faseAnoMes"
                             />
                         </mat-form-field>
                     </div>
@@ -121,15 +169,20 @@
                             color="primary" 
                             (click)="postProcesso()"
                         >
-                            Cadastrar
+                            Enviar
                         </button>
                     </div>
                 </div>
                 <div>
-                    <app-message 
-                        icon="check"
-                        type="success" text="A API não retornou nenhum resultado">
-                    </app-message>
+                    <!-- <Message 
+                        icon="warning"
+                        type="danger" 
+                        text="Não foi possível alterar o processo" /> -->
+                        <div>{{ unidadeGestoraSelecionada }}</div>
+                        <div>{{ planoTipoSelecionado }}</div>
+                        <div>{{ planoAnoMes }}</div>
+                        <div>{{ faseAnoMes }}</div>
+                        <div>{{ processosSelecionados | json }}</div>
                 </div>
             </div>
             <!-- /cadastar -->
@@ -190,11 +243,10 @@
                     </div>
                 </div>
                 <div>
-                    <app-message 
+                    <Message 
                         icon="warning"
                         type="danger" 
-                        text="Não foi possível alterar o processo">
-                    </app-message>
+                        text="Não foi possível alterar o processo" />
                 </div>
             </div>
             <!-- /alterar -->
@@ -266,11 +318,11 @@
                     </div>
                 </div>
                 <div>
-                    <app-message 
+                    <Message
                         icon="warning"
                         type="danger" 
-                        text="Atenção! A ação não poderá ser desfeita">
-                    </app-message>
+                        text="Atenção! A ação não poderá ser desfeita" 
+                    />                    
                 </div>
             </div>
             <!-- /deletar -->
@@ -342,11 +394,11 @@
                     </div>
                 </div>
                 <div>
-                    <app-message 
+                    <Message 
                         icon="warning"
                         type="danger" 
-                        text="Atenção! A ação não poderá ser desfeita">
-                    </app-message>
+                        text="Atenção! A ação não poderá ser desfeita" 
+                    />
                 </div>
             </div>
             <!-- /receber -->
@@ -395,11 +447,11 @@
                     </div>
                 </div>
                 <div>
-                    <app-message 
+                    <Message 
                         icon="info"
                         type="info" 
-                        text="Preencha o formulário e adicione os processos a serem analisados">
-                    </app-message>
+                        text="Preencha o formulário e adicione os processos a serem analisados" 
+                    />
                     <div class="body-container">
                         <app-form-analise></app-form-analise>
                     </div>

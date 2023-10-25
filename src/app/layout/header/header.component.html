@@ -16,4 +16,11 @@
     </mat-toolbar>
     <mat-progress-bar mode="indeterminate" value="50" *ngIf="isLoading"></mat-progress-bar>
 </div>
-<app-status-bar *ngIf="isLoading"></app-status-bar>
+<GlobalMessage
+    *ngIf="message"
+    [type]="message.type"
+    [text]="message.text"
+    [icon]="message.icon"
+    (closeEvent)="closeGlobalMessage()"
+/>
+<app-status-bar *ngIf="isLoading" />

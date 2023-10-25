@@ -1,0 +1,8 @@
+<div class="global-message" *ngIf="text">
+    <Message 
+        [type]="type"
+        [text]="text"
+        [icon]="icon"
+        (closeEvent)="close()"
+    />
+</div>
