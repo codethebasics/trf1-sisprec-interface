@@ -6,6 +6,7 @@ import { FormAnaliseComponent } from './form-analise/form-analise.component';
 
 import Util from 'src/app/shared/util';
 import { ProcessoDTO } from '../model/dto/processo-dto';
+import { GlobalMessageService } from 'src/app/shared/global-message.service';
 
 @Component({
   selector: 'app-processos',
@@ -21,7 +22,7 @@ export class ProcessosComponent implements OnInit {
     dataAjuizamento: Util.mask__yyyy_MM_dd_hh_mm_ss()
   }
 
-  processoResponse: ProcessoDTO = {};
+  processoResponse: ProcessoDTO[] = [];
   processoRequest: ProcessoWS = {
     acaoOriginaria: {
       ajuizamentoData: '',
@@ -118,7 +119,7 @@ export class ProcessosComponent implements OnInit {
     {
       processoNumero: '88899953020224013400',
       assunto: {},
-      registroData: '222222',
+      registroData: '202105',
     }
   ];
 
@@ -132,7 +133,10 @@ export class ProcessosComponent implements OnInit {
   // Lista de processos a serem enviados para análise do CJF
   processosAnalise: ProcessoWS[] = [];
 
-  constructor(private processosService: ProcessosService, public dialog: MatDialog) {
+  constructor(
+    private processosService: ProcessosService, 
+    private globalMessageService: GlobalMessageService,
+    public dialog: MatDialog) {
 
   }
 
@@ -146,10 +150,16 @@ export class ProcessosComponent implements OnInit {
     if (this.processo && this.unidadeGestoraSelecionada) {
       this.processosService.getProcesso(this.processo, this.unidadeGestoraSelecionada)
         .subscribe({
-          next: (response) => this.processoResponse = response.result,
+          next: (response) => { 
+            this.processoResponse = response.result ;
+          },
           error: (error) => {
-            console.error('error', error);
-            this.processoResponse = {};
+            this.globalMessageService.displayMessage({
+              text: error.message,
+              type: 'danger',
+              icon: 'error'
+            });
+            this.processoResponse = [];
           },
           complete: () => console.log('complete')
         })
@@ -171,6 +181,7 @@ export class ProcessosComponent implements OnInit {
   }
 
   postProcesso() {
+    debugger
     const canPostProcesso = this.unidadeGestoraSelecionada 
       && this.planoTipoSelecionado 
       && this.planoAnoMes 
@@ -187,12 +198,22 @@ export class ProcessosComponent implements OnInit {
         this.processosSelecionados
       )
         .subscribe({
-          next: (response) => {
+          next: (response) => {            
+            this.globalMessageService.displayMessage({
+              text: 'Processos enviados ao CJF com sucesso',
+              type: 'success',
+              icon: 'check'
+            });
+            this.processoResponse = response;
             console.log('response', response);
-            // TODO: armazenar response
           },
-          error: (error) => console.log('error', error),
-          complete: () => console.log('complete')
+          error: (error) => {
+            this.globalMessageService.displayMessage({
+              text: `Erro durante o envio de processo: ${error.message}`,
+              type: 'danger',
+              icon: 'error'
+            });
+          }
         });
     }
   }

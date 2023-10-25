@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   data: any[];
   
   // Mensagem global do sistema
-  message: Message;
+  message: Message | null;
 
   private loadingSubscription: Subscription;
   private globalMessageSubscription: Subscription;
@@ -65,6 +65,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   getComputedName() {
     const arrayName = this.username.split(" ");
     this.computedName = arrayName[0] + ' ' + arrayName[(arrayName.length - 1)];
+  }
+
+  closeGlobalMessage() {
+    this.message = null;
   }
 
 }

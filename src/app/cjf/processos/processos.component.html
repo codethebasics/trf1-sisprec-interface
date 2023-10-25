@@ -5,32 +5,62 @@
         <div class="nav-container">
             <div class="nav-links">
                 <div class="nav-link" (click)="setView('consultar')">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="Consulta tabela" fontIcon="search"></mat-icon>
+                    <mat-icon 
+                        class="icon" 
+                        aria-hidden="false" 
+                        aria-label="Consulta tabela" 
+                        fontIcon="search"
+                    />
                     <span>Consultar</span>
                 </div>
                 <mat-divider></mat-divider>
                 <div class="nav-link" (click)="setView('cadastrar')">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="Enviar" fontIcon="cloud_upload"></mat-icon>
+                    <mat-icon 
+                        class="icon" 
+                        aria-hidden="false" 
+                        aria-label="Enviar" 
+                        fontIcon="cloud_upload"
+                    />
                     <span>Enviar</span>
                 </div>
                 <mat-divider></mat-divider>
                 <div class="nav-link" (click)="setView('receber')">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="Receber" fontIcon="cloud_download"></mat-icon>
+                    <mat-icon 
+                        class="icon" 
+                        aria-hidden="false" 
+                        aria-label="Receber" 
+                        fontIcon="cloud_download"
+                    />
                     <span>Receber</span>
                 </div>
                 <mat-divider></mat-divider>
                 <div class="nav-link" (click)="setView('alterar')">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="Alterar" fontIcon="sync"></mat-icon>
+                    <mat-icon 
+                        class="icon" 
+                        aria-hidden="false" 
+                        aria-label="Alterar" 
+                        fontIcon="sync"
+                    />
                     <span>Alterar</span>
                 </div>
                 <mat-divider></mat-divider>
                 <div class="nav-link" (click)="setView('deletar')">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="Deletar" fontIcon="delete"></mat-icon>
+                    <mat-icon 
+                        class="icon" 
+                        aria-hidden="false" 
+                        aria-label="Deletar" 
+                        fontIcon="delete"
+                    />
                     <span>Deletar</span>
                 </div>
                 <mat-divider></mat-divider>
                 <div class="nav-link" (click)="setView('analisar')">
-                    <mat-icon class="icon" aria-hidden="false" aria-label="Analisar" fontIcon="remove_red_eye"></mat-icon>
+                    <mat-icon 
+                        class="icon" 
+                        aria-hidden="false" 
+                        aria-label="Analisar" 
+                        fontIcon="remove_red_eye"
+                    />
                     <span>Analisar</span>
                 </div>
                 <mat-divider></mat-divider>
@@ -72,9 +102,9 @@
                             mat-raised-button 
                             color="primary" 
                             (click)="getProcesso()"
-                            >
-                                Pesquisar
-                            </button>
+                        >
+                            Pesquisar
+                        </button>
                     </div>
                 </div>
                 <div>
@@ -82,11 +112,8 @@
                         icon="info"
                         type="info" 
                         text="Nenhum processo encontrado" 
-                        *ngIf="!processoResponse"
-                    />
-                    <div>
-                        <app-processo [processo]="processoResponse"/>
-                    </div>
+                        *ngIf="!processoResponse?.length"
+                    />                    
                 </div>
             </div>
             <!-- /consultar -->
