@@ -72,6 +72,8 @@ import { ExpandComponent } from './layout/expand/expand.component';
 import { AccordionComponent } from './layout/accordion/accordion.component';
 import { ExpandContentComponent } from './layout/expand/expand-content/expand-content.component';
 import { GlobalMessageComponent } from './layout/global-message/global-message.component';
+import { OpcaoMenuProcessoComponent } from './cjf/processos/menu-processos/opcao-menu-processo/opcao-menu-processo.component';
+import { MenuProcessoComponent } from './cjf/processos/menu-processos/menu-processo/menu-processo.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -115,7 +117,9 @@ registerLocaleData(localePt, 'pt');
     ExpandComponent,
     AccordionComponent,
     ExpandContentComponent,
-    GlobalMessageComponent
+    GlobalMessageComponent,
+    OpcaoMenuProcessoComponent,
+    MenuProcessoComponent
   ],
   imports: [
     BrowserModule,

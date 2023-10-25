@@ -5,6 +5,8 @@ import { environments } from 'src/environments';
 import { Observable } from 'rxjs';
 import Util from '../../shared/util';
 
+
+
 /**
  * Serviço responsável pela integração com a API de processos
  * 
@@ -43,7 +45,7 @@ export class ProcessosService {
     unidadeGestoraCodigo: string, 
     planoTipo: string,
     processos: ProcessoWS[]): Observable<any> {
-      return this.http.post(`${environments.apiUrl}/processo/validar?ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}`, processos);
+      return this.http.post(`${environments.apiUrl}/processos/validar?ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}`, processos);
   }
 
   /**
@@ -62,7 +64,16 @@ export class ProcessosService {
     planoAnoMes: string, 
     faseAnoMes:string,
     processos: ProcessoWS[]): Observable<any> {
-      return this.http.post(`${environments.apiUrl}/processo/enviar?ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}&plano-ano-mes=${planoAnoMes}&fase-ano-mes=${faseAnoMes}`, processos);
+
+      // removendo caracteres de data dos parâmetros
+      const planoAnoMesSanitized = planoAnoMes.replace('/', '');
+      const faseAnoMesSanitized = faseAnoMes.replace('/', '');
+      
+      // convertendo em int o ano e mes do plano e da fase
+      const planoAnoMesParam = parseInt(planoAnoMesSanitized);
+      const faseAnoMesParam = parseInt(faseAnoMesSanitized);
+
+      return this.http.post(`${environments.apiUrl}/processos/enviar?ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}&plano-ano-mes=${planoAnoMesParam}&fase-ano-mes=${faseAnoMesParam}`, processos);
   }
 
   /**
@@ -83,7 +94,7 @@ export class ProcessosService {
     parcela: string,
     anoExercicio: string,
     processos: ProcessoWS[]): Observable<any> {
-      return this.http.post(`${environments.apiUrl}/processo/enviar?ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}&plano-ano-mes=${planoAnoMes}&fase-ano-mes=${faseAnoMes}&parcela=${parcela}&ano-exericio=${anoExercicio}`, processos);
+      return this.http.post(`${environments.apiUrl}/processos/enviar?ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}&plano-ano-mes=${planoAnoMes}&fase-ano-mes=${faseAnoMes}&parcela=${parcela}&ano-exericio=${anoExercicio}`, processos);
   }
 
   /**
@@ -102,7 +113,7 @@ export class ProcessosService {
     faseAnoMes:string,
     processoNumero: string
   ) {
-    return this.http.delete(`${environments.apiUrl}/processo?numero-processo=${processoNumero}&ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}&plano-ano-mes=${planoAnoMes}&fase-ano-mes=${faseAnoMes}`);
+    return this.http.delete(`${environments.apiUrl}/processos?numero-processo=${processoNumero}&ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}&plano-ano-mes=${planoAnoMes}&fase-ano-mes=${faseAnoMes}`);
   }
 
   /**
@@ -120,7 +131,7 @@ export class ProcessosService {
     planoTipo: string,
     planoAnoMes: string,
     faseAnoMes: string): Observable<any> {
-      return this.http.patch(`${environments.apiUrl}/processo?ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}&plano-ano-mes=${planoAnoMes}&fase-ano-mes=${faseAnoMes}`, processo);
+      return this.http.patch(`${environments.apiUrl}/processos?ug=${unidadeGestoraCodigo}&plano-prc-rpv=${planoTipo}&plano-ano-mes=${planoAnoMes}&fase-ano-mes=${faseAnoMes}`, processo);
   }
 
 }

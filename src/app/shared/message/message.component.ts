@@ -34,7 +34,7 @@ export class MessageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-      console.log('componente destruído');
+      
   }
 
   close() {    
