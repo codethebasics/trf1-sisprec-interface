@@ -74,6 +74,8 @@ import { ExpandContentComponent } from './layout/expand/expand-content/expand-co
 import { GlobalMessageComponent } from './layout/global-message/global-message.component';
 import { OpcaoMenuProcessoComponent } from './cjf/processos/menu-processos/opcao-menu-processo/opcao-menu-processo.component';
 import { MenuProcessoComponent } from './cjf/processos/menu-processos/menu-processo/menu-processo.component';
+import { ImportacaoComponent } from './cjf/importacao/importacao.component';
+import { ProcessosSireaComponent } from './sirea/processos/processos-sirea.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -119,7 +121,9 @@ registerLocaleData(localePt, 'pt');
     ExpandContentComponent,
     GlobalMessageComponent,
     OpcaoMenuProcessoComponent,
-    MenuProcessoComponent
+    MenuProcessoComponent,
+    ImportacaoComponent,
+    ProcessosSireaComponent  
   ],
   imports: [
     BrowserModule,

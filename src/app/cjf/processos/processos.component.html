@@ -13,7 +13,7 @@
                     />
                     <span>Consultar</span>
                 </div>
-                <mat-divider></mat-divider>
+                <mat-divider />
                 <div class="nav-link" (click)="setView('cadastrar')">
                     <mat-icon 
                         class="icon" 
@@ -23,7 +23,7 @@
                     />
                     <span>Enviar</span>
                 </div>
-                <mat-divider></mat-divider>
+                <mat-divider />
                 <div class="nav-link" (click)="setView('receber')">
                     <mat-icon 
                         class="icon" 
@@ -33,7 +33,7 @@
                     />
                     <span>Receber</span>
                 </div>
-                <mat-divider></mat-divider>
+                <mat-divider />
                 <div class="nav-link" (click)="setView('alterar')">
                     <mat-icon 
                         class="icon" 
@@ -43,7 +43,7 @@
                     />
                     <span>Alterar</span>
                 </div>
-                <mat-divider></mat-divider>
+                <mat-divider />
                 <div class="nav-link" (click)="setView('deletar')">
                     <mat-icon 
                         class="icon" 
@@ -53,7 +53,7 @@
                     />
                     <span>Deletar</span>
                 </div>
-                <mat-divider></mat-divider>
+                <mat-divider />
                 <div class="nav-link" (click)="setView('analisar')">
                     <mat-icon 
                         class="icon" 
@@ -63,7 +63,7 @@
                     />
                     <span>Analisar</span>
                 </div>
-                <mat-divider></mat-divider>
+                <mat-divider />
             </div>
         </div>
     </section>
@@ -108,12 +108,12 @@
                     </div>
                 </div>
                 <div>
-                    <Message 
+                    <!-- <Message 
                         icon="info"
                         type="info" 
                         text="Nenhum processo encontrado" 
                         *ngIf="!processoResponse?.length"
-                    />                    
+                    />                     -->
                 </div>
             </div>
             <!-- /consultar -->
@@ -318,11 +318,11 @@
                     </div>
                 </div>
                 <div>
-                    <Message
+                    <!-- <Message
                         icon="warning"
                         type="danger" 
                         text="Atenção! A ação não poderá ser desfeita" 
-                    />                    
+                    />                     -->
                 </div>
             </div>
             <!-- /deletar -->
@@ -394,11 +394,11 @@
                     </div>
                 </div>
                 <div>
-                    <Message 
+                    <!-- <Message 
                         icon="warning"
                         type="danger" 
                         text="Atenção! A ação não poderá ser desfeita" 
-                    />
+                    /> -->
                 </div>
             </div>
             <!-- /receber -->

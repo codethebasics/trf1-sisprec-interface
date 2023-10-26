@@ -1,0 +1,107 @@
+<div id="importacao-container">
+    <section id="form">
+        <div class="form-control">
+            <mat-form-field appearance="outline">
+                <mat-label>Classe de requisição</mat-label>
+                <mat-select 
+                    [(ngModel)]="planoTipoSelecionado" 
+                    name="planoTipo"
+                >
+                    <mat-option 
+                        *ngFor="let planoTipo of planosTipo" 
+                        [value]="planoTipo"
+                    >
+                        {{ planoTipo }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-control">
+            <mat-form-field appearance="outline">
+                <mat-label>Fase</mat-label>
+                <mat-select 
+                    [(ngModel)]="faseSelecionada" 
+                    name="planoTipo"
+                >
+                    <mat-option 
+                        *ngFor="let fase of fases" 
+                        [disabled]="planoTipoSelecionado == 'pct' && fase == 'Prévia'"
+                        [value]="fase"
+                    >
+                        {{ fase }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>                
+        <div class="form-control">
+            <mat-form-field appearance="outline">
+                <mat-label>Ano</mat-label>
+                <input 
+                    matInput 
+                    placeholder="YYYY" 
+                    [textMask]="{mask: maskAno}"
+                    [(ngModel)]="ano"
+                />
+            </mat-form-field>
+        </div>    
+        <div class="form-control" *ngIf="planoTipoSelecionado == 'rpv'">
+            <mat-form-field appearance="outline">
+                <mat-label>Mês</mat-label>
+                <mat-select 
+                    [(ngModel)]="mesSelecionado" 
+                    name="mes"
+                >
+                    <mat-option 
+                        *ngFor="let mes of meses" 
+                        [value]="mes"
+                    >
+                        {{ mes }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-control" *ngIf="planoTipoSelecionado == 'pct'">
+            <mat-form-field appearance="outline">
+                <mat-label>Classe de requisição</mat-label>
+                <mat-select 
+                    [(ngModel)]="naturezaSelecionada" 
+                    name="natureza"
+                >
+                    <mat-option 
+                        *ngFor="let natureza of naturezas" 
+                        [value]="natureza"
+                    >
+                        {{ natureza }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-control">
+            <button 
+                mat-raised-button 
+                class="export-button" 
+                color="primary" 
+                (click)="importar()"
+            >
+                Importar dados RPV/PRCs
+            </button>
+        </div>
+    </section>
+    <div id="data">
+        <!-- <ng-container *ngFor="let fase of fases">
+            <div class="fases-container">                
+                <app-fase 
+                    *ngIf="fases.length" 
+                    [fase]="fase"
+                />                
+            </div>
+        </ng-container>         -->
+        <div class="response-container">
+            {{ planoTipoSelecionado }}
+            {{ faseSelecionada }}
+            {{ naturezaSelecionada }}
+            {{ ano }}
+            {{ mesSelecionado }}
+        </div>
+    </div>
+</div>

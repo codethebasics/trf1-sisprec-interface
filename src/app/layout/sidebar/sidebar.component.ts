@@ -28,6 +28,10 @@ export class SidebarComponent {
         { path: '/', label: 'Início' }, 
         { path: '/processos', label: 'Processos' }
       ]); break;
+      case 'importacao': this.changeRouteEvent.emit([
+        { path: '/', label: 'Início' }, 
+        { path: '/importacao', label: 'Importação' }
+      ]); break;
       default: this.changeRouteEvent.emit([
         { path: '/', label: 'Início' }
       ]); break;

@@ -36,28 +36,33 @@
     >
         <!-- assunto -->
         <app-tabela-assunto                            
-        [tableData]="dados" 
-        *ngSwitchCase="'assunto'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'assunto'" 
+        />
         
         <!-- unidade-judicial -->
         <app-tabela-unidade-judicial 
-        [tableData]="dados" 
-        *ngSwitchCase="'unidade-judicial'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'unidade-judicial'" 
+        />
         
         <!-- unidade -->
         <app-tabela-unidade 
-        [tableData]="dados" 
-        *ngSwitchCase="'unidade'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'unidade'" 
+        />
         
         <!-- classificacao-despesa -->
         <app-tabela-classificacao-despesa 
-        [tableData]="dados" 
-        *ngSwitchCase="'classificacao-despesa'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'classificacao-despesa'" 
+        />
         
         <!-- indice -->
         <app-tabela-indice 
-        [tableData]="dados" 
-        *ngSwitchCase="'indice'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'indice'" 
+        />
         
         <!-- indice-tipo -->
         <app-tabela-indice-tipo 
@@ -66,66 +71,77 @@
         
         <!-- beneficiario-tipo -->
         <app-tabela-beneficiario-tipo 
-        [tableData]="dados" 
-        *ngSwitchCase="'beneficiario-tipo'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'beneficiario-tipo'" 
+        />
         
         <!-- beneficiario-sucessao-tipo -->
         <app-tabela-beneficiario-sucessao-tipo 
-        [tableData]="beneficiarioSucessaoTipo" 
-        *ngSwitchCase="'beneficiario-sucessao-tipo'" />
+            [tableData]="beneficiarioSucessaoTipo" 
+            *ngSwitchCase="'beneficiario-sucessao-tipo'" 
+        />
         
         <!-- beneficiario-valor-ordem-pagamento -->
         <app-tabela-beneficiario-valor-ordem-pagamento 
             [tableData]="dados" 
-            *ngSwitchCase="'beneficiario-valor-ordem-pagamento-107a-tipo'" />
+            *ngSwitchCase="'beneficiario-valor-ordem-pagamento-107a-tipo'" 
+        />
 
         <!-- servidor-condicao-tipo -->
         <app-tabela-servidor-condicao-tipo 
-        [tableData]="dados" 
-        *ngSwitchCase="'servidor-condicao-tipo'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'servidor-condicao-tipo'" 
+        />
         
         <!-- fase-tipo -->
         <app-tabela-fase-tipo 
-        [tableData]="dados" 
-        *ngSwitchCase="'fase-tipo'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'fase-tipo'" 
+        />
         
         <!-- identificacao-tipo -->
         <app-tabela-identificacao-tipo 
-        [tableData]="dados" 
-        *ngSwitchCase="'identificacao-tipo'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'identificacao-tipo'" 
+        />
         
         <!-- movimento-tipo -->
         <app-tabela-movimento-tipo 
-        [tableData]="dados" 
-        *ngSwitchCase="'movimento-tipo'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'movimento-tipo'" 
+        />
         
         <!-- sentenca-tipo -->
         <app-tabela-sentenca-tipo 
-        [tableData]="dados" 
-        *ngSwitchCase="'sentenca-tipo'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'sentenca-tipo'" 
+        />
         
         <!-- unidade-judicial-tipo -->
         <app-tabela-unidade-judicial-tipo 
-        [tableData]="dados" 
-        *ngSwitchCase="'unidade-judicial-tipo'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'unidade-judicial-tipo'" 
+        />
         
         <!-- valor-tipo -->
         <app-tabela-valor-tipo 
-        [tableData]="dados" 
-        *ngSwitchCase="'valor-tipo'" />
+            [tableData]="dados" 
+            *ngSwitchCase="'valor-tipo'" 
+        />
         
         <!-- divergencia-tipo -->
         <app-tabela-divergencia-tipo 
             [tableData]="dados" 
-            *ngSwitchCase="'divergencia-tipo'"/>
+            *ngSwitchCase="'divergencia-tipo'" 
+        />
     </div>
     <div class="result-container" *ngIf="!dados.length">
         <div style="padding: 1rem">
-            <Message 
+            <!-- <Message 
                 *ngIf="message"
                 type="info" 
                 icon="info" 
-                [text]="message" />
+                [text]="message" /> -->
         </div>
     </div>
 </div>
