@@ -1,31 +1,137 @@
 <div id="sidebar-container">
     <div class="nav-container">
-        <div class="nav-links">            
-            <div class="nav-link" [routerLink]="['/consulta-tabela']" (click)="triggerRouteChangeEvent('consulta-tabela')">
-                <mat-icon class="icon" aria-hidden="false" aria-label="Consulta tabela" fontIcon="list_alt"></mat-icon>
+        <div class="nav-links">
+            <div 
+                class="nav-link link-section" 
+                [routerLink]="['/consulta-tabela']" 
+                (click)="triggerRouteChangeEvent('consulta-tabela')"
+            >                
+                <span>API CJF</span>
+            </div>
+            <mat-divider />
+            <div 
+                class="nav-link" 
+                [routerLink]="['/consulta-tabela']" 
+                (click)="triggerRouteChangeEvent('consulta-tabela')"
+            >
+                <mat-icon 
+                    class="icon" 
+                    aria-hidden="false" 
+                    aria-label="Consulta tabela" 
+                    fontIcon="list_alt"
+                />
                 <span>Consulta tabela</span>
             </div>
-            <mat-divider></mat-divider>
-            <div class="nav-link" [routerLink]="['/consulta-fase']" (click)="triggerRouteChangeEvent('consulta-fase')">
-                <mat-icon class="icon" aria-hidden="false" aria-label="Consulta fase" fontIcon="event"></mat-icon>
+            <mat-divider />
+            <div 
+                class="nav-link" 
+                [routerLink]="['/consulta-fase']" 
+                (click)="triggerRouteChangeEvent('consulta-fase')"
+            >
+                <mat-icon 
+                    class="icon" 
+                    aria-hidden="false" 
+                    aria-label="Consulta fase" 
+                    fontIcon="event"
+                />
                 <span>Consulta fase</span>
             </div>
-            <mat-divider></mat-divider>
-            <div class="nav-link" [routerLink]="['/processos']" (click)="triggerRouteChangeEvent('processos')">
-                <mat-icon class="icon" aria-hidden="false" aria-label="Processos" fontIcon="gavel"></mat-icon>
+            <mat-divider/>
+            <div 
+                class="nav-link" 
+                [routerLink]="['/processos']" 
+                (click)="triggerRouteChangeEvent('processos')"
+            >
+                <mat-icon 
+                    class="icon" 
+                    aria-hidden="false" 
+                    aria-label="Processos" 
+                    fontIcon="gavel" 
+                />
+                <span>Processos CJF</span>
+            </div>
+            <mat-divider />
+            <div 
+                class="nav-link link-section" 
+                [routerLink]="['/consulta-tabela']" 
+                (click)="triggerRouteChangeEvent('consulta-tabela')"
+            >                
+                <span>API SIREA</span>
+            </div>
+            <mat-divider />
+            <div 
+                class="nav-link" 
+                [routerLink]="['/importacao']" 
+                (click)="triggerRouteChangeEvent('importacao')"
+            >
+                <mat-icon 
+                    class="icon" 
+                    aria-hidden="false" 
+                    aria-label="Processos" 
+                    fontIcon="cloud_download"
+                />
+                <span>Importação</span>
+            </div>
+            <mat-divider />
+            <div 
+                class="nav-link" 
+                [routerLink]="['/processos-sirea']" 
+                (click)="triggerRouteChangeEvent('processos-sirea')"
+            >
+                <mat-icon 
+                    class="icon" 
+                    aria-hidden="false" 
+                    aria-label="Processos" 
+                    fontIcon="gavel" 
+                />
                 <span>Processos</span>
             </div>
-            <mat-divider></mat-divider>
+            <mat-divider />
+            <div 
+                class="nav-link" 
+                [routerLink]="['/gestao-precatorios']" 
+                (click)="triggerRouteChangeEvent('gestao-precatorios')"
+            >
+                <mat-icon 
+                    class="icon" 
+                    aria-hidden="false" 
+                    aria-label="Processos" 
+                    fontIcon="toc" 
+                />
+                <span>Gestão de precatórios</span>
+            </div>
+            <mat-divider />
+            <div 
+                class="nav-link link-section" 
+                [routerLink]="['/consulta-tabela']" 
+                (click)="triggerRouteChangeEvent('consulta-tabela')"
+            >                
+                <span>Sistema</span>
+            </div>
+            <mat-divider />
             <div class="nav-link" [routerLink]="['/sair']">
-                <mat-icon class="icon" aria-hidden="false" aria-label="Sair" fontIcon="exit_to_app"></mat-icon>
+                <mat-icon 
+                    class="icon" 
+                    aria-hidden="false" 
+                    aria-label="Sair" 
+                    fontIcon="exit_to_app"
+                />
                 <span>Sair</span>
             </div>
             <mat-divider></mat-divider>
         </div>
         <div class="bottom-links">
             <mat-divider></mat-divider>
-            <div class="nav-link" (click)="displayChangelog()">
-                <mat-icon class="icon" aria-hidden="false" aria-label="Versão" fontIcon="help_outline"></mat-icon>
+            <div 
+                class="nav-link" 
+                (click)="displayChangelog()"
+            >
+                <mat-icon 
+                    class="icon" 
+                    aria-hidden="false" 
+                    aria-label="Versão" 
+                    fontIcon="help_outline"
+                />
                 <span>TRF1-SISPREC V1.0</span>
             </div>
         </div>

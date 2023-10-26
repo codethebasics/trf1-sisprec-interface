@@ -1,0 +1,27 @@
+.processos {
+    padding: 1rem;
+
+    .cta__container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        &__controller {
+            display: flex;
+            gap: 0.5rem;
+            flex-direction: column;
+            max-width: 10rem;
+        }
+    }
+}
+
+input, button {
+    border: 1px solid #222;
+    border-radius: 2px;
+    padding: 0.5rem;
+}
+
+button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}

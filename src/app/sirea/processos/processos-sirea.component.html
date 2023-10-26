@@ -1,0 +1,22 @@
+<div class="processos">    
+    <div class="cta__container">
+        <div class="cta__container__controller">
+            <button (click)="consultar()">Listar</button>    
+        </div>
+        <div class="cta__container__controller">
+            <label for="id">Consultar por ID</label>
+            <input type="text" name="id" id="id" [(ngModel)]="id">
+            <button (click)="consultarById()">Consultar</button>
+        </div>
+        <div class="cta__container__controller">
+            <label for="num">Consultar por Número</label>
+            <input type="text" name="num" id="num"[(ngModel)]="num">
+            <button (click)="consultarByNum()">Consultar</button>
+        </div>
+        <div class="cta__container__controller">
+            <label for="cpfCnpj">Consultar por CPF/CNPJ</label>
+            <input type="text" name="cpfCnpj" id="cpfCnpj" [(ngModel)]="cpfCnpj">
+            <button (click)="consultarByCpfCnpj()">Consultar</button>
+        </div>
+    </div>    
+</div>
